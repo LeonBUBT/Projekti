@@ -1,0 +1,99 @@
+@font-face {
+    font-family: heartless;
+    src: url(fonts/Heartless.ttf);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    /* font-family: heartless; */
+}
+
+
+/* header */
+#header{
+    background-color: rgb(197, 26, 26);
+    display: flex;
+    flex-direction: ;
+    font-size: large;
+    justify-content: flex-end;
+}
+
+#header ul{
+    list-style-type: none;
+}
+
+#header-ul1{
+    display: flex;
+    padding: 10px;
+}
+
+#header-ul1 li{
+    margin-right: 16px;
+    padding: 5px;
+    border-radius: 7px;
+}
+
+#header-ul2{
+    display: flex;
+    padding: 10px;
+}
+
+#header-ul2 li{
+    padding: 5px;
+    border-radius: 7px;
+}
+
+#header-ul2 li:first-child{
+    margin-right: 20px;
+}
+
+#header-ul2 input{
+    background-color: rgb(197, 26, 26);
+    border: none;
+}
+
+#header-ul2 select{
+    background-color: rgb(197, 26, 26);
+    border: none;
+    font-size: 18px;
+}
+
+#header li:hover{
+    background-color: rgb(172, 25, 25);
+}
+
+/* header */
+/* ============================================= */
+/* Navigation bar */
+
+#nav-bar{
+    background-color: brown;
+    font-size: large;
+}
+
+#nav-bar-ul{
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+}
+
+#nav-bar-ul li{
+    padding: 18px;
+}
+
+#nav-bar-ul li:hover{
+    background-color: rgb(148, 38, 38);
+}
+
+/* Navigation bar */
+/* ============================================= */
+/* Slide Show */
+
+
+
+
