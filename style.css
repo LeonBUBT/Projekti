@@ -3,97 +3,242 @@
     src: url(fonts/Heartless.ttf);
 }
 
-*{
+* {
     margin: 0;
     padding: 0;
 }
 
-body{
+body {
     font-family: Arial, Helvetica, sans-serif;
     /* font-family: heartless; */
+background-color: #f2f2f2;
 }
 
-
-/* header */
-#header{
+#header {
     background-color: rgb(197, 26, 26);
     display: flex;
-    flex-direction: ;
-    font-size: large;
     justify-content: flex-end;
+    font-size: large;
 }
 
-#header ul{
+#header ul {
     list-style-type: none;
 }
 
-#header-ul1{
+#header-ul1, #header-ul2 {
     display: flex;
+    align-items: center;
     padding: 10px;
 }
 
-#header-ul1 li{
+#header-ul1 {
+    justify-content: flex-start;
+    flex-grow: 1;
+}
+
+#header-ul1 img {
+    width: 50px; /* Adjust size as needed */
+    height: auto;
+    object-fit: contain;
+    margin-right: 16px;
+}
+
+#header-ul1 li, #header-ul2 li {
     margin-right: 16px;
     padding: 5px;
     border-radius: 7px;
 }
 
-#header-ul2{
-    display: flex;
-    padding: 10px;
+#header-ul2 {
+    justify-content: flex-end;
 }
 
-#header-ul2 li{
-    padding: 5px;
-    border-radius: 7px;
-}
-
-#header-ul2 li:first-child{
-    margin-right: 20px;
-}
-
-#header-ul2 input{
+#header-ul2 input, #header-ul2 select {
     background-color: rgb(197, 26, 26);
     border: none;
 }
 
-#header-ul2 select{
-    background-color: rgb(197, 26, 26);
-    border: none;
-    font-size: 18px;
-}
-
-#header li:hover{
+#header li:hover {
     background-color: rgb(172, 25, 25);
 }
 
-/* header */
-/* ============================================= */
-/* Navigation bar */
-
-#nav-bar{
+#nav-bar {
     background-color: brown;
     font-size: large;
 }
 
-#nav-bar-ul{
+#nav-bar-ul {
     list-style-type: none;
     display: flex;
     justify-content: space-between;
 }
 
-#nav-bar-ul li{
+#nav-bar-ul li {
     padding: 18px;
 }
 
-#nav-bar-ul li:hover{
+#nav-bar-ul li:hover {
     background-color: rgb(148, 38, 38);
 }
 
-/* Navigation bar */
-/* ============================================= */
-/* Slide Show */
+/* Slideshow */
+.slideshow-container {
+    position: relative;
+    max-width: 100%;
+    height: 83vh; 
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+.slideshow-container img {
+    width: 100%; 
+    height: 100%;
+    object-fit: cover; 
+    display: block;
+    border-radius: 0;
+}
 
+.mySlides {
+    display: none;
+    width: 100%;
+    height: 100%;
+}
 
+.text {
+    color: #f2f2f2;
+    font-size: 20px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    text-align: center;
+    background-color: rgba(177, 16, 16, 0.5);
+}
 
+.dots-container {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 10px;
+    width: 100%;
+}
+
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+    background-color: #717171;
+}
+
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+/* qikko osht per kredit kardat*/
+#kards-section {
+    margin-top: 10%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px;
+    background-color: #f0f0f0;
+    text-align: center;
+}
+
+.kard {
+    flex: 1;
+    max-width: 30%;
+    min-width: 280px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    background-color: transparent; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.kard:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.3);
+}
+
+.kard-image-container {
+    position: relative;
+    width: 100%;
+    height: 300px; 
+    overflow: hidden;
+    border-radius: 12px 12px 0 0;
+}
+
+.kard-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
+
+.kard-image-container h1 {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.8em;
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+    margin: 0;
+    z-index: 2;
+}
+
+.apply-btn {
+    margin: 15px auto;
+    padding: 12px 24px; /* Larger button size */
+    background-color: rgb(197, 26, 26);
+    color: white;
+    font-size: 1.2em;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.apply-btn:hover {
+    background-color: rgb(172, 25, 25);
+    transform: scale(1.1);
+}
+
+.kard p {
+    margin: 10px 0 0;
+    font-size: 1em;
+    color: #555;
+}
+/* Per telefon rezulotion */
+
+@keyframes fade {
+    from {opacity: 0.4}
+    to {opacity: 1}
+}
+
+@media (max-width: 768px) {
+    .text {
+        font-size: 14px;
+    }
+    #kards-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .kard {
+        max-width: 90%;
+    }
+}
