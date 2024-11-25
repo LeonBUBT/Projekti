@@ -18,7 +18,8 @@
                 Gjuha :
                 <select name="Language" id="Language">
                     <option value="Shqip">Shqip</option>
-                    <option value="Anglisht">Anglisht</option>
+                    <!-- <div id="google_translate_element"></option></div> -->
+                    <option value="Anglisht"  >Anglisht
                 </select>
             </li>
             <li>
@@ -97,7 +98,122 @@
             </p>
         </div>
     </div>
-    
+    <!-- bruh what? -->
+    <div id="Services" >
+        <ul style="list-style-type: none;">
+            <div class="ServicesContainer">
+                <img src="images/Services.jpg" alt="Services">
+                    <li id="wrap"> 
+                <div id="wrap"> <b>Pse te zgjedhni kartat tona?</b><br> Kartat tona ju ofrojnë rehati, siguri dhe përfitime të shumta. Paguani lehtësisht në çdo vend, përfitoni oferta ekskluzive dhe grumbulloni pikë shpërblyese për çdo blerje. Me mbrojtje të avancuar kundër mashtrimeve dhe qasje të thjeshtë përmes aplikacionit tonë, kartat tona janë zgjedhja ideale për çdo nevojë financiare. Zgjidhni kartën që ju përshtatet dhe shijoni avantazhet e bankimit modern!</div></li>
+                </div>
+              
+        
+     <div class=" ServicesContainerRight">
+             <div id="wrap"><li><b>Kurse te hollat</b><br> Me bankën tonë, ju ofrojmë mundësinë për të kursyer me siguri dhe përfitime të larta. Përfitoni norma konkurruese interesi, fleksibilitet në llogaritë e kursimeve dhe qasje të lehtë për të menaxhuar fondet tuaja përmes platformave tona dixhitale. Kursimet tuaja janë të mbrojtura dhe gjithmonë të disponueshme kur ju nevojiten. Filloni sot dhe ndërtoni të ardhmen tuaj me ne!</li>
+              </div>
+                <img src="images/Savings.jpg" alt="Savings">
+    </div>
+    <div class="ServicesContainer" id="Us">
+        <img src="images/NoContact.jpg "alt="Contactless">
+           <div id="wrap">
+              <li id="wrap"><b>Pagese pa kontakt! <br></b> Me teknologjinë tonë të pagesave pa kontakt, ju mund të bëni blerjet tuaja shpejt dhe me siguri. Mjafton të afroni kartën tuaj pranë pajisjes POS dhe transaksioni përfundon në pak sekonda, pa pasur nevojë të fusni PIN për shuma të vogla. Ideale për një përvojë të shpejtë dhe higjienike, pagesat pa kontakt janë zgjidhja perfekte për stilin tuaj modern të jetesës!</li>
+            </ul>
+          </div>
+    </div>
+</div>
+<!-- Kalkulatori i interesit kujdessssss -->
+<div id="Kalkulatori">
+    <h1>Kalkulatori i Kredisë</h1>
+    <div id="TeDhenat">
+        <div class="input-group">
+            <label for="shuma-kredise">Shuma e kredisë:</label>
+            <input type="range" id="shuma-kredise" min="1000" max="100000" step="1000">
+            <input type="number" id="shuma-value" min="1000" max="100000" step="1000">
+        </div>
+        <div class="input-group">
+            <label for="maturiteti-kredise">Maturiteti i kredisë:</label>
+            <input type="range" id="maturiteti-kredise" min="6" max="360" step="6">
+            <input type="number" id="maturiteti-value" min="6" max="360" step="6">
+        </div>
+        <div class="input-group">
+            <label for="norma-interesit">Norma mujore e interesit (%):</label>
+            <input type="range" id="norma-interesit" min="0.1" max="5" step="0.1">
+            <input type="number" id="norma-value" min="0.1" max="5" step="0.1">
+        </div>
+    </div>
+    <div id="Rezultati">
+        <div id="RezMajtas">
+            <h2>Rezultati</h2>
+            <p>Shuma e kredisë:</p>
+            <span id="shuma-output">-</span>
+            <p>Kësti mujor:</p>
+            <span id="kesti-output">-</span>
+            <p>Interesi total:</p>
+            <span id="interesi-output">-</span>
+            <p>Maturiteti:</p>
+            <span id="maturiteti-output">-</span>
+        </div>
+    </div>
+</div>
+<div id="google-map">
+    <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1744.7927805994777!2d21.14742556350628!3d42.65330236146237!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x13549ef3f69baacb%3A0xf864a269cc75e908!2sDukagjini%20Residence!5e0!3m2!1sen!2s!4v1732571826972!5m2!1sen!2s"
+        width="100%"
+        height="600px"
+        style="border:1;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+</div>
+<footer>
+    <div class="footer-container">
+        <!-- About Section -->
+        <div class="footer-section about">
+            <h2>About My Website</h2>
+            <p>This website is designed to provide users with valuable insights, tools, and resources. Stay connected with us to learn more!</p>
+        </div>
+
+        <!-- Navigation Links Section -->
+        <div class="footer-section links">
+            <h2>Quick Links</h2>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Features</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+
+        <!-- Contact Section -->
+        <div class="footer-section contact">
+            <h2>Contact Us</h2>
+            <p><i class="fas fa-phone"></i> +123 456 7890</p>
+            <p><i class="fas fa-envelope"></i> contact@mywebsite.com</p>
+            <div class="socials">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+        <p>&copy; 2024 My Website. All rights reserved.</p>
+    </div>
+</footer>
+
     <script src="script.js"></script>
+    
+    <!-- Google translate -->
+    <!-- <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({ pageLanguage: 'sq' }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script> -->
+
 </body>
 </html>
