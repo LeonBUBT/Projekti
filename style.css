@@ -5,21 +5,26 @@
 
 * {
     margin: 0;
-    padding: 0;color: white;
+    padding: 0;
+    color: white;
+    /* border: 2px solid rgb(2, 2, 2); */
 }
 
 body {
     font-family: Arial, Helvetica, sans-serif;
     /* font-family: heartless; */
 background-color: #f2f2f2;
+overflow-x: hidden;
 
 }
 
 #header {
-    background-color: rgb(197, 26, 26);
+    /* rgb(197, 26, 26) */
+    background-color: #8B0000;
     display: flex;
     justify-content: flex-end;
     font-size: large;
+    
 }
 
 #header ul {
@@ -55,17 +60,21 @@ background-color: #f2f2f2;
 }
 
 #header-ul2 input, #header-ul2 select {
-    background-color: rgb(197, 26, 26);
+    /* background-color: rgb(197, 26, 26); */
+    background-color: #8B0000;
     border: none;
 }
 
 #header li:hover {
     background-color: rgb(172, 25, 25);
+    
+    
 }
 
 #nav-bar {
-    background-color: brown;
+    background-color: #600000;
     font-size: large;
+   
 }
 
 #nav-bar-ul {
@@ -80,6 +89,7 @@ background-color: #f2f2f2;
 
 #nav-bar-ul li:hover {
     background-color: rgb(148, 38, 38);
+    border-radius: 100px;
 }
 
 /* Slideshow */
@@ -109,7 +119,7 @@ background-color: #f2f2f2;
 
 .text {
     color: #f2f2f2;
-    font-size: 20px;
+    font-size: 30px;
     padding: 8px 12px;
     position: absolute;
     bottom: 20px;
@@ -123,7 +133,7 @@ background-color: #f2f2f2;
     justify-content: center;
     position: absolute;
     bottom: 10px;
-    width: 100%;
+    width: 99%;
 }
 
 .dot {
@@ -167,11 +177,13 @@ background-color: #f2f2f2;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     background-color: transparent; 
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
 }
 
 .kard:hover {
     transform: translateY(-10px);
     box-shadow: 0 16px 32px rgba(0, 0, 0, 0.3);
+    
 }
 
 .kard-image-container {
@@ -202,6 +214,7 @@ background-color: #f2f2f2;
 
 .apply-btn {
     margin: 15px auto;
+
     padding: 12px 20%; 
     background-color: rgb(197, 26, 26);
     color: white;
@@ -222,6 +235,7 @@ background-color: #f2f2f2;
     margin: 10px 0 0;
     font-size: 1em;
     color: #555;
+    padding-bottom: 10%;
 }
 /* qitu osht per services */
 #Services{
@@ -233,10 +247,7 @@ background-color: #f2f2f2;
     margin: 0;
     padding: 0;
     max-width: 35%;
-
     object-fit: contain;
-
-
 
 }
 .ServicesContainer {
@@ -263,6 +274,12 @@ background-color: #f2f2f2;
     height: 300px;
     /* padding: 0 20px; */
 
+}
+.ServicesContainerRight img {
+    margin: 0;
+    padding: 0;
+    width: 33%;
+   
 }
 /* Kalkulatori */
 #Kalkulatori {
@@ -361,6 +378,76 @@ input[type="number"] {
     font-weight: bold;
     color: rgb(197, 26, 26); 
     margin-bottom: 15px;
+}
+/* Kembimi */
+
+.kontenieri-kembimit {
+    /* max-width: 800px; */
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+
+.kontenieri-kembimit h2 {
+    text-align: center;
+    color: #C51A1A;
+    margin-bottom: 20px;
+}
+
+.simboli-valuta {
+    color: #C51A1A;
+    font-weight: bold;
+}
+
+.tabela-kembimit {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.tabela-kembimit th,
+.tabela-kembimit td {
+    text-align: center;
+    padding: 12px;
+    border: 1px solid #ddd;
+    font-size: 1em;
+    
+}
+.tabela-kembimit td {
+color: #C51A1A;}
+.tabela-kembimit .koka {
+    background-color: #8B0000;
+    color: white;
+}
+
+.tabela-kembimit .blerje {
+    background-color: #C51A1A;
+    color: white;
+    font-weight: bold;
+}
+
+.tabela-kembimit .shitje {
+    background-color: #333;
+    color: white;
+    font-weight: bold;
+}
+
+.tabela-kembimit tbody tr:nth-child(odd) {
+    background-color: #f9f9f9;
+}
+
+.tabela-kembimit tbody tr:nth-child(even) {
+    background-color: #fff;
+}
+
+.shpjegim {
+    font-size: 0.9em;
+    color: #555;
+    text-align: center;
 }
 /* footeri */
 footer {
