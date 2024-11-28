@@ -4,43 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>Nexus Bank</title>
 </head>
 <body>
-    <div id="header">
-        <ul id="header-ul1">
-            <img src="images/logo.png" alt="logo">
-            <li>Individual</li>
-            <li>Biznes</li>
-        </ul>
-        <ul id="header-ul2">
-            <li>
-                Gjuha :
-                <select name="Language" id="Language">
-                    <option value="Shqip">Shqip</option>
-                    <!-- <div id="google_translate_element"></option></div> -->
-                    <option value="Anglisht"  >Anglisht
-                </select>
-            </li>
-            <li>
-                <img src="images/search.png" alt="Magnifying glass" width="14px" height="14px">
-                Search:
-                <input type="text">
-            </li>
-        </ul>
-    </div>
+
     <div id="nav-bar">
-        <ul id="nav-bar-ul">
-            <li>Llogaritë</li>
-            <li>Kreditë</li>
-            <li>Kartelat</li>
-            <li>Sigurimi</li>
-            <li>Kanalet dixhitale te bankimit</li>
-            <li>Ofertat</li>
-            <li>Bankimi privat</li>
-            <li>Apliko</li>
+        <ul id="nav-bar-ul1">
+            <li>Individë</li>
+            <li>Premium</li>
+            <li>Biznes</li>
+            <li>Korporata</li>
+            <li>Rreth Nesh</li>
+        </ul>
+
+        <ul id="nav-bar-ul2">
+            <li>Na kontaktoni</li>
+            <li>Kërko Pikat</li>
+            <li>Shqip <img src="images/world.png" alt="" width="18px" ></li>
         </ul>
     </div>
+
+    <!-- ==================== header ================================= -->
+
+    <div id="header">
+        <img id="header-img" src="images/logo.png" alt="Nexus Logo" width="75px">
+        <ul id="header-ul1">
+            <li><h1>Nexus</h1></li>
+            <li><h1>Bank</h1></li>
+        </ul>
+        
+        <ul id="header-ul2">
+            <li>Bankimi ditor</li>
+            <li>Produktet kreditore</li>
+            <li>Kartelat</li>
+        </ul>
+    </div>
+
+    <!-- --------------------------------------------------------------------------------------------------------------------- -->
+
     <div class="slideshow-container">
         <div class="mySlides fade">
            
@@ -68,7 +69,7 @@
         <div class="kard">
             <div class="kard-image-container">
                 <img src="images/Master.jpg" alt="Master Card">
-                <h1>MasterCard</h1>
+                <h1 class="h1-general">MasterCard</h1>
             </div>
             <button class="apply-btn">Apliko</button>
             <p>
@@ -79,7 +80,7 @@
         <div class="kard">
             <div class="kard-image-container">
                 <img src="images/visa.jpg" alt="Visa Card">
-                <h1>Visa Card</h1>
+                <h1 class="h1-general">Visa Card</h1>
             </div>
             <button class="apply-btn">Apliko</button>
             <p>
@@ -90,7 +91,7 @@
         <div class="kard">
             <div class="kard-image-container">
                 <img src="images/amex.jpeg" alt="American Express">
-                <h1>American Express</h1>
+                <h1 class="h1-general">American Express</h1>
             </div>
             <button class="apply-btn">Apliko</button>
             <p>
@@ -123,7 +124,7 @@
 </div>
 <!-- Kalkulatori i interesit kujdessssss -->
 <div id="Kalkulatori">
-    <h1>Kalkulatori i Kredisë</h1>
+    <h1 class="h1-general">Kalkulatori i Kredisë</h1>
     <div id="TeDhenat">
         <div class="input-group">
             <label for="shuma-kredise">Shuma e kredisë:</label>
