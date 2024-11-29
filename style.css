@@ -12,90 +12,74 @@ a{
     margin: 0;
     padding: 0;
     color: white;
-    /* border: 2px solid rgb(2, 2, 2); */
 }
 
 body {
     font-family: Arial, Helvetica, sans-serif;
-    /* font-family: heartless; */
-background-color: #f2f2f2;
-overflow-x: hidden;
-
-}
-
-#header {
-    /* rgb(197, 26, 26) */
-    background-color: #8B0000;
-    display: flex;
-    justify-content: flex-end;
-    font-size: large;
-    
-}
-
-#header ul {
-    list-style-type: none;
-}
-
-#header-ul1, #header-ul2 {
-    display: flex;
-    align-items: center;
-    padding: 10px;
-}
-
-#header-ul1 {
-    justify-content: flex-start;
-    flex-grow: 1;
-}
-
-#header-ul1 img {
-    width: 50px; 
-    height: auto;
-    object-fit: contain;
-    margin-right: 16px;
-}
-
-#header-ul1 li, #header-ul2 li {
-    margin-right: 16px;
-    padding: 5px;
-    border-radius: 7px;
-}
-
-#header-ul2 {
-    justify-content: flex-end;
-}
-
-#header-ul2 input, #header-ul2 select {
-    /* background-color: rgb(197, 26, 26); */
-    background-color: #8B0000;
-    border: none;
-}
-
-#header li:hover {
-    background-color: rgb(172, 25, 25);
-    
-    
+    background-color: #f2f2f2;
+    overflow-x: hidden;
+    background-image: url(images/login-back.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; 
+    height: 100vh;
 }
 
 #nav-bar {
     background-color: #600000;
     font-size: large;
-   
-}
-
-#nav-bar-ul {
-    list-style-type: none;
     display: flex;
     justify-content: space-between;
 }
 
-#nav-bar-ul li {
-    padding: 18px;
+#nav-bar ul{
+    list-style-type: none;
+    display: flex;
+    padding: 5px;
 }
 
-#nav-bar-ul li:hover {
-    background-color: rgb(148, 38, 38);
-    border-radius: 100px;
+#nav-bar li{
+    padding: 2px 10px 0px 10px;
 }
+
+#nav-bar li:hover {
+    background-color: rgb(148, 38, 38);
+    border-radius: 15px;
+}
+
+/* --------------------------------- Header --------------------------------------------------------------------------- */
+
+#header {
+    background-color: #8B0000;
+    display: flex;
+    font-size: large;
+    align-items: center;
+}
+
+#header-ul1,#header-ul2,#header-img{
+    padding: 15px;
+}
+
+#header-ul1{
+    list-style-type: none;
+    padding-left: 1px;
+}
+
+#header-ul2{
+    list-style-type: none;
+    display: flex;
+}
+
+#header-ul2 li{
+    padding: 10px;
+    font-size:medium;
+}
+
+#header-ul2 li:hover {
+    background-color: rgb(148, 38, 38);
+    border-radius: 15px;
+}
+
 
 /* Slideshow */
 .slideshow-container {
