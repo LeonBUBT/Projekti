@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="pikat.css">
+    <title>Nexus Bank</title>
+</head>
+<body>
+    <div id="nav-bar">
+        <ul id="nav-bar-ul1">
+            <a href="index.html"></a><li>Individë</li>
+            <li>Premium</li>
+            <li>Biznes</li>
+            <li>Korporata</li>
+            <li>Rreth Nesh</li>
+        </ul>
+
+        <ul id="nav-bar-ul2">
+           <a href="Kontakt.html"> <li>Na kontaktoni</li></a>
+            <li>Kërko Pikat</li>
+            <li>Shqip <img src="images/world.png" alt="" width="18px" ></li>
+        </ul>
+    </div>
+
+    <div id="header">
+        <img id="header-img" src="images/logo.png" alt="Nexus Logo" width="75px">
+        <ul id="header-ul1">
+            <li><h1>Nexus</h1></li>
+            <li><h1>Bank</h1></li>
+        </ul>
+        
+        <ul id="header-ul2">
+            <li>Bankimi ditor</li>
+            <li>Produktet kreditore</li>
+            <li>Kartelat</li>
+        </ul>
+
+        <div id="login">
+            <p>Register to Nexus Bank</p>
+        </div>
+    </div>
+
+    <div>
+        <h1>Lokacionet Tona</h1>
+        <p>Gjeni degët dhe ATM-të tona në të gjithë vendin për të përfituar nga shërbimet tona financiare.</p>
+        <div class="content-wrapper">
+            <div id="google-map">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1744.7927805994777!2d21.14742556350628!3d42.65330236146237!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x13549ef3f69baacb%3A0xf864a269cc75e908!2sDukagjini%20Residence!5e0!3m2!1sen!2s!4v1732571826972!5m2!1sen!2s"
+                    width="40%"
+                    height="600px"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+            <div>
+                <div class="ndryshues">
+                    <button id="butoniLista">Zgjidh Degën</button>
+                    <ul id="listaOpsioneve" class="fshehur">
+                        <li data-dega="dega1">Dega Kryesore</li>
+                        <li data-dega="dega2">Dega Qender Qytetit</li>
+                        <li data-dega="dega3">Dega e Aeroportit</li>
+                    </ul>
+                </div>
+                <div id="detajetDeges" class="fshehur">
+                    <h2 id="emriDeges"></h2>
+                    <p id="adresaDeges"></p>
+                    <p id="orarDeges"></p>
+                    <p id="kontaktiDeges"></p>
+                    <p id="sherbimeDeges"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- testimonials -->
+    <div id="testimonials">
+        <h2>Çfarë thonë klientët tanë</h2>
+        <div class="testimonial">
+            <p>"Kam përfituar shumë nga shërbimet e Nexus Bank. Stafi është gjithmonë i gatshëm për të ndihmuar dhe proceset janë të shpejta dhe të lehta."</p>
+            <h4>Arbër Krasniqi</h4>
+            <div class="stars">
+                &#9733;&#9733;&#9733;&#9733;&#9733;
+            </div>
+        </div>
+        <div class="testimonial">
+            <p>"Nexus Bank më ka ndihmuar shumë në menaxhimin e financave të mia personale dhe të biznesit. E rekomandoj shumë!"</p>
+            <h4>Lea Gashi</h4>
+            <div class="stars">
+                &#9733;&#9733;&#9733;&#9733;&#9733;
+            </div>
+        </div>
+        <div class="testimonial">
+            <p>"Shërbimi është i shkëlqyer dhe gjithmonë i përgjegjshëm. ATM-të janë gjithmonë të disponueshme dhe të lehta për t'u përdorur."</p>
+            <h4>Fatmir Beqiri</h4>
+            <div class="stars">
+                &#9733;&#9733;&#9733;&#9733;&#9733;
+            </div>
+        </div>
+    </div>
+    
+    <!-- footeri -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section about">
+                <h2>About Us</h2>
+                <p>This Website was made for Web Dev Class!</p>
+            </div>
+    
+            <div class="footer-section links">
+                <h2>Quick Links</h2>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Features</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+    
+            <div class="footer-section contact">
+                <h2>Contact Us</h2>
+                <p><i class="fas fa-phone"></i> +38349292602</p>
+                <p><i class="fas fa-envelope"></i> ubt-uni.net@email.com</p>
+                <div class="socials">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+    
+        <div class="footer-bottom">
+            <p>&copy; 2024 Nexus Bank. All rights reserved.(Student project)</p>
+        </div>
+    </footer>
+    <script src="pikat.js"></script>
+</body>
+</html>
