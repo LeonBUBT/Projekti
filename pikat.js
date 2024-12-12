@@ -11,7 +11,7 @@ const sherbimeDeges = document.getElementById("sherbimeDeges");
 const teDhenatDeges = {
     dega1: {
         emri: "Dega Kryesore",
-        adresa: "Ndertesa e Dukagjinit, Prishtine, Kosove",
+        adresa: "Ndertesa e Dukagjinit, Prishtine",
         orar: "E Hene - E Premte: 8:00 - 16:00",
         kontakti: "Tel: +1235 42 22 333",
         sherbime: "ATM, Llogari, Kredi, Depozita"
