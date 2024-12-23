@@ -70,7 +70,8 @@ body {
 .form-wrapper{
     display: flex;
     justify-content: center ;
-    margin-top: 5vh;
+    margin-top: 6vh;
+    margin-bottom: 10vh;
 }
 
 .contact-form {
@@ -93,6 +94,8 @@ body {
     text-align: center;
 }
 
+/* ================================================================= FORM BODY ================================================================= */
+
 .form-group{
     padding: 2vh;
 }
@@ -109,10 +112,36 @@ body {
     box-sizing: border-box; 
     font-size: 16px; 
 
-    padding: 2vh 3vh;
+    padding: 2vh 10px;
     border-radius: 1vh;
     border: 1px solid #afafaf;
 }
 
-/* select and textare */
+/* ================================================================= INPUT FIELDS ================================================================= */
+
+select, option{
+    color: #555;
+}
+
+.form-group select{
+    width: 100%;
+    box-sizing: border-box; 
+    font-size: 16px; 
+    padding: 2vh 10px;
+    border-radius: 1vh;
+    border: 1px solid #afafaf;
+}
+
+textarea{
+    width: 100%;
+    box-sizing: border-box; 
+    font-size: 16px; 
+    padding: 2vh 10px;
+    border-radius: 1vh;
+    border: 1px solid #afafaf;
+    height: 100px;
+    color: #555;
+}
+
+/* ================================================================= SELECT AND TEXTAREA ================================================================= */
 
