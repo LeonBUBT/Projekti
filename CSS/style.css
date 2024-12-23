@@ -1,7 +1,3 @@
-@font-face {
-    font-family: heartless;
-    src: url(fonts/Heartless.ttf);
-}
 html{
     scroll-behavior: smooth;
 }
