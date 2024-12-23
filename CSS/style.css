@@ -2,7 +2,12 @@
     font-family: heartless;
     src: url(fonts/Heartless.ttf);
 }
-
+html{
+    scroll-behavior: smooth;
+}
+a{
+    text-decoration: none;
+}
 * {
     margin: 0;
     padding: 0;
@@ -44,6 +49,7 @@ body {
     display: flex;
     font-size: large;
     align-items: center;
+    /* justify-content:flex-end; */
 }
 
 #header-ul1,#header-ul2,#header-img{
@@ -70,6 +76,10 @@ body {
     border-radius: 15px;
 }
 
+#login{
+    /* justify-content:; */
+    flex-wrap: nowrap;
+}
 
 /* ------------------------------------------------------------------------------------------------------------------------------------- */
 
