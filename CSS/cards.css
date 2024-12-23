@@ -91,13 +91,21 @@ body {
     background-color: rgb(122, 16, 16);
 }
 
+/* ================================== cards =================================== */
 
+.card-container img{
+    width: 70vh;
+}
 
+.card-container{
+    display: flex;
+    padding: 6vh;
+    justify-content: space-evenly;
+}
 
-
-
-
-
+.card-container p{
+    color: #333;
+}
 
 
 
