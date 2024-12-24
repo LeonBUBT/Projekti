@@ -3,7 +3,7 @@ html{
 }
 a{
     text-decoration: none;
-}
+} 
 * {
     margin: 0;
     padding: 0;
@@ -30,11 +30,11 @@ body {
 }
 
 #nav-bar li{
-    padding: 2px 10px 0px 10px;
+    padding: 8px 12px 4px 12px;
 }
 
 #nav-bar li:hover {
-    background-color: rgb(148, 38, 38);
+    background-color:#7e0000;
     border-radius: 15px;
 }
 
@@ -45,7 +45,6 @@ body {
     display: flex;
     font-size: large;
     align-items: center;
-    /* justify-content:flex-end; */
 }
 
 #header-ul1,#header-ul2,#header-img{
@@ -60,21 +59,35 @@ body {
 #header-ul2{
     list-style-type: none;
     display: flex;
+    margin-left: auto;
+    margin-right: 4vh;
 }
 
 #header-ul2 li{
     padding: 10px;
-    font-size:medium;
 }
 
 #header-ul2 li:hover {
-    background-color: rgb(148, 38, 38);
+    background-color: #a10d0d;
     border-radius: 15px;
 }
 
-#register{
-    /* justify-content:; */
-    flex-wrap: nowrap;
+#header-ul2 li:active{
+    background-color: rgb(122, 16, 16);
+}
+
+
+#register {
+    padding: 10px;
+    border-radius: 15px; 
+}
+
+#register:hover{
+    background-color: #7e0000;
+}
+
+#register:active{
+    background-color: rgb(122, 16, 16);
 }
 
 /* WANNA KMS */
