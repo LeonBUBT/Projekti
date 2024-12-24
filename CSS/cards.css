@@ -30,11 +30,11 @@ body {
 }
 
 #nav-bar li{
-    padding: 2px 10px 0px 10px;
+    padding: 8px 12px 4px 12px;
 }
 
 #nav-bar li:hover {
-    background-color: rgb(148, 38, 38);
+    background-color:#7e0000;
     border-radius: 15px;
 }
 
@@ -68,91 +68,49 @@ body {
 }
 
 #header-ul2 li:hover {
-    background-color: rgb(148, 38, 38);
+    background-color: #a10d0d;
     border-radius: 15px;
 }
 
-#register{
-    /* justify-content:; */
-    flex-wrap: nowrap;
+#register {
+    margin-left: auto;
+    margin-right: 4vh;
+    padding: 10px;
+    border-radius: 15px; 
 }
 
-/* ---------------------------------------------LoginFomr----------------------------------------------------- */
-#login {
+#register:hover{
+    background-color: #a10d0d;
+}
+
+#register:active{
+    background-color: rgb(122, 16, 16);
+}
+
+#header-ul2 li:active{
+    background-color: rgb(122, 16, 16);
+}
+
+/* ================================== cards =================================== */
+
+.card-container img{
+    width: 70vh;
+}
+
+.card-container{
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 120%;
-    max-width: 900px;
-    margin: 50px auto;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 36% 64% 36% 64% / 66% 29% 71% 34% ;
-    background-color: #f9f9f9;
-    backdrop-filter: blur( 10px );
-    box-shadow: 0px 0px 110px 0px rgba(176,0,0,1);
-     /* box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 ); */
-    box-sizing: border-box;
+    padding: 6vh;
+    justify-content: space-evenly;
 }
 
-#login h3 {
-    width: 100%;
-    text-align: center;
-    margin-bottom: 5px;
-
-    color: #8B0000;
-    padding-left: 10px;
-    box-sizing: border-box;
-}
-#login input[type="text"],
-#login input[type="password"] {
-    width: 100%;
-    max-width: 400px;
-    padding: 12px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    font-size: 1em;
-    box-sizing: border-box;
-    color: #8B0000;
+.card-container p{
+    color: #333;
 }
 
-#login button {
-    width: 100%;
-    max-width: 400px;
-    padding: 12px;
-    background-color: #600000;
-    color: white;
-    font-size: 1.1em;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
 
-#login button:hover {
-    background-color: #600000;
-    transform: scale(1.02);
-}
 
-#login a {
-    display: block;
-    margin-top: 10px;
-    color: #1976d2;
-    text-decoration: none;
-    font-size: 0.9em;
-}
 
-#login a:hover {
-    text-decoration: underline;
-}
-
-#error-message {
-    margin-top: 15px;
-    color: red;
-    font-size: 0.9em;
-    display: none;
-}
+/* ================================ Footer =========================== */
 
 footer {
     background-color: rgb(197, 26, 26);
@@ -235,4 +193,3 @@ footer {
     justify-content: center;
     align-items: center;
 }
-/* Pe

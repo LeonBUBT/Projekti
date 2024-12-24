@@ -3,12 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="CSS/kontakt.css">
-    <title>Nexus Bank - Contact</title>
+    <link rel="stylesheet" href="CSS/cards.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>Cards</title>
 </head>
 <body>
-
     <div id="nav-bar">
         <ul id="nav-bar-ul1">
             <li><a href="index.html">Individë</a></li>
@@ -19,8 +18,8 @@
         </ul>
 
         <ul id="nav-bar-ul2">
-           <a href="kontakt.html"> <li>Na kontaktoni</li></a>
-            <li><a href="Pikat.html">Kërko Pikat</a></li>
+            <a href="kontakt.html"><li>Na kontaktoni</li></a>
+            <li><a href="pikat.html">Kërko Pikat</a></li>
             <li>Shqip <img src="images/world.png" alt="" width="18px" ></li>
         </ul>
     </div>
@@ -28,13 +27,14 @@
     <!-- ==================== header ================================= -->
 
     <div id="header">
-      <a href="index.html">  <img id="header-img" src="images/logo.png" alt="Nexus Logo" width="75px"> </a>
-        
+        <a href="index.html">
+            <img id="header-img" src="images/logo.png" alt="Nexus Logo" width="75px">
+        </a>
         <ul id="header-ul1">
             <li><h1>Nexus</h1></li>
             <li><h1>Bank</h1></li>
         </ul>
-   
+        
         <ul id="header-ul2">
             <li><a href="">Bankimi ditor</a></li>
             <li><a href="">Produktet kreditore</a></li>
@@ -42,52 +42,42 @@
         </ul>
 
         <div id="register">
-            <p>Register to Nexus Bank</p>
+            <a href="">Register to Nexus Bank</a>
+            <hr>
         </div>
     </div>
-    
-    <!-- =============================== Contact ================================= -->
-    
-    <div class="form-wrapper">
-        <div class="contact-form">
-            <h1>Forma e Kontaktit</h1>
-            <form action="#" method="POST">
-                <div class="form-group">
-                    <label for="emri">Emri dhe Mbiemri</label>
-                    <input type="text" id="emri" name="emri" placeholder="Shkruani emrin tuaj" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email Adresa</label>
-                    <input type="email" id="email" name="email" placeholder="Shkruani email-in tuaj" required>
-                </div>
-                <div class="form-group">
-                    <label for="telefoni">Numri i Telefonit</label>
-                    <input type="tel" id="telefoni" name="telefoni" placeholder="Shkruani numrin e telefonit tuaj">
-                </div>
 
-                <div class="form-group">
-                    <label for="subjekti">Subjekti</label>
-                    <select id="subjekti" name="subjekti" required>
-                        <option value="">Zgjidhni një opsion</option>
-                        <option value="ndihme">Kërkesë për ndihmë</option>
-                        <option value="informata">Kërkesa për informata</option>
-                        <option value="tjeter">Tjetër</option>
-                    </select>
-                </div>
+    <!-- ==================== cards ================================= -->
 
-                <div class="form-group">
-                    <label for="mesazhi">Mesazhi</label>
-                    <textarea id="mesazhi" name="mesazhi" placeholder="Shkruani mesazhin tuaj këtu" required></textarea>
-                </div>
+    <div class="card-container">
+        <img src="images/debit-card-test1.png" alt="Classic debit card">
+        <p>
+            The Nexus Premium Debit Card offers a sleek design and seamless worldwide transactions. 
+            Enjoy cashback rewards, travel perks, 
+            and advanced chip security for a secure and reliable experience. 
+            Perfect for those seeking premium banking benefits.
+        </p>
+    </div>
+    <div class="card-container">
+        <img src="images/debit-card-test1.png" alt="Classic debit card">
+        <p>
+            The Nexus Classic Debit Card is simple, secure, and ideal for everyday use. 
+            With no annual fees, it provides instant access to your funds and essential features like fraud protection. 
+            A perfect choice for practical banking.
+        </p>
+    </div>
+    <div class="card-container">
+        <img src="images/debit-card-test2.png" alt="">
+        <p>
+            The Nexus Elite Debit Card delivers luxury and convenience. 
+            Enjoy priority services, higher spending limits, and exclusive travel benefits. 
+            A card designed to match your ambition and lifestyle.
+        </p>
+    </div>
 
-                <div class="form-group" id="submit-btn">
-                    <button type="submit">Dërgo</button>
-                </div>
-            </form>
-        </div>
-    </div>    
 
-    <!-- ================================================ Footer ================================================ -->
+    <!-- ==================== footer ================================= -->
+
 
     <footer>
         <div class="footer-container">
@@ -107,7 +97,8 @@
                     <li><a href="#">Contact</a></li>
                 </ul>
             </div>
-                
+    
+            
             <div class="footer-section contact">
                 <h2>Contact Us</h2>
                 <p><i class="fas fa-phone"></i> +38349292602</p>
@@ -126,8 +117,5 @@
             <p>&copy; 2024 Nexus Bank. All rights reserved.(Student project)</p>
         </div>
     </footer>
-    
-
-
 </body>
 </html>
