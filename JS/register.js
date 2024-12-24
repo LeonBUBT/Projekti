@@ -1,4 +1,4 @@
-let currentStep = 1;
+let currentStep = 0;
 
 function nextStep(step) {
     document.getElementById(`step${step}`).classList.remove("active");

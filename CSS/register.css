@@ -41,6 +41,9 @@ body {
 
 #signupForm {
     width: 60%;
+    text-align: center;
+    padding-left: 6vh;
+    padding-top: 12vh;
 }
 
 .step {
