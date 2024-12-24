@@ -92,22 +92,25 @@ body {
 
 /* ================================== cards =================================== */
 
+.wrapper{
+    background-image: url(../images/vector.jpg);
+}
+
 .card-container img{
     width: 70vh;
 }
 
 .card-container{
     display: flex;
-    padding: 6vh;
     justify-content: space-evenly;
+    padding: 6vh ;
+    margin:5vh 0;
+    background-color: #686565aa;
 }
 
 .card-container p{
-    color: #333;
+    color: white;
 }
-
-
-
 
 /* ================================ Footer =========================== */
 

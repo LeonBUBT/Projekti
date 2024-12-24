@@ -155,7 +155,29 @@ body {
     animation-duration: 1.5s;
 }
 
-/* ============================================== qitu osht per services ============================================== */
+/* ============================================== services ============================================== */
+
+@keyframes slide-in-left {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slide-in-right {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
 
 #Services{
     background-color:  #C51A1A;
@@ -163,32 +185,28 @@ body {
 
 #Services img{
     margin: 0;
-    padding: 0;
-    max-width: 35%;
+    padding: 3vh;
+    /* max-width: 35%; */
     object-fit: contain;
+    border-radius: 40px;
 }
 
 .ServicesContainer {
     display: flex;
-    align-items: center;         
-}
-
-#wrap    {
-    text-align: center;
-    text-wrap: wrap;
+    align-items: center;  
+    text-align: center;       
+    animation: slide-in-right 1.7s ease-out forwards;
 }
 
 .ServicesContainerRight { 
+    text-align: center;       
     background-color:#D32F2F ;
     display: flex;
     align-items: center; 
+    animation: slide-in-left 1.7s ease-out forwards;
 }
 
-.ServicesContainerRight img {
-    margin: 0;
-    padding: 0;
-    width: 33%;   
-}
+
 
 /* ============================================== Kalkulatori ============================================== */
 
