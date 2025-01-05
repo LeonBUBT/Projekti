@@ -152,64 +152,67 @@ scrollToTopButton.addEventListener('click', () => {
 
 updatePieChart();
 function addDeadline() {
-    const billName = document.getElementById("billName").value;
-    const dueDate = document.getElementById("dueDate").value;
-    const amountDue = document.getElementById("amountDue").value;
-    const priority = document.getElementById("priority").value;
-  
-    if (!billName || !dueDate || !amountDue) {
-      alert("Please fill out all fields!");
-      return;
+  const billName = document.getElementById("billName").value;
+  const dueDate = document.getElementById("dueDate").value;
+  const amountDue = document.getElementById("amountDue").value;
+  const priority = document.getElementById("priority").value;
+
+  if (!billName || !dueDate || !amountDue) {
+    alert("Please fill out all fields!");
+    return;
+  }
+
+  const deadlineList = document.getElementById("deadlinesList");
+  const deadlineItem = document.createElement("div");
+  deadlineItem.classList.add("deadline-item");
+  deadlineItem.style.borderColor = priority;
+  deadlineItem.innerHTML = `
+    <p><strong>Bill:</strong> ${billName}</p>
+    <p><strong>Due Date:</strong> ${dueDate}</p>
+    <p><strong>Amount Due:</strong> $${amountDue}</p>
+  `;
+
+  deadlineList.appendChild(deadlineItem);
+
+  document.getElementById("billName").value = "";
+  document.getElementById("dueDate").value = "";
+  document.getElementById("amountDue").value = "";
+  document.getElementById("priority").value = "green";
+  updateDangerIndicator();
+}
+
+function updateDangerIndicator() {
+  const deadlines = document.querySelectorAll(".deadline-item");
+  const indicator = document.querySelector(".danger-indicator");
+  let highestPriority = "green";
+
+  deadlines.forEach((deadline) => {
+    if (deadline.style.borderColor === "red") highestPriority = "red";
+    else if (deadline.style.borderColor === "yellow" && highestPriority !== "red") {
+      highestPriority = "yellow";
     }
-  
-    const deadlineList = document.getElementById("deadlinesList");
-    const deadlineItem = document.createElement("div");
-    deadlineItem.classList.add("deadline-item");
-    deadlineItem.style.borderColor = priority;
-    deadlineItem.innerHTML = `
-      <p><strong>Bill:</strong> ${billName}</p>
-      <p><strong>Due Date:</strong> ${dueDate}</p>
-      <p><strong>Amount Due:</strong> $${amountDue}</p>
-    `;
-  
-    deadlineList.appendChild(deadlineItem);
-  
-    document.getElementById("billName").value = "";
-    document.getElementById("dueDate").value = "";
-    document.getElementById("amountDue").value = "";
-    document.getElementById("priority").value = "green";
-    updateDangerIndicator();
-  }
-  
-  function updateDangerIndicator() {
-    const deadlines = document.querySelectorAll(".deadline-item");
-    const indicator = document.querySelector(".danger-indicator");
-    let highestPriority = "green";
-  
-    deadlines.forEach((deadline) => {
-      if (deadline.style.borderColor === "red") highestPriority = "red";
-      else if (deadline.style.borderColor === "yellow" && highestPriority !== "red") {
-        highestPriority = "yellow";
-      }
-    });
-  
-    indicator.style.background =
-      highestPriority === "red"
-        ? "red"
-        : highestPriority === "yellow"
-        ? "yellow"
-        : "green";
-  }
+  });
+
+  indicator.style.background =
+    highestPriority === "red"
+      ? "red"
+      : highestPriority === "yellow"
+      ? "yellow"
+      : "green";
+}
   function showLogoutModal() {
     const modal = document.getElementById('logout-modal');
     modal.style.display = 'flex';
 
-    document.getElementById('confirm-logout').addEventListener('click', () => {
+    const confirmBtn = document.getElementById('confirm-logout');
+    const cancelBtn = document.getElementById('cancel-logout');
+
+    confirmBtn.addEventListener('click', () => {
         modal.style.display = 'none';
         window.open('index.html', '_self');
     });
 
-    document.getElementById('cancel-logout').addEventListener('click', () => {
+    cancelBtn.addEventListener('click', () => {
         modal.style.display = 'none';
     });
 }

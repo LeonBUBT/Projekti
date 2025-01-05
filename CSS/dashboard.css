@@ -71,53 +71,54 @@ body {
 
 .navbar img:hover {
   transform: scale(1.2);
-}
-.modal {
+}.modal {
   display: none;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.7);
   justify-content: center;
   align-items: center;
   z-index: 1000;
 }
 
 .modal-content {
-  background-color: white;
-  padding: 20px;
-  border-radius: 8px;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 12px;
   text-align: center;
-  width: 300px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  width: 400px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.3s ease-out;
 }
 
 .modal-content h2 {
-  margin: 0 0 10px;
-  font-size: 20px;
+  font-size: 24px;
   color: #7e0000;
+  margin-bottom: 15px;
 }
 
 .modal-content p {
-  margin: 10px 0 20px;
   font-size: 16px;
-  color: #333;
+  color: #555;
+  margin-bottom: 25px;
 }
 
 .modal-actions {
   display: flex;
   justify-content: space-around;
+  gap: 20px;
 }
 
 .btn-confirm, .btn-cancel {
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
+  padding: 12px 20px;
   font-size: 16px;
+  border: none;
+  border-radius: 8px;
   cursor: pointer;
-  transition: transform 0.2s ease;
+  transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 .btn-confirm {
@@ -132,12 +133,12 @@ body {
 
 .btn-confirm:hover {
   background-color: #9c0000;
-  transform: scale(1.05);
+  transform: scale(1.1);
 }
 
 .btn-cancel:hover {
   background-color: #bbb;
-  transform: scale(1.05);
+  transform: scale(1.1);
 }
 #welcome {
   display: flex;
@@ -442,23 +443,6 @@ footer {
   color: #ddd;
 }
 
-body.dark-mode {
-  background-color: #121212;
-  color: #e0e0e0;
-}
-
-body.dark-mode .navbar {
-  background-color: #333;
-}
-
-body.dark-mode .section {
-  background-color: #1e1e1e;
-  color: #e0e0e0;
-}
-
-body.dark-mode .scroll-to-top {
-  background-color: #444;
-}
 
 #detailsContainer {
   margin-top: 20px;
@@ -544,89 +528,20 @@ body.dark-mode .scroll-to-top {
   background: #45a049;
   transform: scale(1.05);
 }
+
+
+/* help me god */
+.deadlines-form label {
+  font-size: 16px;
+  display: block;
+  margin-top: 10px;
+}
+
 .upcoming-deadlines-section {
-  display: flex;
-  align-items: flex-start;
-  gap: 20px;
-  margin-top: 30px;
-  padding: 60px;
-  background: rgba(0, 0, 0, 0.5);
-  border-radius: 10px;
-}
-
-.danger-indicator {
-  width: 10px;
-  height: 300px;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
-}
-
-.deadlines-form {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  background: rgba(255, 255, 255, 0.1);
-  padding: 15px;
-  border-radius: 10px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-}
-
-.deadlines-form h2 {
-  color: #fff;
-  text-align: center;
-}
-
-.deadlines-form form label {
-  font-size: 14px;
-  color: white;
-  margin-bottom: 5px;
-}
-
-.deadlines-form form input,
-.deadlines-form form select {
-  width: 100%;
-  padding: 10px;
-  border-radius: 5px;
-  border: none;
-  background: rgba(255, 255, 255, 0.2);
-  color: white;
-}
-
-.deadlines-form form button {
-  padding: 10px;
-  background: #4caf50;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.deadlines-form form button:hover {
-  background: #45a049;
-  transform: scale(1.05);
-}
-
-#deadlinesList {
-  margin-top: 20px;
-  color: white;
-}
-
-.deadline-item {
-  background: rgba(255, 255, 255, 0.1);
-  padding: 10px;
-  margin-bottom: 10px;
-  border-radius: 5px;
-  border-left: 5px solid;
-}.upcoming-deadlines-section {
-  display: flex;
-  align-items: flex-start;
-  gap: 20px;
-  margin-top: 30px;
   padding: 20px;
-  background: rgba(0, 0, 0, 0.5);
-  border-radius: 10px;
+  background-color: #fefefe;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .danger-indicator {
@@ -648,7 +563,7 @@ body.dark-mode .scroll-to-top {
 }
 
 .deadlines-form h2 {
-  color: #fff;
+  color: #7e0000;
   text-align: center;
 }
 
@@ -660,22 +575,23 @@ body.dark-mode .scroll-to-top {
 
 .deadlines-form form input,
 .deadlines-form form select {
-  width: 100%;
+  width: 90%;
   padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ddd;
   border-radius: 5px;
-  border: none;
-  background: rgba(255, 255, 255, 0.2);
-  color: white;
 }
 
 .deadlines-form form button {
-  padding: 10px;
-  background: #4caf50;
+  margin-top: 15px;
+  width: 100%;
+  background-color: #7e0000;
   color: white;
   border: none;
   border-radius: 5px;
+  padding: 10px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  font-size: 16px;
 }
 
 .deadlines-form form button:hover {
@@ -694,79 +610,28 @@ body.dark-mode .scroll-to-top {
   margin-bottom: 10px;
   border-radius: 5px;
   border-left: 5px solid;
-}.upcoming-deadlines-section {
-  display: flex;
-  align-items: flex-start;
-  gap: 20px;
-  margin-top: 30px;
-  padding: 20px;
-  background: rgba(0, 0, 0, 0.5);
-  border-radius: 10px;
+}
+body.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
 }
 
-.danger-indicator {
-  width: 10px;
-  height: 300px;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+body.dark-mode .navbar {
+  background-color: #333;
 }
 
-.deadlines-form {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  background: rgba(255, 255, 255, 0.1);
-  padding: 15px;
-  border-radius: 10px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+body.dark-mode .section {
+  background-color: #1e1e1e;
+  color: #e0e0e0;
 }
 
-.deadlines-form h2 {
-  color: #fff;
-  text-align: center;
+body.dark-mode .scroll-to-top {
+  background-color: #444;
 }
-
-.deadlines-form form label {
-  font-size: 14px;
-  color: white;
-  margin-bottom: 5px;
+body.dark-mode .upcoming-deadlines-section{
+  background-color: #121212 ;
 }
+body.dark-mode .navbar button{
+  background-color: #333;
 
-.deadlines-form form input,
-.deadlines-form form select {
-  width: 100%;
-  padding: 10px;
-  border-radius: 5px;
-  border: none;
-  background: rgba(255, 255, 255, 0.2);
-  color: white;
-}
-
-.deadlines-form form button {
-  padding: 10px;
-  background: #4caf50;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.deadlines-form form button:hover {
-  background: #45a049;
-  transform: scale(1.05);
-}
-
-#deadlinesList {
-  margin-top: 20px;
-  color: white;
-}
-
-.deadline-item {
-  background: rgba(255, 255, 255, 0.1);
-  padding: 10px;
-  margin-bottom: 10px;
-  border-radius: 5px;
-  border-left: 5px solid;
 }

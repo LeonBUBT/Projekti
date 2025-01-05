@@ -12,8 +12,8 @@
             <h2>Confirm Logout</h2>
             <p>Are you sure you want to log out?</p>
             <div class="modal-actions">
-                <button id="confirm-logout" class="btn-confirm">Yes</button>
-                <button id="cancel-logout" class="btn-cancel">No</button>
+                <button id="confirm-logout" class="btn-confirm">Yes, Logout</button>
+                <button id="cancel-logout" class="btn-cancel">Cancel</button>
             </div>
         </div>
     </div>
@@ -84,7 +84,7 @@
       
     <div id="detailsContainer"></div>
    <div class="upcoming-deadlines-section">
-<div class="danger-indicator"></div>
+<!-- <div class="danger-indicator"></div> -->
 <div class="deadlines-form">
   <h2>Upcoming Deadlines</h2>
   <form id="deadlineForm">
@@ -157,15 +157,15 @@
             
                 <div id="ExportDelete">
                     <button id="ExportDataBtn">Export Data</button>
-                    <button id="DeleteAccountBtn">Delete Account</button>
+                    <button id="DeleteAccountBtn" onclick="showLogoutModal()">Delete Account</button>
                 </div>
             </div>
             
         </section>
         <h2>Settings</h2>
         <div class="settings-options">
-            <button id="theme-toggle">Toggle Dark Mode</button>
-            <button id="clear-data">Clear Dashboard Data</button>
+            <button id="theme-toggle" class="styled-button">Toggle Dark Mode</button>
+            <button id="clear-data" class="styled-button">Clear Dashboard Data</button>
         </div>
     </section>
 
