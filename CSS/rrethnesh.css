@@ -1,0 +1,217 @@
+html{
+    scroll-behavior: smooth;
+}
+a{
+    text-decoration: none;
+} 
+* {
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f2f2f2;
+    overflow-x: hidden;
+}
+
+#nav-bar {
+    background-color: #600000;
+    font-size: large;
+    display: flex;
+    justify-content: space-between;
+}
+
+#nav-bar ul{
+    list-style-type: none;
+    display: flex;
+    padding: 5px;
+}
+
+#nav-bar li{
+    padding: 8px 12px 4px 12px;
+}
+
+#nav-bar li:hover {
+    background-color:#7e0000;
+    border-radius: 15px;
+}
+
+/* --------------------------------- Header --------------------------------------------------------------------------- */
+
+#header {
+    background-color: #8B0000;
+    display: flex;
+    font-size: large;
+    align-items: center;
+}
+
+#header-ul1,#header-ul2,#header-img{
+    padding: 15px;
+}
+
+#header-ul1{
+    list-style-type: none;
+    padding-left: 1px;
+}
+
+#header-ul2{
+    list-style-type: none;
+    display: flex;
+    margin-left: auto;
+    margin-right: 4vh;
+}
+
+#header-ul2 li{
+    padding: 10px;
+}
+
+#header-ul2 li:hover {
+    background-color: #a10d0d;
+    border-radius: 15px;
+}
+
+#header-ul2 li:active{
+    background-color: rgb(122, 16, 16);
+}
+
+
+#register {
+    padding: 10px;
+    border-radius: 15px; 
+}
+
+#register:hover{
+    background-color: #7e0000;
+}
+
+#register:active{
+    background-color: rgb(122, 16, 16);
+}
+/*========================================================= footeri =========================================================*/
+
+footer {
+    background-color: rgb(197, 26, 26);
+    color: #fff;
+    padding: 40px 20px;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 250px;
+}
+
+.footer-section h2 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+}
+
+.footer-section p,
+.footer-section li {
+    font-size: 0.9em;
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+.footer-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-section a {
+    text-decoration: none;
+    color: #fff;
+    transition: color 0.3s;
+}
+
+.footer-section a:hover {
+    color: #ffd700; /* Golden hover effect */
+}
+
+.socials a {
+    color: #fff;
+    margin-right: 15px;
+    font-size: 1.5em;
+    transition: transform 0.3s;
+}
+
+.socials a:hover {
+    transform: scale(1.2);
+}
+.flip-card{
+    background-color: transparent;
+    width: 300px;
+    height: 200px;
+    border: 1px solid #f1f1f1;
+}
+.flip-card-inner {
+    position: realtive;
+    width: 100%;
+    height: 100%;
+    text-align:  center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+.flip-card:hover .flip.flip-card-inner{
+    transform: rotateY(180deg);
+}
+.flip
+.flip-card-front {
+    background-color: #bbb;
+    color:black;
+}
+    
+
+/* Footer Bottom */
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.8em;
+    border-top: 1px solid #fff;
+    padding-top: 10px;
+    color: #ddd;
+}
+.scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: rgb(197, 26, 26);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    font-size: 1.2em;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+/* Per telefon rezulotion */
+
+@keyframes fade {
+    from {opacity: 0.4}
+    to {opacity: 1}
+}
+
+@media (max-width: 768px) {
+    .text {
+        font-size: 14px;
+    }
+    #kards-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .kard {
+        max-width: 90%;
+    }
+}
