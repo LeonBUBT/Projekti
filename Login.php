@@ -9,34 +9,43 @@
 
 </head>
 <body >
-<!-- ===================================== navbar ===================================== -->
 
-<div id="nav-bar">
-    <div id="register">
-        <a href="">Register to Nexus Bank</a>
-        <hr>
+    <div id="nav-bar">
+        <ul id="nav-bar-ul1">
+            <li><a href="index.html">Individë</a></li>
+            <li><a href="">Premium</a></li>
+            <li><a href="">Biznes</a></li>
+            <li><a href="">Korporata</a></li>
+            <li><a href="">Rreth Nesh</a></li>
+        </ul>
+
+        <ul id="nav-bar-ul2">
+           <a href="Kontakt.html"> <li>Na kontaktoni</li></a>
+            <li><a href="Pikat.html">Kërko Pikat</a></li>
+            <li>Shqip <img src="images/world.png" alt="" width="18px" ></li>
+        </ul>
     </div>
-    <ul>
-        <li><a href="">Rreth Nesh</a></li>
-        <li><a href="kontakt.html">Na kontaktoni</a></li>
-        <li><a href="pikat.html">Kërko Pikat</a></li>
-    </ul>
-</div>
 
-<!-- ===================================== header ===================================== -->
+    <!-- ==================== header ================================= -->
 
-<div id="header">
-    <a href="index.html"><img id="header-img" src="images/logo.png" alt="Nexus Logo" width="75px"></a>
-    <ul id="header-ul1">
-        <li><h1>Nexus</h1></li>
-        <li><h1>Bank</h1></li>
-    </ul>
-    
-    <ul id="header-ul2">
-        <li><a href="">Produktet kreditore</a></li>
-        <li><a href="cards.html">Kartelat</a></li>
-    </ul>
-</div>
+    <div id="header">
+      <a href="index.html">  <img id="header-img" src="images/logo.png" alt="Nexus Logo" width="75px"> </a>
+        
+        <ul id="header-ul1">
+            <li><h1>Nexus</h1></li>
+            <li><h1>Bank</h1></li>
+        </ul>
+   
+        <ul id="header-ul2">
+            <li><a href="">Bankimi ditor</a></li>
+            <li><a href="">Produktet kreditore</a></li>
+            <li><a href="">Kartelat</a></li>
+        </ul>
+
+        <div id="register">
+            <p>Register to Nexus Bank</p>
+        </div>
+    </div>
 
     <div id="login">
         <form id="loginForm">
