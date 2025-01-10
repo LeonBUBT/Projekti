@@ -92,24 +92,43 @@ body {
 
 /* ================================== cards =================================== */
 
-.wrapper{
-    background-image: url(../images/vector.jpg);
-}
-
 .card-container img{
     width: 70vh;
 }
 
+.wrapper{
+    background-image: url(../images/vector.jpg);
+}
+
 .card-container{
     display: flex;
-    justify-content: space-evenly;
+    align-items: center;
+    text-align: end;
     padding: 6vh ;
     margin:5vh 0;
     background-color: #686565aa;
 }
 
+.card-container-info{
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+}
+
 .card-container p{
     color: white;
+    margin: 0;
+    width: 50%;
+    margin-top: 3vh;
+}
+
+.card-container button{
+    width: 25%;
+    padding: 2vh 3vh;
+    border-radius: 10vh;
+    background-color: #600000;
+    border: none;
+    margin-top: 8vh;
 }
 
 /* ================================ Footer =========================== */
