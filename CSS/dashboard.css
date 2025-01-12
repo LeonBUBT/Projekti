@@ -47,6 +47,7 @@ body {
   padding: 10px 20px;
   display: block;
   transition: all 0.3s ease;
+  border: none;
 }
 .navbar a:hover {
   color: #7e0000;
@@ -552,15 +553,15 @@ footer {
 }
 
 .deadlines-form {
-  flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 15px;
-  background: rgba(255, 255, 255, 0.1);
+  margin: 0 auto;
   padding: 15px;
   border-radius: 10px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  max-width: 807px;
 }
+
 
 .deadlines-form h2 {
   color: #7e0000;
@@ -569,7 +570,7 @@ footer {
 
 .deadlines-form form label {
   font-size: 14px;
-  color: white;
+  color: black;
   margin-bottom: 5px;
 }
 
@@ -584,7 +585,7 @@ footer {
 
 .deadlines-form form button {
   margin-top: 15px;
-  width: 100%;
+  width: 90%;
   background-color: #7e0000;
   color: white;
   border: none;

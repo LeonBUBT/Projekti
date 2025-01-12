@@ -36,3 +36,11 @@
     border: none;
     margin-top: 8vh;
 }
+
+.wrapper > div:first-child {
+    margin-top: 0;
+}
+
+.wrapper > div:last-child {
+    margin-bottom: 0;
+}

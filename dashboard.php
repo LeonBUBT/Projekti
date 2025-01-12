@@ -20,7 +20,7 @@
     <nav class="navbar">
         <ul>
             <li class="logo"><img src="images/logo.png" alt="logo"></li>
-            <li><a href="#overview">Home</a></li>
+            <li><a href="cards.php">Products</a></li>
             <li><a href="#account-overview">Account Overview</a></li>
             <li><a href="#transfers">Transfers</a></li>
             <li><a href="#transactions">Transactions</a></li>
@@ -63,6 +63,7 @@
             <button type="submit">Send Money</button>
         </form>
     </section>
+    
 <!-- transcations -->
 <section id="transactions" class="section">
     <h2>Recent Transactions</h2>
