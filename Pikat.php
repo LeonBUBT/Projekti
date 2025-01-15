@@ -23,9 +23,6 @@
                     
                     <button id="butoniLista">Zgjidh Degën</button>
                     <ul id="listaOpsioneve" class="fshehur">
-                        <li data-dega="dega1">Dega Kryesore</li>
-                        <li data-dega="dega2">Dega Qender Qytetit</li>
-                        <li data-dega="dega3">Dega e Aeroportit</li>
                     </ul>
                 </div>
                 <div id="detajetDeges" class="fshehur">
@@ -65,6 +62,66 @@
         </div>
     </div>
     
-    <script src="JS/pikat.js"></script>
+    <script>
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const butoniLista = document.getElementById("butoniLista");
+            const listaOpsioneve = document.getElementById("listaOpsioneve");
+            const detajetDeges = document.getElementById("detajetDeges");
+            const emriDeges = document.getElementById("emriDeges");
+            const adresaDeges = document.getElementById("adresaDeges");
+            const orarDeges = document.getElementById("orarDeges");
+            const kontaktiDeges = document.getElementById("kontaktiDeges");
+            const sherbimeDeges = document.getElementById("sherbimeDeges");
+
+            let teDhenatDeges = {}; 
+
+
+            fetch('backend/fetch_pikat.php')
+                .then(response => response.json())
+                .then(data => {
+      
+                    data.forEach((dega, index) => {
+                        teDhenatDeges[`dega${index + 1}`] = {
+                            emri: dega.name,
+                            adresa: dega.address,
+                            orar: dega.shift,
+                            kontakti: dega.contact,
+                            sherbime: dega.services
+                        };
+                    
+                        const li = document.createElement('li');
+                        li.textContent = dega.name;
+                        li.setAttribute('data-dega', `dega${index + 1}`);
+                        listaOpsioneve.appendChild(li);
+                    });
+                })
+                .catch(error => {
+                    console.error("Error fetching data:", error);
+                });
+
+            butoniLista.addEventListener("click", () => {
+                listaOpsioneve.classList.toggle("trego");
+                if(!emriDeges.hasChildNodes()){
+                    detajetDeges.classList.toggle("fshehu");            
+                }else{
+                    detajetDeges.classList.toggle("trego");            
+                }
+            });
+        
+            listaOpsioneve.addEventListener("click", (event) => {
+                const degaID = event.target.getAttribute("data-dega");
+                if (degaID && teDhenatDeges[degaID]) {
+                    const { emri, adresa, orar, kontakti, sherbime } = teDhenatDeges[degaID];
+                    emriDeges.textContent = emri;
+                    adresaDeges.textContent = `Adresa: ${adresa}`;
+                    orarDeges.textContent = `Orari: ${orar}`;
+                    kontaktiDeges.textContent = `Kontakti: ${kontakti}`;
+                    sherbimeDeges.textContent = `Sherbimet: ${sherbime}`;
+                    detajetDeges.classList.add("trego");
+                }
+            });
+        });
+    </script>
 </main>
 <?php include 'footer.php' ?>
