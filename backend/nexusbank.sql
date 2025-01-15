@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 12, 2025 at 10:13 PM
+-- Generation Time: Jan 15, 2025 at 11:33 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -20,6 +20,29 @@ SET time_zone = "+00:00";
 --
 -- Database: `nexusbank`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `about_us`
+--
+
+CREATE TABLE `about_us` (
+  `about_us_id` int(9) NOT NULL,
+  `image` varchar(255) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `position` varchar(255) NOT NULL,
+  `description` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `about_us`
+--
+
+INSERT INTO `about_us` (`about_us_id`, `image`, `name`, `position`, `description`) VALUES
+(1, 'albini.webp', 'Albin Aliu', 'CEO', 'We love that guy'),
+(2, 'leoni.png', 'Leon Berisha', 'CEO', 'The genius we all look up to'),
+(3, 'loresi.jpg', 'Lores Gashi', 'CEO', 'Someone we all trust and respect');
 
 -- --------------------------------------------------------
 
@@ -60,7 +83,7 @@ CREATE TABLE `card_type` (
 
 INSERT INTO `card_type` (`card_type_id`, `type_name`, `card_category`, `image_url`, `description`, `benefits`, `card_name`) VALUES
 (1, 'classic', 'debit', 'debit-card-test1.png', 'The Nexus Classic Debit Card is simple, secure, and ideal for everyday use. With no annual fees, it provides instant access to your funds and essential features like fraud protection. A perfect choice for practical banking.\r\n', 'testtest', 'Classic Debit Card'),
-(4, 'premium', 'debit', 'debit-card-test2.png', 'The Nexus Premium Debit Card offers a sleek design and seamless worldwide transactions. Enjoy cashback rewards, travel perks, and advanced chip security for a secure and reliable experience. Perfect for those seeking premium banking benefits.\r\n', 'testtest', 'Premium Debit Card');
+(2, 'premium', 'debit', 'premium_debit_card.png', 'The Nexus Premium Debit Card offers a sleek design and seamless worldwide transactions. Enjoy cashback rewards, travel perks, and advanced chip security for a secure and reliable experience. Perfect for those seeking premium banking benefits.\r\n', 'testtest', 'Premium Debit Card');
 
 -- --------------------------------------------------------
 
@@ -78,6 +101,30 @@ CREATE TABLE `loans` (
   `end_date` date NOT NULL,
   `status` enum('ongoing','paid') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pikat`
+--
+
+CREATE TABLE `pikat` (
+  `pikat_id` int(9) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `address` varchar(255) NOT NULL,
+  `shift` varchar(255) NOT NULL,
+  `contact` varchar(255) NOT NULL,
+  `services` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `pikat`
+--
+
+INSERT INTO `pikat` (`pikat_id`, `name`, `address`, `shift`, `contact`, `services`) VALUES
+(1, 'Dega Kryesore', 'Ndertesa e Dukagjinit, Prishtine', 'E Hene - E Premte: 8:00 - 16:00', 'Tel: +1235 42 22 333', 'ATM, Llogari, Kredi, Depozita'),
+(2, 'Dega Qender Qytetit', 'Sheshi Skenderbeu, Prishtine', 'E Hene - E Shtune: 9:00 - 18:00', 'Tel: +355 42 55 444', 'ATM, Konsultime, Depozita'),
+(3, 'Dega e Aeroportit', 'Aeroporti Adem Jashari , Sllatine', 'E Hene - E Diel: 7:00 - 22:00', 'Tel: +355 42 11 555', 'ATM, Exchange, Informacion');
 
 -- --------------------------------------------------------
 
@@ -115,6 +162,12 @@ CREATE TABLE `users` (
 --
 
 --
+-- Indexes for table `about_us`
+--
+ALTER TABLE `about_us`
+  ADD PRIMARY KEY (`about_us_id`);
+
+--
 -- Indexes for table `cards`
 --
 ALTER TABLE `cards`
@@ -133,6 +186,12 @@ ALTER TABLE `loans`
   ADD PRIMARY KEY (`loan_id`);
 
 --
+-- Indexes for table `pikat`
+--
+ALTER TABLE `pikat`
+  ADD PRIMARY KEY (`pikat_id`);
+
+--
 -- Indexes for table `transactions`
 --
 ALTER TABLE `transactions`
@@ -147,6 +206,12 @@ ALTER TABLE `users`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `about_us`
+--
+ALTER TABLE `about_us`
+  MODIFY `about_us_id` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `cards`
@@ -165,6 +230,12 @@ ALTER TABLE `card_type`
 --
 ALTER TABLE `loans`
   MODIFY `loan_id` int(9) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `pikat`
+--
+ALTER TABLE `pikat`
+  MODIFY `pikat_id` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `transactions`

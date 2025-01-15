@@ -112,7 +112,7 @@
     border: 1px solid #ccc;
     border-radius: 5px;
     background-color: rgb(197, 26, 26);
-    width:120%;
+    width:120%; 
 
     max-height: 200px;
     overflow-y: auto;

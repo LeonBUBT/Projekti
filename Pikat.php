@@ -20,12 +20,8 @@
             </div>
             <div>
                 <div id="ndryshues">
-                    
                     <button id="butoniLista">Zgjidh Degën</button>
                     <ul id="listaOpsioneve" class="fshehur">
-                        <li data-dega="dega1">Dega Kryesore</li>
-                        <li data-dega="dega2">Dega Qender Qytetit</li>
-                        <li data-dega="dega3">Dega e Aeroportit</li>
                     </ul>
                 </div>
                 <div id="detajetDeges" class="fshehur">
@@ -39,32 +35,86 @@
         </div>
     </div>
     
-    <!-- testimonials -->
     <div id="testimonials">
-        <h2>Çfarë thonë klientët tanë</h2>
-        <div class="testimonial">
-            <p>"Kam përfituar shumë nga shërbimet e Nexus Bank. Stafi është gjithmonë i gatshëm për të ndihmuar dhe proceset janë të shpejta dhe të lehta."</p>
-            <h4>Arbër Krasniqi</h4>
-            <div class="stars">
-                &#9733;&#9733;&#9733;&#9733;&#9733;
-            </div>
-        </div>
-        <div class="testimonial">
-            <p>"Nexus Bank më ka ndihmuar shumë në menaxhimin e financave të mia personale dhe të biznesit. E rekomandoj shumë!"</p>
-            <h4>Lea Gashi</h4>
-            <div class="stars">
-                &#9733;&#9733;&#9733;&#9733;&#9733;
-            </div>
-        </div>
-        <div class="testimonial">
-            <p>"Shërbimi është i shkëlqyer dhe gjithmonë i përgjegjshëm. ATM-të janë gjithmonë të disponueshme dhe të lehta për t'u përdorur."</p>
-            <h4>Fatmir Beqiri</h4>
-            <div class="stars">
-                &#9733;&#9733;&#9733;&#9733;&#9733;
-            </div>
-        </div>
+        <?php 
+            require 'backend/fetch_reviews.php';
+
+            if(count($reviews)>0){
+                foreach($reviews as $review){
+                    echo"
+                        <div class='testimonial'>
+                            <p>\"".$review['description']." \"</p>
+                            <h4>".$review['user_name']."</h4>
+                            <div class='stars'>
+                                &#9733;&#9733;&#9733;&#9733;&#9733;
+                            </div>
+                        </div>
+                    ";
+                }
+            }
+        ?>
     </div>
     
-    <script src="JS/pikat.js"></script>
+    <script>
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const butoniLista = document.getElementById("butoniLista");
+            const listaOpsioneve = document.getElementById("listaOpsioneve");
+            const detajetDeges = document.getElementById("detajetDeges");
+            const emriDeges = document.getElementById("emriDeges");
+            const adresaDeges = document.getElementById("adresaDeges");
+            const orarDeges = document.getElementById("orarDeges");
+            const kontaktiDeges = document.getElementById("kontaktiDeges");
+            const sherbimeDeges = document.getElementById("sherbimeDeges");
+
+            let teDhenatDeges = {}; 
+
+
+            fetch('backend/fetch_pikat.php')
+                .then(response => response.json())
+                .then(data => {
+      
+                    data.forEach((dega, index) => {
+                        teDhenatDeges[`dega${index + 1}`] = {
+                            emri: dega.name,
+                            adresa: dega.address,
+                            orar: dega.shift,
+                            kontakti: dega.contact,
+                            sherbime: dega.services
+                        };
+                    
+                        const li = document.createElement('li');
+                        li.textContent = dega.name;
+                        li.setAttribute('data-dega', `dega${index + 1}`);
+                        listaOpsioneve.appendChild(li);
+                    });
+                })
+                .catch(error => {
+                    console.error("Error fetching data:", error);
+                });
+
+            butoniLista.addEventListener("click", () => {
+                listaOpsioneve.classList.toggle("trego");
+                if(!emriDeges.hasChildNodes()){
+                    detajetDeges.classList.toggle("fshehu");            
+                }else{
+                    detajetDeges.classList.toggle("trego");            
+                }
+            });
+            
+            listaOpsioneve.addEventListener("click", (event) => {          
+                const degaID = event.target.getAttribute("data-dega");
+                if (degaID && teDhenatDeges[degaID]) {
+                    const { emri, adresa, orar, kontakti, sherbime } = teDhenatDeges[degaID];
+                    emriDeges.textContent = emri;
+                    adresaDeges.textContent = `Adresa: ${adresa}`;
+                    orarDeges.textContent = `Orari: ${orar}`;
+                    kontaktiDeges.textContent = `Kontakti: ${kontakti}`;
+                    sherbimeDeges.textContent = `Sherbimet: ${sherbime}`;
+                    detajetDeges.classList.add("trego");
+                }
+            });
+        });
+    </script>
 </main>
 <?php include 'footer.php' ?>
