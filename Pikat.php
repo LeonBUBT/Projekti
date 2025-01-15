@@ -20,7 +20,6 @@
             </div>
             <div>
                 <div id="ndryshues">
-                    
                     <button id="butoniLista">Zgjidh Degën</button>
                     <ul id="listaOpsioneve" class="fshehur">
                     </ul>
@@ -36,30 +35,24 @@
         </div>
     </div>
     
-    <!-- testimonials -->
     <div id="testimonials">
-        <h2>Çfarë thonë klientët tanë</h2>
-        <div class="testimonial">
-            <p>"Kam përfituar shumë nga shërbimet e Nexus Bank. Stafi është gjithmonë i gatshëm për të ndihmuar dhe proceset janë të shpejta dhe të lehta."</p>
-            <h4>Arbër Krasniqi</h4>
-            <div class="stars">
-                &#9733;&#9733;&#9733;&#9733;&#9733;
-            </div>
-        </div>
-        <div class="testimonial">
-            <p>"Nexus Bank më ka ndihmuar shumë në menaxhimin e financave të mia personale dhe të biznesit. E rekomandoj shumë!"</p>
-            <h4>Lea Gashi</h4>
-            <div class="stars">
-                &#9733;&#9733;&#9733;&#9733;&#9733;
-            </div>
-        </div>
-        <div class="testimonial">
-            <p>"Shërbimi është i shkëlqyer dhe gjithmonë i përgjegjshëm. ATM-të janë gjithmonë të disponueshme dhe të lehta për t'u përdorur."</p>
-            <h4>Fatmir Beqiri</h4>
-            <div class="stars">
-                &#9733;&#9733;&#9733;&#9733;&#9733;
-            </div>
-        </div>
+        <?php 
+            require 'backend/fetch_reviews.php';
+
+            if(count($reviews)>0){
+                foreach($reviews as $review){
+                    echo"
+                        <div class='testimonial'>
+                            <p>\"".$review['description']." \"</p>
+                            <h4>".$review['user_name']."</h4>
+                            <div class='stars'>
+                                &#9733;&#9733;&#9733;&#9733;&#9733;
+                            </div>
+                        </div>
+                    ";
+                }
+            }
+        ?>
     </div>
     
     <script>
@@ -108,8 +101,8 @@
                     detajetDeges.classList.toggle("trego");            
                 }
             });
-        
-            listaOpsioneve.addEventListener("click", (event) => {
+            
+            listaOpsioneve.addEventListener("click", (event) => {          
                 const degaID = event.target.getAttribute("data-dega");
                 if (degaID && teDhenatDeges[degaID]) {
                     const { emri, adresa, orar, kontakti, sherbime } = teDhenatDeges[degaID];
