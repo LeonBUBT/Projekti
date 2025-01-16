@@ -1,0 +1,712 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+.navbar {
+  background-color: #7e0000;
+  padding: 10px 20px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1;
+}
+
+.navbar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar li {
+  margin: 0 20px;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 10px 20px;
+  display: block;
+  transition: all 0.3s ease;
+}
+
+.navbar button {
+  background-color: #9c0000;
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 10px 20px;
+  display: block;
+  transition: all 0.3s ease;
+  border: none;
+}
+.navbar a:hover {
+  color: #7e0000;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transform: scale(1.05);
+}
+.navbar button:hover {
+  color: #7e0000;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transform: scale(1.05);
+}
+
+.navbar img {
+  height: 50px;
+  width: auto;
+  transition: transform 0.3s ease;
+}
+
+.navbar img:hover {
+  transform: scale(1.2);
+}.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  width: 400px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.3s ease-out;
+}
+
+.modal-content h2 {
+  font-size: 24px;
+  color: #7e0000;
+  margin-bottom: 15px;
+}
+
+.modal-content p {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 25px;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+}
+
+.btn-confirm, .btn-cancel {
+  padding: 12px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.btn-confirm {
+  background-color: #7e0000;
+  color: white;
+}
+
+.btn-cancel {
+  background-color: #ccc;
+  color: #333;
+}
+
+.btn-confirm:hover {
+  background-color: #9c0000;
+  transform: scale(1.1);
+}
+
+.btn-cancel:hover {
+  background-color: #bbb;
+  transform: scale(1.1);
+}
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.section {
+  animation: fadeIn 0.5s ease-in-out;
+  margin: 20px auto;
+  max-width: 800px;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background: white;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.stat-card, .add-funds {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  flex: 1;
+  min-width: 200px;
+  transition: transform 0.3s ease;
+}
+
+.stat-card:hover, .add-funds:hover {
+  transform: scale(1.05);
+}
+
+.transactions-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+
+.transactions-table th, .transactions-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+
+.transactions-table th {
+  background-color: #7e0000;
+  color: white;
+  font-weight: bold;
+}
+
+.pie-chart-container {
+  width: 250px;
+  height: 250px;
+  position: relative;
+  flex: 1;
+  min-width: 250px;
+}
+
+.pie-chart {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: conic-gradient(#7e0000 0% 0%, #e0e0e0 0% 100%);
+  position: absolute;
+}
+
+.pie-chart-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 24px;
+  font-weight: bold;
+}
+
+#notifications {
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 20px auto;
+  max-width: 800px;
+  text-align: center;
+}
+
+#notifications h2 {
+  font-size: 26px;
+  color: #7e0000;
+}
+
+.scroll-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #7e0000;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.scroll-to-top:hover {
+  transform: scale(1.2);
+}
+
+#transfer-form button{
+  background-color: #9c0000;
+  color: white;
+  text-decoration: none;
+  /* font-size: 16px; */
+  padding: 10px 20px;
+  display: inline;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+#transfer-form input{
+  width: 90%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+#detailsContainer {
+  margin-top: 20px;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-around;
+  border-radius: 10px;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.progress-details {
+  flex: 1 1 calc(30% - 20px);
+  max-width: calc(30% - 20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 15px;
+  background: rgba(0, 0, 0, 0.5);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.progress-details h3 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.circular-progress {
+  --percentage: 0;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: conic-gradient(
+    #4caf50 calc(var(--percentage) * 1%),
+    #ddd 0%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: bold;
+  color: white;
+  margin: 15px 0;
+}
+
+.motivational-message {
+  font-size: 16px;
+  font-style: italic;
+  color: #ffcc00;
+  margin: 10px 0;
+}
+
+#detailsContainer p {
+  font-size: 14px;
+  color: #ddd;
+  margin: 5px 0;
+}
+
+.update-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.update-btn {
+  padding: 8px 15px;
+  background: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.update-btn:hover {
+  background: #45a049;
+  transform: scale(1.05);
+}
+
+
+/* help me god */
+.deadlines-form label {
+  font-size: 16px;
+  display: block;
+  margin-top: 10px;
+}
+
+/* .upcoming-deadlines-section {
+  padding: 20px;
+  background-color: #fefefe;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+} */
+
+.danger-indicator {
+  width: 10px;
+  height: 300px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+.deadlines-form {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  max-width: 800px;
+}
+
+
+.deadlines-form h2 {
+  color: #7e0000;
+  text-align: center;
+}
+
+.deadlines-form form label {
+  font-size: 14px;
+  color: black;
+  margin-bottom: 5px;
+}
+
+.deadlines-form form input,
+.deadlines-form form select {
+  width: 90%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.deadlines-form form button {
+  margin-top: 15px;
+  width: 90%;
+  background-color: #7e0000;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.deadlines-form form button:hover {
+  background: #7e1503;
+  
+  transition-duration: 1s;
+  /* transform: skew(360deg,360deg); */
+  /* transform: scale(1.1); */
+  transform: translateY(-3px) ;
+
+
+  
+  
+
+}
+
+#deadlinesList {
+  margin-top: 20px;
+  color: #7e0000;
+}
+
+.deadline-item {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border-left: 5px solid;
+}
+/* settings */
+#settings{
+  background-color: #990000;
+  color: white;
+}
+#welcome {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  padding: 30px;
+  border-radius: 15px;
+
+  /* box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); */
+  color: white;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+#welcome h1 {
+  font-size: 28px;
+  color: #ffcc00;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+#welcome h1 span {
+  color: #fff;
+}
+
+#welcome #profileImage {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 15px 0;
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.2);
+  border: 4px solid #ffcc00;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#welcome #profileImage:hover {
+  transform: scale(1.1);
+  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3);
+}
+
+#welcome .profile-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+#welcome #uploadBtn {
+  padding: 12px 25px;
+  background: #b30000;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#welcome #uploadBtn:hover {
+  background: #e60000;
+  transform: scale(1.1);
+}
+
+#welcome #profileInput {
+  display: none;
+}
+
+
+#UserInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  background: #990000;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+  color: white;
+}
+
+#BasicInfo, #AccountInfo, #SecuritySettings, #ExportDelete {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+#UserInfo p {
+  margin: 5px 0;
+  font-size: 16px;
+  color: #f0f0f0;
+}
+
+#UserInfo p:first-child {
+  font-weight: bold;
+  font-size: 18px;
+  color: #ffcc00;
+}
+
+#ActionButtons, #ExportDelete {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+#UserInfo button {
+  padding: 12px 20px;
+  background: #cc0000;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#UserInfo button:hover {
+  background: #ff0000;
+  transform: translateY(-3px) ;
+}
+
+
+
+
+#DeleteAccountBtn {
+  background: #e74c3c;
+}
+
+#DeleteAccountBtn:hover {
+  background: #c0392b;
+}
+
+#ExportDataBtn {
+  background: #3498db;
+}
+
+#ExportDataBtn:hover {
+  background: #2980b9;
+}
+
+
+#welcome, #UserInfo {
+  animation: fadeIn 0.8s ease-in-out;
+}
+.settings-options button {
+  background-color: #9c0000;
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 10px 20px;
+  display: block;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.settings-options button:hover {
+  background-color: #cc0000;
+  padding: 12px 22px;  
+  font-size: 17px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+/* footer */
+
+footer {
+  background-color: rgb(197, 26, 26);
+  color: #fff;
+  padding: 40px 20px;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 250px;
+}
+
+.footer-section h2 {
+  font-size: 1.5em;
+  margin-bottom: 15px;
+}
+
+.footer-section a {
+  text-decoration: none;
+  color: #fff;
+  transition: color 0.3s;
+}
+
+.footer-section a:hover {
+  color: #ffd700;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 0.8em;
+  border-top: 1px solid #fff;
+  padding-top: 10px;
+  color: #ddd;
+}
+
+/* theme changer */
+body.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+body.dark-mode .navbar {
+  background-color: #333;
+}
+
+body.dark-mode .section {
+  background-color: #1e1e1e;
+  color: #e0e0e0;
+}
+
+body.dark-mode .scroll-to-top {
+  background-color: #444;
+}
+body.dark-mode .upcoming-deadlines-section{
+  background-color: #121212 ;
+  
+}
+body.dark-mode .navbar button{
+  background-color: #333;
+
+}
+body.dark-mode .settings{
+  background-color: #333;
+
+}
+body.dark-mode label{
+  color: white;
+}

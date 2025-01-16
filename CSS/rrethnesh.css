@@ -96,6 +96,70 @@ body {
     border: 1px;
 }
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+=======
+.accordion {
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    
+}
+#why-choose-us h2{
+    text-align: center;
+    color: #800000;
+    font-size: 2em;
+    margin-bottom: 20px;
+} 
+
+.accordion-item {
+    border-bottom: 1px solid #ddd;
+   
+}
+
+.accordion-item:last-child {
+    border-bottom: none;
+}
+
+.accordion-item button {
+    width: 100%;
+    padding: 15px 20px;
+    background-color: #800000;
+    color: #ffffff;
+    font-size: 16px;
+    text-align: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.accordion-item button:hover {
+    background-color: #a10d0d;
+}
+
+.accordion-item button[aria-expanded="true"] {
+    background-color: #a10d0d;
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    padding: 0 20px;
+    background-color: #fff;
+    color: #333;
+}
+
+.accordion-content p {
+    padding: 15px 0;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #000;
+}
+>>>>>>> Stashed changes
 /* Main Content */
 #main {
     display: flex;
@@ -188,7 +252,7 @@ body {
     height: 80px;
     border-radius: 50%;
     margin-bottom: 15px;
-    border: 2px solid #ffffff; /* White border for contrast */
+    border: 2px solid #ffffff; 
 }
 
 /* Back of Card */
@@ -209,6 +273,56 @@ body {
     font-size: 1em;
     margin: 5px 0;
 }
+#core-values {
+    text-align: center;
+    background-color: #f2f2f2;
+    padding: 40px 20px;
+    border-radius: 10px;
+    margin: 20px auto;
+    max-width: 1200px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#core-values h2 {
+    font-size: 2.5em;
+    color: #800000;
+    margin-bottom: 30px;
+}
+
+.values-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.value-item {
+    background-color: #800000;
+    color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: left;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.value-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.value-item h3 {
+    color: #ffd700;
+    font-size: 1.8em;
+    margin-bottom: 15px;
+}
+
+.value-item p {
+    font-size: 1em;
+    line-height: 1.6;
+    color: #f9f9f9;
+}
+
+
 
 =======
 }
