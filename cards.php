@@ -5,7 +5,17 @@
 <main>
     <div class="wrapper">
         <?php
-            require './backend/fetch_cards.php';
+            require 'backend/config.php';
+            require 'backend/fetch_cards.php';
+
+            error_reporting(E_ALL);
+            ini_set('display_errors', 1);
+
+            $database = new Database();
+            $cardType = new CardType($database);
+
+            $cardTypes = $cardType->getAllCardTypes();
+
             if (count($cardTypes) > 0) {
                 foreach ($cardTypes as $card) {
                     echo "<div class='card-container'>
