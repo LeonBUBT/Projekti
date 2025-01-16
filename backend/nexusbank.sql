@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 15, 2025 at 11:33 PM
+-- Generation Time: Jan 16, 2025 at 01:45 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -129,13 +129,35 @@ INSERT INTO `pikat` (`pikat_id`, `name`, `address`, `shift`, `contact`, `service
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `reviews`
+--
+
+CREATE TABLE `reviews` (
+  `review_id` int(9) NOT NULL,
+  `user_name` varchar(255) NOT NULL,
+  `description` text NOT NULL,
+  `raiting` tinyint(4) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `reviews`
+--
+
+INSERT INTO `reviews` (`review_id`, `user_name`, `description`, `raiting`) VALUES
+(1, 'Arbër Krasniqi', 'Kam përfituar shumë nga shërbimet e Nexus Bank. Stafi është gjithmonë i gatshëm për të ndihmuar dhe proceset janë të shpejta dhe të lehta.', NULL),
+(2, 'Lea Gashi', 'Nexus Bank më ka ndihmuar shumë në menaxhimin e financave të mia personale dhe të biznesit. E rekomandoj shumë!', NULL),
+(3, 'Fatmir Beqiri', 'Shërbimi është i shkëlqyer dhe gjithmonë i përgjegjshëm. ATM-të janë gjithmonë të disponueshme dhe të lehta për t\'u përdorur.', NULL);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `transactions`
 --
 
 CREATE TABLE `transactions` (
   `transaction_id` int(9) NOT NULL,
   `user_id` int(9) NOT NULL,
-  `card_id` int(9) NOT NULL,
+  `card_id` int(9) DEFAULT NULL,
   `loan_id` int(9) DEFAULT NULL,
   `amount` decimal(10,2) NOT NULL,
   `type` enum('debit','credit','loan') NOT NULL,
@@ -171,7 +193,9 @@ ALTER TABLE `about_us`
 -- Indexes for table `cards`
 --
 ALTER TABLE `cards`
-  ADD PRIMARY KEY (`card_id`);
+  ADD PRIMARY KEY (`card_id`),
+  ADD KEY `user_id` (`user_id`),
+  ADD KEY `card_type_id` (`card_type_id`);
 
 --
 -- Indexes for table `card_type`
@@ -192,10 +216,19 @@ ALTER TABLE `pikat`
   ADD PRIMARY KEY (`pikat_id`);
 
 --
+-- Indexes for table `reviews`
+--
+ALTER TABLE `reviews`
+  ADD PRIMARY KEY (`review_id`);
+
+--
 -- Indexes for table `transactions`
 --
 ALTER TABLE `transactions`
-  ADD PRIMARY KEY (`transaction_id`);
+  ADD PRIMARY KEY (`transaction_id`),
+  ADD KEY `card_id` (`card_id`),
+  ADD KEY `user_id` (`user_id`),
+  ADD KEY `loan_id` (`loan_id`);
 
 --
 -- Indexes for table `users`
@@ -217,7 +250,7 @@ ALTER TABLE `about_us`
 -- AUTO_INCREMENT for table `cards`
 --
 ALTER TABLE `cards`
-  MODIFY `card_id` int(9) NOT NULL AUTO_INCREMENT;
+  MODIFY `card_id` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `card_type`
@@ -238,6 +271,12 @@ ALTER TABLE `pikat`
   MODIFY `pikat_id` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
+-- AUTO_INCREMENT for table `reviews`
+--
+ALTER TABLE `reviews`
+  MODIFY `review_id` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT for table `transactions`
 --
 ALTER TABLE `transactions`
@@ -248,6 +287,25 @@ ALTER TABLE `transactions`
 --
 ALTER TABLE `users`
   MODIFY `user_id` int(9) NOT NULL AUTO_INCREMENT;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `cards`
+--
+ALTER TABLE `cards`
+  ADD CONSTRAINT `cards_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `cards_ibfk_2` FOREIGN KEY (`card_type_id`) REFERENCES `card_type` (`card_type_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `transactions`
+--
+ALTER TABLE `transactions`
+  ADD CONSTRAINT `transactions_ibfk_1` FOREIGN KEY (`card_id`) REFERENCES `cards` (`card_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `transactions_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `transactions_ibfk_3` FOREIGN KEY (`loan_id`) REFERENCES `loans` (`loan_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
