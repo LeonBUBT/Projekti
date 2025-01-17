@@ -7,7 +7,7 @@ class Database {
     private $connection;
     public function __construct(){
       try {
-        $this->connection=new PDO("mysql:=host{$this->server};dbname={$this->dbname}",$this->username,$this->password);
+        $this->connection=new PDO("mysql:host={$this->server};dbname={$this->dbname}",$this->username,$this->password);
         $this->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
       } catch (PDOException $e) {
         echo "something went wront".$e->getMessage();

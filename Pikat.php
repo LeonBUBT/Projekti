@@ -37,19 +37,28 @@
     
     <div id="testimonials">
         <?php 
+            require 'backend/config.php';
             require 'backend/fetch_reviews.php';
+
+            error_reporting(E_ALL);
+            ini_set('display_errors',1);
+
+            $database = new Database();
+            $cards = new Reviews($database);
+
+            $reviews=$cards->getReviews();
 
             if(count($reviews)>0){
                 foreach($reviews as $review){
                     echo"
-                        <div class='testimonial'>
-                            <p>\"".$review['description']." \"</p>
-                            <h4>".$review['user_name']."</h4>
-                            <div class='stars'>
-                                &#9733;&#9733;&#9733;&#9733;&#9733;
-                            </div>
+                    <div class='testimonial'>
+                        <p>\"".$review['description']." \"</p>
+                        <h4>".$review['user_name']."</h4>
+                        <div class='stars'>
+                            &#9733;&#9733;&#9733;&#9733;&#9733;
                         </div>
-                    ";
+                    </div>
+                ";
                 }
             }
         ?>
