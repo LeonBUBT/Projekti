@@ -5,9 +5,19 @@
 <main>
     <div id="main">
         <?php 
+            require 'backend/config.php';
             require 'backend/fetch_about_us.php';
-            if(count($aboutUs)>0){
-                foreach($aboutUs as $abt){
+
+            error_reporting(E_ALL);
+            ini_set('display_errors',1);
+
+            $database = new Database();
+            $aboutus = new AboutUs($database);    
+
+            $cards=$aboutus->getCards();
+
+            if(count($cards)>0){
+                foreach($cards as $abt){
                     echo"
                         <div class='flip-card'>
                           <div class='flip-card-inner'>

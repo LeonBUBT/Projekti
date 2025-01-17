@@ -12,7 +12,6 @@
 
         header('Content-Type: application/json');
         echo json_encode($pikat);
-        // echo"data fetched";
     }catch(Exception $e){
         echo "something went wrong";
     }

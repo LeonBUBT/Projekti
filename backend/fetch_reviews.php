@@ -1,16 +1,21 @@
 <?php 
-    require 'config.php';
-    error_reporting(E_ALL);
-    ini_set('display_errors', 1);
 
-    try{
-        $sql = "SELECT * FROM reviews";
-        $review=$connect->prepare($sql);
-        $review->execute();
-        $reviews = $review->fetchAll();
-        // echo "data fetched";
-    }catch(Exception $e){
-        echo "something went wrong";
-        echo $e->getMessage();
+class Reviews{
+    private $db;
+
+    public function __construct(Database $database){
+        $this->db=$database->getConnection();
     }
+
+    public function getReviews(){
+        try{
+            $sql = "SELECT * FROM reviews";
+            $reviews =$this->db->prepare($sql);
+            $reviews->execute();
+            return $reviews->fetchAll(PDO::FETCH_ASSOC);
+        }catch(PDOException $e){
+            echo $e->getMessage();
+        }
+    }
+}
 ?>

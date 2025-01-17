@@ -1,12 +1,23 @@
-<?php
-  $server='localhost';
-  $dbname='nexusbank';    
-  $username='root';
-  $password='';
+<?php  
+class Database {
+    private $server = 'localhost';
+    private $dbname = 'nexusbank';
+    private $username = 'root';
+    private $password = '';
+    private $connection;
+    public function __construct(){
+      try {
+        $this->connection=new PDO("mysql:host={$this->server};dbname={$this->dbname}",$this->username,$this->password);
+        $this->connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+      } catch (PDOException $e) {
+        echo "something went wront".$e->getMessage();
+        exit;
+      }
+    }
 
-  try{
-    $connect = new PDO("mysql:host=$server;dbname=$dbname",$username,$password);
-  }catch(PDOException $e){
-    echo $e->getMessage();
-  }  
+    public function getConnection() {
+        return $this->connection;
+    }
+}
+
 ?>
