@@ -5,6 +5,7 @@ class Database {
     private $username = 'root';
     private $password = '';
     private $connection;
+
     public function __construct(){
       try {
         $this->connection=new PDO("mysql:host={$this->server};dbname={$this->dbname}",$this->username,$this->password);
@@ -16,7 +17,7 @@ class Database {
     }
 
     public function getConnection() {
-        return $this->connection;
+        return $this->connection; 
     }
 }
 
