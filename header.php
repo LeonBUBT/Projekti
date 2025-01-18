@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo isset($pageTittle)? $pageTittle: 'Nexus Bank'; ?></title>
+    <link rel="icon" href="images/tab_logo/circular_favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="CSS/cards.css">
     <link rel="stylesheet" href="CSS/kontakt.css">
     <link rel="stylesheet" href="CSS/pikat.css">
@@ -17,7 +18,7 @@
     
     <div id="nav-bar">
         <div id="register">
-            <a href="register.php">Register to Nexus Bank</a>
+            <a href="apply.php">Register to Nexus Bank</a>
             <hr>
         </div>
         <ul>

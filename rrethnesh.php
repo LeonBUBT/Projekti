@@ -36,6 +36,5 @@
             }
         ?>
     </div>
-    <script src="JS/rrethnesh.js"></script>
 </main>
 <?php include 'footer.php' ?>
