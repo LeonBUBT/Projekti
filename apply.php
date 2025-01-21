@@ -11,12 +11,19 @@
 <body>
     
     <div class="container">
+        <div class="header">
+            <img src="images/logo.png" alt="">
+            <h1>Apply for Nexus Bank</h1>
+        </div>
+
+        <hr id="header-hr">
+
         <form action="#">
-            <div class="name-email">
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name" required>
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" required>
+            <div class="acc-type">
+                <label for="name">Individual</label>
+                <input type="radio" id="name" name="name" required>
+                <label for="email">Business</label>
+                <input type="radio" id="email" name="email" required>
             </div>            
 
             

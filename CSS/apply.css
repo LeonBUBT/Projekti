@@ -3,12 +3,43 @@
     padding: 0;
 }
 
+body{
+    background-image: url(../images/geometric-background-with-copy-space.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
 .container{
     top: 50%;
     left: 50%;
     position: absolute;
-    width: 100px;
-    height: 100px;
+    width: fit-content;
+    height: auto;
     transform: translate(-50%,-50%);
-    background-color: green;
+    background-color: rgb(121, 121, 121);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3vh;
+}
+
+.header img{
+    width: 120px;
+    border-radius: 50%;
+    padding: 15px;
+    box-shadow:5px 5px  15px rgba(0, 0, 0, 0.3); ;
+    background-color: black;
+}
+
+#header-hr{
+    width: 93%;
+    align-self: center;
+    margin: 2vh;
 }
