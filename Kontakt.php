@@ -1,48 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="CSS/kontakt.css">
-    <title>Nexus Bank - Contact</title>
-</head>
-<body>
-
-    <div id="nav-bar">
-        <ul id="nav-bar-ul1">
-            <li>Individë</li>
-            <li>Premium</li>
-            <li>Biznes</li>
-            <li>Korporata</li>
-            <li>Rreth Nesh</li>
-        </ul>
-
-        <ul id="nav-bar-ul2">
-            <li>Na kontaktoni</li>
-            <li>Kërko Pikat</li>
-            <li>Shqip <img src="images/world.png" alt="" width="18px" ></li>
-        </ul>
-    </div>
-
-    <!-- ==================== header ================================= -->
-
-    <div id="header">
-      <a href="index.html">  <img id="header-img" src="images/logo.png" alt="Nexus Logo" width="75px"> </a>
-        
-        <ul id="header-ul1">
-            <li><h1>Nexus</h1></li>
-            <li><h1>Bank</h1></li>
-        </ul>
-   
-        <ul id="header-ul2">
-            <li>Bankimi ditor</li>
-            <li>Produktet kreditore</li>
-            <li>Kartelat</li>
-        </ul>
-    </div>
-    
-    <!-- =============================== Contact ================================= -->
-    
+<?php
+    $pageTittle = 'Nexus Bank - Contact';
+    include 'header.php';
+?>
+<main >
+    <div id="background">
     <div class="form-wrapper">
         <div class="contact-form">
             <h1>Forma e Kontaktit</h1>
@@ -81,9 +42,7 @@
             </form>
         </div>
     </div>    
+</div>
 
-
-
-
-</body>
-</html>
+</main>
+<?php include 'footer.php';?>

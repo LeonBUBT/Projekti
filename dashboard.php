@@ -20,11 +20,18 @@
     <nav class="navbar">
         <ul>
             <li class="logo"><img src="images/logo.png" alt="logo"></li>
+<<<<<<< HEAD
+=======
+            <li><a href="cards.php">Products</a></li>
+>>>>>>> main
             <li><a href="#account-overview">Account Overview</a></li>
             <li><a href="#transfers">Transfers</a></li>
             <li><a href="#transactions">Transactions</a></li>
             <li><a href="#notifications">Notifications</a></li>
+<<<<<<< HEAD
             <li><a href="cards.php">Products</a></li>
+=======
+>>>>>>> main
             <li><a href="#settings">Settings</a></li>
             <li><button onclick="showLogoutModal()">Logout</button></li>
         </ul>
@@ -84,7 +91,11 @@
 <section>    
       
     <div id="detailsContainer"></div>
+<<<<<<< HEAD
    <!-- <div class="upcoming-deadlines-section"> -->
+=======
+   <div class="upcoming-deadlines-section">
+>>>>>>> main
 <!-- <div class="danger-indicator"></div> -->
 <div class="deadlines-form">
   <h2>Upcoming Deadlines</h2>
@@ -105,7 +116,11 @@
   </form>
   <div id="deadlinesList"></div>
 </div>
+<<<<<<< HEAD
 <!-- </div> -->
+=======
+</div>
+>>>>>>> main
 </section>
    
 <!-- notifs -->
@@ -127,7 +142,10 @@
                     <input type="file" name="Profile" id="profileInput" accept="image/*">
                 </div>
             </div>  
+<<<<<<< HEAD
             
+=======
+>>>>>>> main
             <div id="UserInfo">
                 <div id="BasicInfo">
                     <p id="FullName">Full Name</p>
@@ -166,14 +184,47 @@
         </section>
         <h2>Settings</h2>
         <div class="settings-options">
+<<<<<<< HEAD
             <button id="theme-toggle" class="styled-button">Toggle Dark Mode</button> <br>
+=======
+            <button id="theme-toggle" class="styled-button">Toggle Dark Mode</button>
+>>>>>>> main
             <button id="clear-data" class="styled-button">Clear Dashboard Data</button>
         </div>
     </section>
 
+<<<<<<< HEAD
     <?php include 'footer.php' ?>
+=======
+<!-- foooterrr -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p>Your trusted financial partner, making money management easy and efficient.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#overview">Home</a></li>
+                    <li><a href="#account-overview">Account Overview</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>Email: support@nexusbank.com</p>
+                <p>Phone: +38349292602</p>
+            </div>
+        </div>
+        <p class="footer-bottom">&copy; 2024 Nexus Bank. All rights reserved.</p>
+    </footer>
+>>>>>>> main
 
     <button class="scroll-to-top" id="scroll-to-top">&#8679;</button>
     <script src="js/dashboard.js"></script>
 </body>
+<<<<<<< HEAD
 </html>
+=======
+</html>
+>>>>>>> main

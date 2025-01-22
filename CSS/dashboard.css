@@ -141,7 +141,147 @@ body {
   background-color: #bbb;
   transform: scale(1.1);
 }
+<<<<<<< HEAD
 
+=======
+#welcome {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: rgba(126, 0, 0, 0.5);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  color: white;
+  gap: 15px;
+  margin-top: 80px;
+}
+
+#welcome h1 {
+  font-size: 24px;
+  color: #ffcc00;
+}
+
+#welcome h1 span {
+  color: #fff;
+}
+
+#welcome #profileImage {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 10px 0;
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+  border: 3px solid #ffcc00;
+}
+
+#welcome .profile-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+#welcome #uploadBtn {
+  padding: 10px 20px;
+  background: #cc0000;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#welcome #uploadBtn:hover {
+  background: #b30000;
+  transform: scale(1.05);
+}
+
+#welcome #profileInput {
+  display: none;
+}
+
+#UserInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background: rgba(126, 0, 0, 0.5);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  color: white;
+}
+
+#BasicInfo, #AccountInfo, #SecuritySettings, #ExportDelete {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+#UserInfo p {
+  margin: 5px 0;
+  font-size: 16px;
+}
+
+#UserInfo p:first-child {
+  font-weight: bold;
+  font-size: 18px;
+  color: #ffcc00;
+}
+
+#ActionButtons, #ExportDelete {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+#UserInfo button {
+  padding: 10px 20px;
+  background: #cc0000;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#UserInfo button:hover {
+  background: #b30000;
+  transform: scale(1.05);
+}
+
+#ChangePasswordBtn {
+  background: #0093E9;
+}
+
+#ChangePasswordBtn:hover {
+  background: #007acc;
+}
+
+#DeleteAccountBtn {
+  background: #e74c3c;
+}
+
+#DeleteAccountBtn:hover {
+  background: #c0392b;
+}
+
+#ExportDataBtn {
+  background: #3498db;
+}
+
+#ExportDataBtn:hover {
+  background: #2980b9;
+}
+>>>>>>> main
 
 @keyframes fadeIn {
   from {
@@ -266,6 +406,7 @@ body {
   transform: scale(1.2);
 }
 
+<<<<<<< HEAD
 #transfer-form button{
   background-color: #9c0000;
   color: white;
@@ -285,6 +426,51 @@ body {
   border: 1px solid #ddd;
   border-radius: 5px;
 }
+=======
+footer {
+  background-color: rgb(197, 26, 26);
+  color: #fff;
+  padding: 40px 20px;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 250px;
+}
+
+.footer-section h2 {
+  font-size: 1.5em;
+  margin-bottom: 15px;
+}
+
+.footer-section a {
+  text-decoration: none;
+  color: #fff;
+  transition: color 0.3s;
+}
+
+.footer-section a:hover {
+  color: #ffd700;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 0.8em;
+  border-top: 1px solid #fff;
+  padding-top: 10px;
+  color: #ddd;
+}
+
+
+>>>>>>> main
 #detailsContainer {
   margin-top: 20px;
   padding: 20px;
@@ -378,12 +564,20 @@ body {
   margin-top: 10px;
 }
 
+<<<<<<< HEAD
 /* .upcoming-deadlines-section {
+=======
+.upcoming-deadlines-section {
+>>>>>>> main
   padding: 20px;
   background-color: #fefefe;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+<<<<<<< HEAD
 } */
+=======
+}
+>>>>>>> main
 
 .danger-indicator {
   width: 10px;
@@ -399,7 +593,11 @@ body {
   padding: 15px;
   border-radius: 10px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+<<<<<<< HEAD
   max-width: 800px;
+=======
+  max-width: 807px;
+>>>>>>> main
 }
 
 
@@ -436,6 +634,7 @@ body {
 }
 
 .deadlines-form form button:hover {
+<<<<<<< HEAD
   background: #7e1503;
   
   transition-duration: 1s;
@@ -447,6 +646,10 @@ body {
   
   
 
+=======
+  background: #45a049;
+  transform: scale(1.05);
+>>>>>>> main
 }
 
 #deadlinesList {
@@ -461,6 +664,7 @@ body {
   border-radius: 5px;
   border-left: 5px solid;
 }
+<<<<<<< HEAD
 /* settings */
 #settings{
   background-color: #990000;
@@ -678,6 +882,8 @@ footer {
 }
 
 /* theme changer */
+=======
+>>>>>>> main
 body.dark-mode {
   background-color: #121212;
   color: #e0e0e0;
@@ -697,11 +903,15 @@ body.dark-mode .scroll-to-top {
 }
 body.dark-mode .upcoming-deadlines-section{
   background-color: #121212 ;
+<<<<<<< HEAD
   
+=======
+>>>>>>> main
 }
 body.dark-mode .navbar button{
   background-color: #333;
 
+<<<<<<< HEAD
 }
 body.dark-mode .settings{
   background-color: #333;
@@ -709,4 +919,6 @@ body.dark-mode .settings{
 }
 body.dark-mode label{
   color: white;
+=======
+>>>>>>> main
 }

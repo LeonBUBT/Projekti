@@ -1,7 +1,3 @@
-@font-face {
-    font-family: heartless;
-    src: url(fonts/Heartless.ttf);
-}
 html{
     scroll-behavior: smooth;
 }
@@ -18,11 +14,6 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     background-color: #f2f2f2;
     overflow-x: hidden;
-    background-image: url(images/login-back.jpg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat; 
-    height: 100vh;
 }
 
 #nav-bar {
@@ -54,6 +45,7 @@ body {
     display: flex;
     font-size: large;
     align-items: center;
+    /* justify-content:flex-end; */
 }
 
 #header-ul1,#header-ul2,#header-img{
@@ -80,7 +72,12 @@ body {
     border-radius: 15px;
 }
 
-/* ----------------------LoginFomr----- */
+#register{
+    /* justify-content:; */
+    flex-wrap: nowrap;
+}
+
+/* ---------------------------------------------LoginFomr----------------------------------------------------- */
 #login {
     display: flex;
     flex-direction: column;

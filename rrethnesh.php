@@ -3,6 +3,7 @@
     include 'header.php';
 ?>
 <main>
+<<<<<<< HEAD
 <div id="why-choose-us">
     <h2>Why Choose Us?</h2>
     <div class="accordion">
@@ -66,6 +67,23 @@
             require 'backend/fetch_about_us.php';
             if(count($aboutUs)>0){
                 foreach($aboutUs as $abt){
+=======
+    <div id="main">
+        <?php 
+            require 'backend/config.php';
+            require 'backend/fetch_about_us.php';
+
+            error_reporting(E_ALL);
+            ini_set('display_errors',1);
+
+            $database = new Database();
+            $aboutus = new AboutUs($database);    
+
+            $cards=$aboutus->getCards();
+
+            if(count($cards)>0){
+                foreach($cards as $abt){
+>>>>>>> main
                     echo"
                         <div class='flip-card'>
                           <div class='flip-card-inner'>
@@ -84,6 +102,7 @@
             }
         ?>
     </div>
+<<<<<<< HEAD
     <div id="core-values">
         <?php
         $core_values = [
@@ -144,5 +163,8 @@
         }
     });
 });</script>
+=======
+    <script src="JS/rrethnesh.js"></script>
+>>>>>>> main
 </main>
 <?php include 'footer.php' ?>

@@ -5,21 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="CSS/login.css">
     <title>Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
 </head>
 <body >
 
     <div id="nav-bar">
         <ul id="nav-bar-ul1">
-            <li>Individë</li>
-            <li>Premium</li>
-            <li>Biznes</li>
-            <li>Korporata</li>
-            <li>Rreth Nesh</li>
+            <li><a href="index.html">Individë</a></li>
+            <li><a href="">Premium</a></li>
+            <li><a href="">Biznes</a></li>
+            <li><a href="">Korporata</a></li>
+            <li><a href="">Rreth Nesh</a></li>
         </ul>
 
         <ul id="nav-bar-ul2">
-            <li>Na kontaktoni</li>
-            <li>Kërko Pikat</li>
+           <a href="Kontakt.html"> <li>Na kontaktoni</li></a>
+            <li><a href="Pikat.html">Kërko Pikat</a></li>
             <li>Shqip <img src="images/world.png" alt="" width="18px" ></li>
         </ul>
     </div>
@@ -35,12 +37,15 @@
         </ul>
    
         <ul id="header-ul2">
-            <li>Bankimi ditor</li>
-            <li>Produktet kreditore</li>
-            <li>Kartelat</li>
+            <li><a href="">Bankimi ditor</a></li>
+            <li><a href="">Produktet kreditore</a></li>
+            <li><a href="">Kartelat</a></li>
         </ul>
-    </div>
 
+        <div id="register">
+            <p>Register to Nexus Bank</p>
+        </div>
+    </div>
 
     <div id="login">
         <form id="loginForm">
@@ -61,6 +66,7 @@
         <div id="error-message"></div>
         </form>
     </div>
+
     <footer>
         <div class="footer-container">
             
@@ -99,8 +105,6 @@
             <p>&copy; 2024 Nexus Bank. All rights reserved.(Student project)</p>
         </div>
     </footer>
-    <script src="JS/login.js" >
-
-    </script>
+    <script src="JS/login.js" ></script>
 </body>
 </html>
