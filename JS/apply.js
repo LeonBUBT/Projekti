@@ -14,3 +14,28 @@ document.getElementById('phone').addEventListener('input', function (e) {
     }
     input.value = formatted;
 });
+
+const individ = document.getElementById('individ');
+const business = document.getElementById('business');
+const form = document.querySelector('form');
+const nextBtn = document.querySelector('.next');
+const accTypeDiv = document.getElementById('acc-type');
+
+var accType = null;
+
+individ.addEventListener('click',()=>{
+    accType=individ.value;
+    console.log(accType);
+    nextBtn.classList.add("show");
+});
+
+business.addEventListener('click',()=>{
+    accType=business.value;
+    console.log(accType);
+    nextBtn.classList.add("show");
+});
+
+nextBtn.addEventListener('click',()=>{
+    accTypeDiv.style.display="none";
+    form.classList.toggle("hidden");
+});

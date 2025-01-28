@@ -18,18 +18,16 @@
 
         <hr id="header-hr">
 
-        <form action="#">
-            <div id="acc-type">
-                <div class="acctypeDiv">
-                    <button id="individ" value="individ">Individual</button>
-                    <button id="business" value="business">Business</button>
-                </div>
-                <button class="next">Next</button>
-            </div>       
+        <div id="acc-type" class="">
+            <div class="acctypeDiv">
+                <button id="individ" value="individ">Individual</button>
+                <button id="business" value="business">Business</button>
+            </div>
+            <button class="next hidden">Next</button>
+        </div>       
 
-            <!-- ======================= -->
-            
-            <div class="name_email hidden">
+        <form action="#" class="hidden" >            
+            <div class="name_email">
                 <div class="nameDiv">
                     <label for="name">Name:</label>
                     <input id="name" name="name" type="text" placeholder="Enter your full name" required>
@@ -41,13 +39,13 @@
             </div>
 
 
-            <div class="phone_type hidden">
+            <div class="phone_type">
                 <div class="phoneDiv">
                     <label for="phone">Phone Number:</label>
                     <input id="phone" name="phone" type="tel" placeholder="Enter your phone number" maxlength="11" required>
                 </div>
 
-                <div class="cardDiv hidden">
+                <div class="cardDiv">
                     <label for="type">Card type</label>
                     <select name="type" id="type" required>
                         <option value=""> --- </option>
@@ -59,7 +57,7 @@
             </div>
 
 
-            <div class="password hidden">
+            <div class="password">
                 <div class="passDiv">
                     <label for="password">Password:</label>
                     <input id="password" name="password" type="password" placeholder="Enter your password" required>
@@ -72,7 +70,7 @@
             </div>
 
 
-            <div class="age_gender hidden">
+            <div class="age_gender">
                 <div class="bdayDiv">
                     <label for="bday">Birth-day:</label>
                     <input id="bday" name="bday" type="date" required>
@@ -91,7 +89,7 @@
             
             <p id="login">Already have an account? <a href="Login.php">Login</a></p>
 
-            <button value="submit" id="submit" class="hidden" >Apply!</button>
+            <button value="submit" id="submit" class="" >Apply!</button>
 
         </form>
     </div>
