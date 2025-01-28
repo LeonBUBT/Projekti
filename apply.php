@@ -26,7 +26,7 @@
             <button class="next hidden">Next</button>
         </div>       
 
-        <form action="#" class="hidden" >            
+        <form action="backend/applyBackend.php" method="POST" class="hidden" >            
             <div class="name_email">
                 <div class="nameDiv">
                     <label for="name">Name:</label>
@@ -47,7 +47,7 @@
 
                 <div class="cardDiv">
                     <label for="type">Card type</label>
-                    <select name="type" id="type" required>
+                    <select name="cardType" id="type" required>
                         <option value=""> --- </option>
                         <option value="classic">Classic card</option>
                         <option value="premium">Premium card</option>
@@ -65,7 +65,7 @@
 
                 <div class="confirmDiv">
                     <label for="confirm">Confirm password:</label>
-                    <input id="confirm" type="password" placeholder="Confirm your password" required>
+                    <input id="confirm" name="confirm" type="password" placeholder="Confirm your password" required>
                 </div>
             </div>
 
