@@ -93,6 +93,7 @@ input,select{
     border: none;
 }
 
+
 .hidden{
     display: none;
 }
@@ -107,11 +108,65 @@ input,select{
     margin: 3vh;
 }
 
-#submit:hover{
+#submit:hover,.acctypeDiv button:hover{
     background-color:rgb(199, 8, 8) ;
 }
 
-#submit:active{
+#submit:active,.acctypeDiv button:active{
     background-color:rgb(231, 20, 20) ;
 }
 
+#login{
+    font-size: 16px;
+    margin: 7px 0;
+}
+
+#acc-type{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.acctypeDiv{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.acctypeDiv button{
+    background-color:rgb(231, 20, 20) ;
+    color: white;
+    padding: 2% 20%;
+    font-size: 18px;
+    border-radius: 2px;
+    border: none;
+    margin: 2vh;
+}
+
+.next{
+    background-color:rgb(119, 115, 115) ;
+    color: white;
+    padding: 1% 10%;
+    font-size: 18px;
+    border-radius: 2px;
+    border: none;
+    margin: 2vh;
+}
+
+button.next:hover{
+    background-color:rgb(85, 83, 83) ;
+}
+
+button.next:active{
+    background-color:rgb(119, 115, 115) ;
+}
+
+/*              <div class="acctypeDiv">
+                    <button id="individ" value="individ">Individual</button>
+                    <button id="business" value="business">Business</button>
+                </div>
+                <button id="next" class="">Next</button>
+ */
+
+
+/* ========================================== */

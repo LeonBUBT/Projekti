@@ -19,17 +19,17 @@
         <hr id="header-hr">
 
         <form action="#">
-            <div class="acc-type hidden">
+            <div id="acc-type">
                 <div class="acctypeDiv">
                     <button id="individ" value="individ">Individual</button>
                     <button id="business" value="business">Business</button>
                 </div>
-                <button id="next" class="hidden">Next</button>
+                <button class="next">Next</button>
             </div>       
 
             <!-- ======================= -->
             
-            <div class="name_email">
+            <div class="name_email hidden">
                 <div class="nameDiv">
                     <label for="name">Name:</label>
                     <input id="name" name="name" type="text" placeholder="Enter your full name" required>
@@ -41,13 +41,13 @@
             </div>
 
 
-            <div class="phone_type">
+            <div class="phone_type hidden">
                 <div class="phoneDiv">
                     <label for="phone">Phone Number:</label>
-                    <input id="phone" name="phone" type="tel" placeholder="Enter your phone number" required>
+                    <input id="phone" name="phone" type="tel" placeholder="Enter your phone number" maxlength="11" required>
                 </div>
 
-                <div class="cardDiv">
+                <div class="cardDiv hidden">
                     <label for="type">Card type</label>
                     <select name="type" id="type" required>
                         <option value=""> --- </option>
@@ -59,7 +59,7 @@
             </div>
 
 
-            <div class="password">
+            <div class="password hidden">
                 <div class="passDiv">
                     <label for="password">Password:</label>
                     <input id="password" name="password" type="password" placeholder="Enter your password" required>
@@ -72,7 +72,7 @@
             </div>
 
 
-            <div class="age_gender">
+            <div class="age_gender hidden">
                 <div class="bdayDiv">
                     <label for="bday">Birth-day:</label>
                     <input id="bday" name="bday" type="date" required>
@@ -88,12 +88,13 @@
                     </select>
                 </div>
             </div>
+            
+            <p id="login">Already have an account? <a href="Login.php">Login</a></p>
 
-            <button value="submit" id="submit">Apply!</button>
+            <button value="submit" id="submit" class="hidden" >Apply!</button>
 
         </form>
     </div>
-
+    <script src="JS/apply.js" ></script>
 </body>
 </html>
-<!-- name, email, phone, type, password, confirm password, age, gender -->
