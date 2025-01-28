@@ -89,7 +89,7 @@
                 </div>
             </div>
 
-            <button value="submit" >Apply!</button>
+            <button value="submit" id="submit">Apply!</button>
 
         </form>
     </div>

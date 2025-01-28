@@ -21,6 +21,7 @@ body{
     transform: translate(-50%,-50%);
     background-color: rgba(204, 204, 204, 0.93);
     /* background-color: rgba(121, 121, 121, 0.93); */
+    
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -39,8 +40,9 @@ body{
     width: 120px;
     border-radius: 50%;
     padding: 15px;
-    box-shadow:5px 5px  15px rgba(0, 0, 0, 0.3); ;
+    box-shadow:5px 5px  15px rgba(0, 0, 0, 0.212); ;
     background-color: black;
+    margin-bottom: 5px;
 }
 
 #header-hr{
@@ -81,6 +83,7 @@ form div div {
 
 label{
     padding: 0px 0px 4px 4px;
+
 }
 
 input,select{
@@ -93,3 +96,22 @@ input,select{
 .hidden{
     display: none;
 }
+
+#submit{
+    background-color:rgb(231, 20, 20) ;
+    color: white;
+    padding: 2% 20%;
+    font-size: 18px;
+    border-radius: 10px;
+    border: none;
+    margin: 3vh;
+}
+
+#submit:hover{
+    background-color:rgb(199, 8, 8) ;
+}
+
+#submit:active{
+    background-color:rgb(231, 20, 20) ;
+}
+
