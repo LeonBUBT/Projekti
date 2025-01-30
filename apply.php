@@ -49,9 +49,9 @@
                     <label for="type">Card type</label>
                     <select name="cardType" id="type" required>
                         <option value=""> --- </option>
-                        <option value="classic">Classic card</option>
-                        <option value="premium">Premium card</option>
-                        <option value="elite">Elite card</option>
+                        <option value="classic">Classic debit card</option>
+                        <option value="premium">Premium debit card</option>
+                        <option value="elite">Elite debit card</option>
                     </select>
                 </div>
             </div>
