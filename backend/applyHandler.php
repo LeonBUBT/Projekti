@@ -9,15 +9,28 @@ class ApplyHandler {
     }
 
     public function insertUser($data) {
-        $sql = "INSERT INTO users (name, email, phone, card_type, password, birthday, gender) 
-        VALUES (:name, :email, :phone, :card_type, :password, :birthday, :gender)";
-        
+
+        $sql = "SELECT COUNT(*) FROM users WHERE email = :email";
+        $stmt = $this->db->prepare($sql);
+        $stmt->bindParam(':email',$data['email']);
+        $stmt->execute();
+        $count = $stmt->fetchColumn();
+
+        if($count>0){
+            die ("This email already exists");
+        }
+
+        $sql = "INSERT INTO users (name, email, phone, type, admin, password, birthday, gender) 
+        VALUES (:name, :email, :phone, :type, :admin, :password, :birthday, :gender)";
+        $hashedPass = password_hash($data['password'], PASSWORD_DEFAULT);
+
         $stmt = $this->db->prepare($sql);
         $stmt->bindParam(':name', $data['name']);
         $stmt->bindParam(':email', $data['email']);
         $stmt->bindParam(':phone', $data['phone']);
-        $stmt->bindParam(':card_type', $data['type']);
-        $stmt->bindParam(':password', password_hash($data['password'], PASSWORD_DEFAULT));
+        $stmt->bindParam(':type', $data['accType']);
+        $stmt->bindparam(':admin',$data['admin']);
+        $stmt->bindParam(':password', $hashedPass);
         $stmt->bindParam(':birthday', $data['bday']);
         $stmt->bindParam(':gender', $data['gender']);
         $stmt->execute();
