@@ -93,6 +93,37 @@
                 }
         ?>
     </div>
+    <div id="timeline">
+        ,<h2>Our Milestone</h2>
+        <div class="timeline-container">
+            <?php
+            $milestone = [
+                ["year" => "2000", "title" => "Founded  Nexus Bank", "description" => "Established with a vision to revolutionize banking through innovation and trust."],
+                ["year" => "2002", "title" => "First Branch Opened", "description" => "Serving thousand of costumers locally."],
+                ["year" => "2005", "title" => "Online Banking Introduced", "description" => "Enabled costumers to manage accounts remotely."],
+                ["year" => "2010", "title" => "1 Million Costumers", "description" => "Expanded to multiple locations with a growing costumer base." ],
+                ["year" => "2012", "title" => "Mobile Banking Launched", "description" => "Bringing banking services to smartphones."],
+                ["year" => "2015", "title" => "International Expansion", "description" => "Seamless global transactions made possible."],
+                ["year" => "2018", "title" => "AI Financial Advisory", "description" => "Personalized banking enhanced by AI-driven services."],
+                ["year" => "2022", "title" => "Carbon-Neutral Operation", "description" => "Commitment to sustainability and eco-friendly banking."],
+                ["year" => "2024", "title" => "Fully Digital Branches", "description" => "Combining AI, automation, and human experties."],
+                ["year" => "2025", "title" => "Blockchain Banking Solutions", "description" => "Enhanced security and transparency through blockchain,"],
+                ["year" => "2026", "title" => "Serving 50M+ Costumers", "description" => "Loading the future of finance worldwide." ]
+            ];
+            foreach ($milestones as $milestone){
+                echo '
+                <div class="timeline-item">
+                    <div class="timeline-year">' . $milestone['year'] . '</div>
+                    <div class="timeline-content">
+                    <h3>' . $milestone['title'] .'</h3>
+                    <p>' . $milestone['description'] . '</p>
+                    </div>
+                    </div>
+                ';
+            }
+            ?>
+        </div>
+    </div>
 
     <script src="JS/rrethnesh.js" ></script>
 </main>

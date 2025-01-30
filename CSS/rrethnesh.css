@@ -68,16 +68,16 @@
 /* Main Content */
 #main {
     display: flex;
-    flex-wrap: wrap; /* Allows cards to wrap on smaller screens */
-    justify-content: center; /* Centers the cards horizontally */
-    align-items: center; /* Centers the cards vertically */
-    gap: 20px; /* Adds spacing between cards */
+    flex-wrap: wrap; 
+    justify-content: center; 
+    align-items: center; 
+    gap: 20px; 
     padding: 40px;
     margin: auto;
     max-width: 1200px;
-    background-color: #600000; /* Deep red background to align with the theme */
+    background-color: #600000; 
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
 }
 
 /* Flip Card */
@@ -85,10 +85,10 @@
     background-color: transparent;
     width: 250px;
     height: 300px;
-    perspective: 1000px; /* Adds 3D effect */
+    perspective: 1000px; 
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds depth to the cards */
-    overflow: hidden; /* Ensures clean edges */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    overflow: hidden; 
 }
 
 .flip-card-inner {
@@ -122,8 +122,8 @@
 
 /* Front of Card */
 .flip-card-front {
-    background: linear-gradient(145deg, #800000, #a10d0d); /* Vibrant red gradient */
-    color: #ffffff; /* White text for high contrast */
+    background: linear-gradient(145deg, #800000, #a10d0d); 
+    color: #ffffff; 
 }
 
 .flip-card-front img {
@@ -136,8 +136,8 @@
 
 /* Back of Card */
 .flip-card-back {
-    background: #7e0000; /* Dark red for strong contrast */
-    color: #ffffff; /* White text for readability */
+    background: #7e0000; 
+    color: #ffffff; 
     transform: rotateY(180deg);
     text-align: center;
 }
@@ -200,6 +200,82 @@
     line-height: 1.6;
     color: #f9f9f9;
 }
+/*timeline*/
+#timeline{
+    text-align: center;
+    background-color: #f2f2f2;
+    padding: 60px 20px;
+    border-radius: 10PX;
+    margin: 40PX auto;
+    max-width: 120px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+#timeline h2{
+    font-size: 2.5em;
+    color: #800000;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+}
+.timeline-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    padding: 20px;
+}
+.timeline-item{
+    display: flex;
+    align-items: center;
+    background-color: #800000;
+    color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    width: 80%;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    text-align: left;
+    margin: 20px 0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.timeline-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.timeline-year {
+    background-color: #ffd700;
+    color: #800000;
+    font-size: 1.5em;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-right: 20px;
+    flex-shrink: 0;
+}
+
+.timeline-content h3 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+    color: #ffd700;
+}
+
+.timeline-content p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #f9f9f9;
+}
+
+@media (max-width: 768px) {
+    .timeline-item {
+        flex-direction: column;
+        text-align: center;
+        width: 90%;
+    }
+
+    .timeline-year {
+        margin: 0 0 15px 0;
+    }
+}
+
 
 
 
