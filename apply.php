@@ -26,7 +26,7 @@
             <button class="next hidden">Next</button>
         </div>       
 
-        <form action="backend/applyBackend.php" method="POST" class="hidden" >            
+        <form action="backend/apply_backend.php" method="POST" class="hidden" >            
             <div class="name_email">
                 <div class="nameDiv">
                     <label for="name">Name:</label>

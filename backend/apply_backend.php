@@ -1,12 +1,14 @@
 <?php
 require_once 'validator.php';
 require_once 'config.php';
-require_once 'applyHandler.php';
+require_once 'apply_query.php';
+require_once 'apply_card.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $validator = new Validator();
     $database = new Database();
     $signupHandler = new applyHandler($database);
+    $cardMaker = new CardMaker($database);
 
     $name = $_POST['name'] ?? '';
     $email = $_POST['email'] ?? '';
@@ -45,6 +47,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             'bday' => $bday,
             'gender' => $gender
         ]);
+        $cardMaker->makeCard([
+           'email'=>$email,
+           'cardType'=>$cardtype 
+        ]);
+
         header("Location: ../dashboard.php");
         exit;
     } else {
