@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> User Dashboard</title>
     <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/footer.css">
+    
 </head>
 <body>
     <div id="logout-modal" class="modal">
@@ -169,31 +171,9 @@
             <button id="clear-data" class="styled-button">Clear Dashboard Data</button>
         </div>
     </section>
-
-<!-- foooterrr -->
-    <footer>
-        <div class="footer-container">
-            <div class="footer-section">
-                <h3>About Us</h3>
-                <p>Your trusted financial partner, making money management easy and efficient.</p>
-            </div>
-            <div class="footer-section">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="#overview">Home</a></li>
-                    <li><a href="#account-overview">Account Overview</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Contact</h3>
-                <p>Email: support@nexusbank.com</p>
-                <p>Phone: +38349292602</p>
-            </div>
-        </div>
-        <p class="footer-bottom">&copy; 2024 Nexus Bank. All rights reserved.</p>
-    </footer>
-
     <button class="scroll-to-top" id="scroll-to-top">&#8679;</button>
     <script src="js/dashboard.js"></script>
-</body>
-</html>
+<?php include 'footer.php'?>
+
+   
+
