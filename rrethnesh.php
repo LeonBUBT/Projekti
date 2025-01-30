@@ -72,7 +72,7 @@
 
             $cards=$aboutus->getCards();
 
-        if(count($cards)>0){
+            if(count($cards)>0){
 
                     foreach($cards as $abt){
                         echo"
@@ -93,66 +93,6 @@
                 }
         ?>
     </div>
-    <div id="core-values">
-        <?php
-        $core_values = [
-         [   
-            "title" => "Integrity",
-            "description" => "We uphold the highest standards of honesty and transparwncy in everything we do."
-         ],
-         [
-            "title" => "Costumer-Centricity",
-            "description" => "our costumers are at the heart of our business, and we strive to meet their unique financial needs."
-         ],
-         [
-            "title" => "Innovation",
-            "description" => "We embrace technology to deliver forward-thinking banking solutions."
-         ],
-         [
-            "title" => "Trust",
-            "description" => "we build lasting relationships by consistently delivering on our promisess."
-         ],
-         [
-            "title" => "Sustainability",
-            "description" => "We are comitted to enviromentally consicious operations and investments in our communities."
-         ],
-         [
-            "title" => "Excellence",
-            "description" => "We pursue excellence in every service and solution we offer."
-         ],
-         [
-            "title" => "Diversity and Inclusion",
-            "description" => "We celebrate diversity and foster and inclusive enviroment fpr pur employees and customers."
-         ],
-         [
-            "title" => "Accountability",
-            "description" => "We take responsibility for our actions and prioritize customer statisfaction"
-         ]
-         ];
-            
-            foreach ($core_values as $value){
-                echo '
-                <div class="value-item">
-                <h3>' . $value['title'] . '</h3>
-                <p> ' . $value['description'] . '</p>
-                </div>
-                ';
-            }
-        ?>
-
-   <script>document.querySelectorAll('.accordion-item button').forEach(button => {
-    button.addEventListener('click', () => {
-        const expanded = button.getAttribute('aria-expanded') === 'true';
-        button.setAttribute('aria-expanded', !expanded);
-
-        const content = document.getElementById(button.getAttribute('aria-controls'));
-        if (!expanded) {
-            content.style.maxHeight = content.scrollHeight + "px";
-        } else {
-            content.style.maxHeight = null;
-        }
-    });
-});</script>
 
     <script src="JS/rrethnesh.js" ></script>
 </main>
