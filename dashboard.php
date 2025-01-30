@@ -91,13 +91,13 @@
 <div class="deadlines-form">
   <h2>Upcoming Deadlines</h2>
   <form id="deadlineForm">
-    <label for="billName">Bill Name:</label>
+  <b><label for="billName">Bill Name:</label>
     <input type="text" id="billName" placeholder="Enter bill name">
     <label for="dueDate">Due Date:</label>
     <input type="date" id="dueDate">
     <label for="amountDue">Amount Due:</label>
     <input type="number" id="amountDue" placeholder="Enter amount due">
-    <label for="priority">Priority Level:</label>
+    <label for="priority">Priority Level:</label></b>
     <select id="priority">
       <option value="green">Done (Low Priority)</option>
       <option value="yellow">Incoming (Medium Priority)</option>
@@ -119,58 +119,62 @@
     </section>
 <!-- settings -->
 
-    <section id="settings" class="section">
-        <section class="home-section">
-            <div id="welcome">
-                <h1>Welcome To Your Profile <span>[User]</span></h1>
-                <img src="images/user.png" alt="Profile Picture" id="profileImage">
-                <div class="profile-actions">
-                    <button type="button" id="uploadBtn">Enter Your Profile Picture</button>
-                    <input type="file" name="Profile" id="profileInput" accept="image/*">
-                </div>
-            </div>  
-            <div id="UserInfo">
-                <div id="BasicInfo">
-                    <p id="FullName">Full Name</p>
-                    <p>John Smith</p>
-                    <p id="Email">Email</p>
-                    <p>ex@ample.email</p>
-                    <p id="PhoneNumber">Phone Number</p>
-                    <p>+123-345-678-90</p>
-                </div>
-                
-                <div id="AccountInfo">
-                    <p id="Username">Username</p>
-                    <p>john_smith</p>
-                    <p id="DateJoined">Date Joined</p>
-                    <p>January 1, 2023</p>
-                    <p id="Membership">Membership Tier</p>
-                    <p>Free</p>
-                </div>
-            
-                <div id="ActionButtons">
-                    <button id="EditBtn">Edit Information</button>
-                    <button id="SaveChangesBtn">Save Changes</button>
-                </div>
-                
-                <div id="SecuritySettings">
-                    <p id="ChangePassword">Change Password</p>
-                    <button id="ChangePasswordBtn">Change</button>
-                </div>
-            
-                <div id="ExportDelete">
-                    <button id="ExportDataBtn">Export Data</button>
-                    <button id="DeleteAccountBtn" onclick="showLogoutModal()">Delete Account</button>
-                </div>
+<section id="settings" class="section">
+    <h2 style="text-align:center;">User Settings</h2>
+
+    <section class="home-section">
+        <div id="welcome">
+            <h1>Welcome To Your Profile <span>[User]</span></h1>
+            <img src="images/user.png" alt="Profile Picture" id="profileImage">
+            <div class="profile-actions">
+                <button type="button" id="uploadBtn">Enter Your Profile Picture</button>
+                <input type="file" name="Profile" id="profileInput" accept="image/*">
             </div>
-            
-        </section>
-        <h2>Settings</h2>
-        <div class="settings-options">
-            <button id="theme-toggle" class="styled-button">Toggle Dark Mode</button>
-            <button id="clear-data" class="styled-button">Clear Dashboard Data</button>
+        
+
+        <div id="UserInfo">
+            <div id="BasicInfo">
+                <p id="FullName">Full Name</p>
+                <p>John Smith</p>
+                <p id="Email">Email</p>
+                <p>ex@ample.email</p>
+                <p id="PhoneNumber">Phone Number</p>
+                <p>+123-345-678-90</p>
+            </div>
+
+            <div id="AccountInfo">
+                <p id="Username">Username</p>
+                <p>john_smith</p>
+                <p id="DateJoined">Date Joined</p>
+                <p>January 1, 2023</p>
+                <p id="Membership">Membership Tier</p>
+                <p>Free</p>
+            </div>
+
+            <div id="ActionButtons">
+                <button id="EditBtn">Edit Information</button>
+                <button id="SaveChangesBtn">Save Changes</button>
+            </div>
+
+            <div id="SecuritySettings">
+                <p id="ChangePassword">Change Password</p>
+                <button id="ChangePasswordBtn">Change</button>
+            </div>
+
+            <div id="ExportDelete">
+                <button id="ExportDataBtn">Export Data</button>
+                <button id="DeleteAccountBtn" onclick="showLogoutModal()">Delete Account</button>
+            </div>
         </div>
+</div>
     </section>
+
+    <div class="settings-options">
+        <button id="theme-toggle" class="styled-button">Toggle Dark Mode</button>
+        <button id="clear-data" class="styled-button">Clear Dashboard Data</button>
+    </div>
+</section>
+
     <button class="scroll-to-top" id="scroll-to-top">&#8679;</button>
     <script src="js/dashboard.js"></script>
 <?php include 'footer.php'?>
