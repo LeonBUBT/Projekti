@@ -299,6 +299,21 @@ body {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   background: white;
 }
+button{
+  margin-top: 15px;
+  width: 100%;
+  background-color: #7e0000;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 16px;
+}
+button:hover {
+  transition: 1s;
+  transform: translateY(-3px);
+}
 
 .container {
   display: flex;
@@ -401,7 +416,7 @@ body {
 .scroll-to-top:hover {
   transform: scale(1.2);
 }
-
+/* 
 footer {
   background-color: rgb(197, 26, 26);
   color: #fff;
@@ -442,7 +457,7 @@ footer {
   border-top: 1px solid #fff;
   padding-top: 10px;
   color: #ddd;
-}
+} */
 
 
 #detailsContainer {
@@ -538,13 +553,6 @@ footer {
   margin-top: 10px;
 }
 
-.upcoming-deadlines-section {
-  padding: 20px;
-  background-color: #fefefe;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
 .danger-indicator {
   width: 10px;
   height: 300px;
@@ -583,22 +591,9 @@ footer {
   border-radius: 5px;
 }
 
-.deadlines-form form button {
-  margin-top: 15px;
-  width: 90%;
-  background-color: #7e0000;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  padding: 10px;
-  cursor: pointer;
-  font-size: 16px;
-}
 
-.deadlines-form form button:hover {
-  background: #45a049;
-  transform: scale(1.05);
-}
+
+
 
 #deadlinesList {
   margin-top: 20px;
