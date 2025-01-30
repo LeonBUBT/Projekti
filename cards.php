@@ -2,7 +2,7 @@
     $pageTittle = 'Cards';
     include 'header.php';
 ?>
-<main>
+<main> 
     <div class="wrapper">
         <?php
             require 'backend/config.php';
