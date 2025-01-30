@@ -11,19 +11,20 @@ class CardMaker{
         $email = $data['email'];
         $type = $data['cardType'];
 
-        $emailSql = "SELECT COUNT(*) FROM users WHERE email = :email";
+        $emailSql = "SELECT user_id FROM users WHERE email = :email";
         $stmt = $this->db->prepare($emailSql);
         $stmt->bindParam(':email', $email);
         $stmt->execute();
-        $user = $stmt->fetchColumn();
+        $user = $stmt->fetch(PDO::FETCH_ASSOC);
         $user_id = $user['user_id'];
 
+        
 
-        $cardSql = "SELECT COUNT(*) FROM card_type WHERE type_name = :type_name";
+        $cardSql = "SELECT card_type_id FROM card_type WHERE type_name = :type_name";
         $stmt = $this->db->prepare($cardSql);
         $stmt->bindParam(':type_name', $type);
         $stmt->execute();
-        $card = $stmt->fetchColumn();
+        $card = $stmt->fetch(PDO::FETCH_ASSOC);
         $card_type_id = $card['card_type_id'];
         
         $cardNumber = implode('', array_map(fn() => random_int(0, 9), range(1, 16)));

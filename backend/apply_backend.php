@@ -2,7 +2,7 @@
 require_once 'validator.php';
 require_once 'config.php';
 require_once 'apply_query.php';
-require_once 'apply_card.php';
+require_once 'apply_card_query.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $validator = new Validator();
