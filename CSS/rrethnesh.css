@@ -210,12 +210,29 @@
     max-width: 120px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
+#timeline {
+    background-color: #800000;
+    padding: 40px;
+    border-radius: 10px;
+    margin: 30px auto;
+    max-width: 900px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    color: #ffffff;
+}
 #timeline h2{
     font-size: 2.5em;
-    color: #800000;
+    color: #ffffff;
     margin-bottom: 40px;
+
+#timeline h2 {
+    font-size: 2em;
+    color: #ffd700;
+    margin-bottom: 20px;
     text-transform: uppercase;
+    font-weight: bold;
+    text-align: left;
 }
+
 .timeline-container {
     display: flex;
     flex-direction: column;
@@ -235,48 +252,93 @@
     text-align: left;
     margin: 20px 0;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+    display: table;
+    border-collapse: collapse;
+    background-color: #7e0000;
 }
 .timeline-item:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+
+.timeline-item {
+    display: table-row;
+    border-bottom: 2px solid #ffffff;
 }
 
 .timeline-year {
+    display: table-cell;
     background-color: #ffd700;
     color: #800000;
     font-size: 1.5em;
+    font-size: 1.2em;
     font-weight: bold;
     padding: 10px 15px;
     border-radius: 5px;
     margin-right: 20px;
     flex-shrink: 0;
+    padding: 12px;
+    width: 150px;
+    text-align: center;
+    vertical-align: middle;
+    border-right: 2px solid #ffffff;
+}
+
+.timeline-content {
+    display: table-cell;
+    padding: 12px 15px;
+    text-align: left;
+    vertical-align: middle;
+    color: #050101;
 }
 
 .timeline-content h3 {
     font-size: 1.8em;
     margin-bottom: 10px;
+    font-size: 1.3em;
+    margin-bottom: 5px;
     color: #ffd700;
+    font-weight: bold;
 }
 
 .timeline-content p {
     font-size: 1.1em;
     line-height: 1.6;
     color: #f9f9f9;
+    font-size: 1em;
+    line-height: 1.4;
+    color: #050101;
 }
 
 @media (max-width: 768px) {
+    .timeline-container {
+        display: block;
+    }
+
     .timeline-item {
+        display: flex;
         flex-direction: column;
         text-align: center;
         width: 90%;
+        border-bottom: 2px solid #ffffff;
+        padding: 10px 0;
     }
 
     .timeline-year {
         margin: 0 0 15px 0;
+        width: 100%;
+        text-align: left;
+        border-right: none;
+        margin-bottom: 5px;
+        padding: 10px;
     }
 }
 
 
+    .timeline-content {
+        padding: 10px;
+    }
+}
 
 
 /*========================================================= footeri =========================================================*/
@@ -298,4 +360,5 @@
     .kard {
         max-width: 90%;
     }
+}
 }

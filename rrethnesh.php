@@ -94,7 +94,7 @@
         ?>
     </div>
     <div id="timeline">
-        ,<h2>Our Milestone</h2>
+        <h2>Our Milestone</h2>
         <div class="timeline-container">
             <?php
             $milestone = [
@@ -110,7 +110,7 @@
                 ["year" => "2025", "title" => "Blockchain Banking Solutions", "description" => "Enhanced security and transparency through blockchain,"],
                 ["year" => "2026", "title" => "Serving 50M+ Costumers", "description" => "Loading the future of finance worldwide." ]
             ];
-            foreach ($milestones as $milestone){
+            foreach ($milestone as $milestone){
                 echo '
                 <div class="timeline-item">
                     <div class="timeline-year">' . $milestone['year'] . '</div>
