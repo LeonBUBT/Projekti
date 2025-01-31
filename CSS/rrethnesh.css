@@ -18,6 +18,7 @@
     color: #800000;
     font-size: 2em;
     margin-bottom: 20px;
+    margin-top: 20px;
 } 
 
 .accordion-item {
@@ -74,6 +75,7 @@
     gap: 20px; 
     padding: 40px;
     margin: auto;
+    margin-top: 30px;
     max-width: 1200px;
     background-color: #600000; 
     border-radius: 10px;
@@ -152,6 +154,7 @@
     font-size: 1em;
     margin: 5px 0;
 }
+
 #core-values {
     text-align: center;
     background-color: #f2f2f2;
