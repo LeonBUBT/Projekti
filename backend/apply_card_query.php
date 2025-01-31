@@ -37,8 +37,6 @@ class CardMaker{
 
         $balance = 0.0;
 
-        // $creditLimit = ; add logic for determening credit limit for credit cards
-
         $typeSql = "INSERT INTO cards (user_id, card_type_id, card_number, expiry_date, cvv, balance) 
                 VALUES (:user_id, :card_type_id, :card_number, :expiry_date, :cvv, :balance) ";
 

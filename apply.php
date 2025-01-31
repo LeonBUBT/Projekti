@@ -42,7 +42,7 @@
             <div class="phone_type">
                 <div class="phoneDiv">
                     <label for="phone">Phone Number:</label>
-                    <input id="phone" name="phone" type="tel" placeholder="Enter your phone number" maxlength="11" required>
+                    <input id="phone" name="phone" class="autoformat" type="tel" placeholder="Enter your phone number" maxlength="11" required>
                 </div>
 
                 <div class="personalID">
@@ -86,9 +86,29 @@
                 <label for="type">Card types:</label>
                 <select name="cardType" id="type" required>
                     <option value=""> --- </option>
-                    <option value="classic">Classic debit card</option>
-                    <option value="premium">Premium debit card</option>
-                    <option value="elite">Elite debit card</option>
+                        <?php
+                            require_once 'backend/config.php';
+                            require_once 'backend/fetch_cards.php';
+
+                            error_reporting(E_ALL);
+                            ini_set('display_errors',1);
+                            
+                            $database = new Database();
+                            $cardTypes = new CardType($database);
+                            $cards = $cardTypes->getAllCardTypes();
+                            
+                            if(!empty($cards)){
+                                foreach($cards as $card){
+                                    echo"
+                                        <option value='".$card['type_name']."'>".$card['card_name']."</option>
+                                    ";
+                                }
+                            }else{
+                                echo"
+                                    <option>No cards are currently available</option>
+                                ";
+                            }
+                        ?>
                 </select>
             </div>
 
@@ -127,16 +147,26 @@
             <div class="phone_type">
                 <div class="phoneDiv">
                     <label for="phone">Phone Number:</label>
-                    <input id="phone" name="phone" type="tel" placeholder="Enter your phone number" maxlength="11" required>
+                    <input id="phone" class="autoformat" name="phone" type="tel" placeholder="Enter your phone number" maxlength="11" required>
                 </div>
 
                 <div class="cardDivB">
                     <label for="type">Card types:</label>
                     <select name="cardType" id="type" required>
                         <option value=""> --- </option>
-                        <option value="classic">Classic debit card</option>
-                        <option value="premium">Premium debit card</option>
-                        <option value="elite">Elite debit card</option>
+                            <?php
+                                if(!empty($cards)){
+                                    foreach($cards as $card){
+                                        echo"
+                                            <option value='".$card['type_name']."'>".$card['card_name']."</option>
+                                        ";
+                                    }
+                                }else{
+                                    echo"
+                                        <option>No cards are currently available</option>
+                                    ";
+                                }
+                            ?>
                     </select>
                 </div>
             </div>

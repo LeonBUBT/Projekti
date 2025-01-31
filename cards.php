@@ -25,7 +25,7 @@
                                 <p>
                                     " . $card['description'] . "
                                     <br>
-                                    <button>Apply</button>
+                                    <button onclick=\" window.location.href='http://localhost/Projekti/apply.php';\" >Apply</button>
                                 </p>
                             </div>    
                           </div>";
