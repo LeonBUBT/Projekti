@@ -26,7 +26,7 @@
             <button class="next hidden">Next</button>
         </div>       
 
-        <form action="backend/apply_backend.php" method="POST" class="hidden" >            
+        <form action="backend/apply_backend.php" method="POST" id="individualForm" class="hidden" >            
             <div class="name_email">
                 <div class="nameDiv">
                     <label for="name">Name:</label>
@@ -45,14 +45,9 @@
                     <input id="phone" name="phone" type="tel" placeholder="Enter your phone number" maxlength="11" required>
                 </div>
 
-                <div class="cardDiv">
-                    <label for="type">Card type</label>
-                    <select name="cardType" id="type" required>
-                        <option value=""> --- </option>
-                        <option value="classic">Classic debit card</option>
-                        <option value="premium">Premium debit card</option>
-                        <option value="elite">Elite debit card</option>
-                    </select>
+                <div class="personalID">
+                    <label for="id">Personal number:</label>
+                    <input id="id" name="personal_number" type="text" required placeholder="Enter your personal number" maxlength="10" >
                 </div>
             </div>
 
@@ -76,7 +71,7 @@
                     <input id="bday" name="bday" type="date" required>
                 </div>
 
-                <div class="cardDiv">
+                <div class="genderDiv">
                     <label for="gender">Gender</label>
                     <select name="gender" id="gender" required>
                         <option value=""> --- </option>
@@ -86,9 +81,68 @@
                     </select>
                 </div>
             </div>
+
+            <div class="cardDiv">
+                <label for="type">Card types:</label>
+                <select name="cardType" id="type" required>
+                    <option value=""> --- </option>
+                    <option value="classic">Classic debit card</option>
+                    <option value="premium">Premium debit card</option>
+                    <option value="elite">Elite debit card</option>
+                </select>
+            </div>
+
             
             <p id="login">Already have an account? <a href="Login.php">Login</a></p>
+            <button value="submit" id="submit" class="" >Apply!</button>
 
+        </form>
+
+        <!-- ======================================= Business form ================================ -->
+
+        <form action="backend/apply_backend.php" method="POST" id="businessForm" class="hidden" >            
+            <div class="name_email">
+                <div class="nameDiv">
+                    <label for="name">Name:</label>
+                    <input id="name" name="name" type="text" placeholder="Enter your full name" required>
+                </div>
+                <div class="emailDiv">
+                    <label for="email">Email:</label>
+                    <input id="email" name="email" type="email" placeholder="Enter your email" required>
+                </div>            
+            </div>
+
+            <div class="password">
+                <div class="passDiv">
+                    <label for="password">Password:</label>
+                    <input id="password" name="password" type="password" placeholder="Enter your password" required>
+                </div>
+
+                <div class="confirmDiv">
+                    <label for="confirm">Confirm password:</label>
+                    <input id="confirm" name="confirm" type="password" placeholder="Confirm your password" required>
+                </div>
+            </div>
+
+            <div class="phone_type">
+                <div class="phoneDiv">
+                    <label for="phone">Phone Number:</label>
+                    <input id="phone" name="phone" type="tel" placeholder="Enter your phone number" maxlength="11" required>
+                </div>
+
+                <div class="cardDivB">
+                    <label for="type">Card types:</label>
+                    <select name="cardType" id="type" required>
+                        <option value=""> --- </option>
+                        <option value="classic">Classic debit card</option>
+                        <option value="premium">Premium debit card</option>
+                        <option value="elite">Elite debit card</option>
+                    </select>
+                </div>
+            </div>
+
+
+            <p id="login">Already have an account? <a href="Login.php">Login</a></p>
             <button value="submit" id="submit" class="" >Apply!</button>
 
         </form>
