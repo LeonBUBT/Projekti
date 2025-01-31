@@ -141,147 +141,7 @@ body {
   background-color: #bbb;
   transform: scale(1.1);
 }
-<<<<<<< HEAD
 
-=======
-#welcome {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  background: rgba(126, 0, 0, 0.5);
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-  color: white;
-  gap: 15px;
-  margin-top: 80px;
-}
-
-#welcome h1 {
-  font-size: 24px;
-  color: #ffcc00;
-}
-
-#welcome h1 span {
-  color: #fff;
-}
-
-#welcome #profileImage {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin: 10px 0;
-  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
-  border: 3px solid #ffcc00;
-}
-
-#welcome .profile-actions {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-}
-
-#welcome #uploadBtn {
-  padding: 10px 20px;
-  background: #cc0000;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  font-size: 14px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-#welcome #uploadBtn:hover {
-  background: #b30000;
-  transform: scale(1.05);
-}
-
-#welcome #profileInput {
-  display: none;
-}
-
-#UserInfo {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  background: rgba(126, 0, 0, 0.5);
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-  color: white;
-}
-
-#BasicInfo, #AccountInfo, #SecuritySettings, #ExportDelete {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  padding: 15px;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-}
-
-#UserInfo p {
-  margin: 5px 0;
-  font-size: 16px;
-}
-
-#UserInfo p:first-child {
-  font-weight: bold;
-  font-size: 18px;
-  color: #ffcc00;
-}
-
-#ActionButtons, #ExportDelete {
-  display: flex;
-  gap: 15px;
-  justify-content: center;
-}
-
-#UserInfo button {
-  padding: 10px 20px;
-  background: #cc0000;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  font-size: 14px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-#UserInfo button:hover {
-  background: #b30000;
-  transform: scale(1.05);
-}
-
-#ChangePasswordBtn {
-  background: #0093E9;
-}
-
-#ChangePasswordBtn:hover {
-  background: #007acc;
-}
-
-#DeleteAccountBtn {
-  background: #e74c3c;
-}
-
-#DeleteAccountBtn:hover {
-  background: #c0392b;
-}
-
-#ExportDataBtn {
-  background: #3498db;
-}
-
-#ExportDataBtn:hover {
-  background: #2980b9;
-}
->>>>>>> main
 
 @keyframes fadeIn {
   from {
@@ -302,6 +162,22 @@ body {
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   background: white;
+}
+button{
+  margin-top: 15px;
+  width: 100%;
+  background-color: #7e0000;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 16px;
+}
+button:hover {
+  transition: 1s;
+  transform: translateY(-3px) ;
+ 
 }
 
 .container {
@@ -369,6 +245,43 @@ body {
   font-weight: bold;
 }
 
+#transfer-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin: 0 auto;
+  transition: transform 0.3s ease-in-out;
+}
+#transfer-form h2 {
+  text-align: center;
+  color: #7e0000;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+#transfer-form label {
+
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+
+#transfer-form input {
+  width: 97%;
+  
+  padding: 10px;
+  border: 2px solid #ddd;
+  border-radius: 6px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+#transfer-form input:focus {
+  border-color: #7e0000;
+  outline: none;
+  box-shadow: 0 0 8px rgba(126, 0, 0, 0.3);
+}
+
 #notifications {
   padding: 20px;
   background-color: #fff;
@@ -406,71 +319,7 @@ body {
   transform: scale(1.2);
 }
 
-<<<<<<< HEAD
-#transfer-form button{
-  background-color: #9c0000;
-  color: white;
-  text-decoration: none;
-  /* font-size: 16px; */
-  padding: 10px 20px;
-  display: inline;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-#transfer-form input{
-  width: 90%;
-  padding: 10px;
-  margin-top: 5px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-}
-=======
-footer {
-  background-color: rgb(197, 26, 26);
-  color: #fff;
-  padding: 40px 20px;
-}
 
-.footer-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 20px;
-}
-
-.footer-section {
-  flex: 1;
-  min-width: 250px;
-}
-
-.footer-section h2 {
-  font-size: 1.5em;
-  margin-bottom: 15px;
-}
-
-.footer-section a {
-  text-decoration: none;
-  color: #fff;
-  transition: color 0.3s;
-}
-
-.footer-section a:hover {
-  color: #ffd700;
-}
-
-.footer-bottom {
-  text-align: center;
-  margin-top: 20px;
-  font-size: 0.8em;
-  border-top: 1px solid #fff;
-  padding-top: 10px;
-  color: #ddd;
-}
-
-
->>>>>>> main
 #detailsContainer {
   margin-top: 20px;
   padding: 20px;
@@ -564,21 +413,6 @@ footer {
   margin-top: 10px;
 }
 
-<<<<<<< HEAD
-/* .upcoming-deadlines-section {
-=======
-.upcoming-deadlines-section {
->>>>>>> main
-  padding: 20px;
-  background-color: #fefefe;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-<<<<<<< HEAD
-} */
-=======
-}
->>>>>>> main
-
 .danger-indicator {
   width: 10px;
   height: 300px;
@@ -587,70 +421,47 @@ footer {
 }
 
 .deadlines-form {
+  text-align: center;
   display: flex;
   flex-direction: column;
   margin: 0 auto;
   padding: 15px;
   border-radius: 10px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-<<<<<<< HEAD
-  max-width: 800px;
-=======
   max-width: 807px;
->>>>>>> main
 }
 
 
 .deadlines-form h2 {
   color: #7e0000;
-  text-align: center;
+  
 }
 
 .deadlines-form form label {
-  font-size: 14px;
+  font-size: 16px;
+  
   color: black;
   margin-bottom: 5px;
+
 }
 
 .deadlines-form form input,
 .deadlines-form form select {
-  width: 90%;
+  width: 97%;
   padding: 10px;
   margin-top: 5px;
   border: 1px solid #ddd;
   border-radius: 5px;
 }
-
-.deadlines-form form button {
-  margin-top: 15px;
-  width: 90%;
-  background-color: #7e0000;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  padding: 10px;
-  cursor: pointer;
+.deadlines-form form select
+ {width: 100%;}
+.deadlines-form input:focus ,select:focus {
+  border-color: #7e0000;
   font-size: 16px;
+  outline: none;
+  box-shadow: 0 0 8px rgba(126, 0, 0, 0.3);
 }
 
-.deadlines-form form button:hover {
-<<<<<<< HEAD
-  background: #7e1503;
-  
-  transition-duration: 1s;
-  /* transform: skew(360deg,360deg); */
-  /* transform: scale(1.1); */
-  transform: translateY(-3px) ;
-
-
-  
-  
-
-=======
-  background: #45a049;
-  transform: scale(1.05);
->>>>>>> main
-}
 
 #deadlinesList {
   margin-top: 20px;
@@ -664,31 +475,28 @@ footer {
   border-radius: 5px;
   border-left: 5px solid;
 }
-<<<<<<< HEAD
-/* settings */
-#settings{
-  background-color: #990000;
-  color: white;
-}
+/* profile */
+
 #welcome {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  /* align-items: center; */
   text-align: center;
-
-  padding: 30px;
-  border-radius: 15px;
-
-  /* box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); */
+  background: linear-gradient(135deg, rgba(94, 0, 0, 0.85), rgba(210, 75, 75, 0.75));
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
   color: white;
-  gap: 10px;
-  margin-top: 10px;
+  
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+
+
 #welcome h1 {
-  font-size: 28px;
+  font-size: 26px;
   color: #ffcc00;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 #welcome h1 span {
@@ -696,80 +504,76 @@ footer {
 }
 
 #welcome #profileImage {
-  width: 150px;
-  height: 150px;
+  align-self: center;
+  width: 160px;
+  height: 160px;
   border-radius: 50%;
   object-fit: cover;
   margin: 15px 0;
-  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.2);
+  box-shadow: 0 5px 12px rgba(255, 255, 255, 0.2);
   border: 4px solid #ffcc00;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease;
 }
 
 #welcome #profileImage:hover {
-  transform: scale(1.1);
-  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3);
+  transform: rotate(5deg) scale(1.05);
 }
 
 #welcome .profile-actions {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 15px;
+  gap: 12px;
 }
 
 #welcome #uploadBtn {
-  padding: 12px 25px;
-  background: #b30000;
+  padding: 12px 24px;
+  background: #cc0000;
   color: white;
   border: none;
-  border-radius: 8px;
-  font-size: 16px;
-  font-weight: bold;
+
+  border-radius: 12px;
+  font-size: 15px;
   cursor: pointer;
   transition: all 0.3s ease;
+  max-width: 50%;
 }
 
-#welcome #uploadBtn:hover {
-  background: #e60000;
-  transform: scale(1.1);
-}
 
 #welcome #profileInput {
   display: none;
 }
 
-
 #UserInfo {
   display: flex;
   flex-direction: column;
-  gap: 25px;
-  background: #990000;
-  padding: 25px;
-  border-radius: 15px;
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+gap: 20px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
   color: white;
+  transition: transform 0.3s ease;
 }
+
+
 
 #BasicInfo, #AccountInfo, #SecuritySettings, #ExportDelete {
   display: flex;
   flex-direction: column;
-  gap: 15px;
-  padding: 20px;
-  background: rgba(255, 255, 255, 0.15);
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  gap: 12px;
+  padding: 18px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.4);
 }
 
 #UserInfo p {
   margin: 5px 0;
-  font-size: 16px;
-  color: #f0f0f0;
+  font-size: 17px;
 }
 
 #UserInfo p:first-child {
   font-weight: bold;
-  font-size: 18px;
+  font-size: 20px;
   color: #ffcc00;
 }
 
@@ -780,110 +584,20 @@ footer {
 }
 
 #UserInfo button {
-  padding: 12px 20px;
+  padding: 12px 24px;
   background: #cc0000;
   color: white;
   border: none;
-  border-radius: 8px;
+  border-radius: 6px;
   font-size: 15px;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
-#UserInfo button:hover {
-  background: #ff0000;
-  transform: translateY(-3px) ;
-}
 
 
 
-
-#DeleteAccountBtn {
-  background: #e74c3c;
-}
-
-#DeleteAccountBtn:hover {
-  background: #c0392b;
-}
-
-#ExportDataBtn {
-  background: #3498db;
-}
-
-#ExportDataBtn:hover {
-  background: #2980b9;
-}
-
-
-#welcome, #UserInfo {
-  animation: fadeIn 0.8s ease-in-out;
-}
-.settings-options button {
-  background-color: #9c0000;
-  color: white;
-  text-decoration: none;
-  font-size: 16px;
-  padding: 10px 20px;
-  display: block;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.settings-options button:hover {
-  background-color: #cc0000;
-  padding: 12px 22px;  
-  font-size: 17px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-/* footer */
-
-footer {
-  background-color: rgb(197, 26, 26);
-  color: #fff;
-  padding: 40px 20px;
-}
-
-.footer-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 20px;
-}
-
-.footer-section {
-  flex: 1;
-  min-width: 250px;
-}
-
-.footer-section h2 {
-  font-size: 1.5em;
-  margin-bottom: 15px;
-}
-
-.footer-section a {
-  text-decoration: none;
-  color: #fff;
-  transition: color 0.3s;
-}
-
-.footer-section a:hover {
-  color: #ffd700;
-}
-
-.footer-bottom {
-  text-align: center;
-  margin-top: 20px;
-  font-size: 0.8em;
-  border-top: 1px solid #fff;
-  padding-top: 10px;
-  color: #ddd;
-}
-
-/* theme changer */
-=======
->>>>>>> main
+/* color switch */
 body.dark-mode {
   background-color: #121212;
   color: #e0e0e0;
@@ -903,22 +617,8 @@ body.dark-mode .scroll-to-top {
 }
 body.dark-mode .upcoming-deadlines-section{
   background-color: #121212 ;
-<<<<<<< HEAD
-  
-=======
->>>>>>> main
 }
 body.dark-mode .navbar button{
   background-color: #333;
 
-<<<<<<< HEAD
-}
-body.dark-mode .settings{
-  background-color: #333;
-
-}
-body.dark-mode label{
-  color: white;
-=======
->>>>>>> main
 }

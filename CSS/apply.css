@@ -1,0 +1,175 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+
+body{
+    background-image: url(../images/geometric-background-with-copy-space.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+}
+
+.container{
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    width: 700px;
+    height: auto;
+    transform: translate(-50%,-50%);
+    background-color: rgba(204, 204, 204, 0.93);
+    /* background-color: rgba(121, 121, 121, 0.93); */
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 15px;
+}
+
+.header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3vh;
+}
+
+.header img{
+    width: 120px;
+    border-radius: 50%;
+    padding: 15px;
+    box-shadow:5px 5px  15px rgba(0, 0, 0, 0.212); ;
+    background-color: black;
+    margin-bottom: 5px;
+}
+
+#header-hr{
+    width: 90%;
+    align-self: center;
+    margin: 2vh;
+    border-color: rgba(255, 50, 50, 0.856);
+}
+
+/* ======================== form ===================================== */
+
+form{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 2vh;
+    width: 600px;
+    font-size: larger;
+
+    /* border: 1px black solid; */
+}
+
+form div {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: auto;
+    padding: 5px 0px;
+
+    /* border: 1px black solid; */
+}
+
+form div div {
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+}
+
+label{
+    padding: 0px 0px 4px 4px;
+
+}
+
+input,select{
+    padding: 8px;
+    font-size: 17px;
+    border-radius: 5px;
+    border: none;
+}
+
+
+.hidden{
+    display: none;
+}
+
+.show{
+    display: flex;
+}
+
+#submit{
+    background-color:rgb(231, 20, 20) ;
+    color: white;
+    padding: 2% 20%;
+    font-size: 18px;
+    border-radius: 10px;
+    border: none;
+    margin: 3vh;
+}
+
+#submit:hover,.acctypeDiv button:hover{
+    background-color:rgb(199, 8, 8) ;
+}
+
+#submit:active,.acctypeDiv button:active{
+    background-color:rgb(231, 20, 20) ;
+}
+
+#login{
+    font-size: 16px;
+    margin: 7px 0;
+}
+
+#acc-type{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.acctypeDiv{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-bottom: 10px;
+}
+
+.acctypeDiv button{
+    background-color:rgb(231, 20, 20) ;
+    color: white;
+    padding: 2% 20%;
+    font-size: 18px;
+    border-radius: 2px;
+    border: none;
+    margin: 2vh;
+}
+
+.next{
+    background-color:rgb(119, 115, 115) ;
+    color: white;
+    padding: 1% 10%;
+    font-size: 18px;
+    border-radius: 2px;
+    border: none;
+    margin: 2vh;
+}
+
+.cardDiv{
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    width: 50%;
+}
+
+button.next:hover{
+    background-color:rgb(85, 83, 83) ;
+}
+
+button.next:active{
+    background-color:rgb(119, 115, 115) ;
+}
+/* ========================================== */

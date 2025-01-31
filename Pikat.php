@@ -78,7 +78,6 @@
 
             let teDhenatDeges = {}; 
 
-
             fetch('backend/fetch_pikat.php')
                 .then(response => response.json())
                 .then(data => {

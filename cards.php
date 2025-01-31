@@ -2,7 +2,7 @@
     $pageTittle = 'Cards';
     include 'header.php';
 ?>
-<main>
+<main> 
     <div class="wrapper">
         <?php
             require 'backend/config.php';
@@ -25,7 +25,7 @@
                                 <p>
                                     " . $card['description'] . "
                                     <br>
-                                    <button>Apply</button>
+                                    <button onclick=\" window.location.href='http://localhost/Projekti/apply.php';\" >Apply</button>
                                 </p>
                             </div>    
                           </div>";
