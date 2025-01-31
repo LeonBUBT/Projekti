@@ -23,20 +23,28 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $admin = 0;
 
 
-    if($bday===null || $gender===null){
+    if($bday==='' || $gender===''){
         $accType = 'business';
     }
 
     $errors = [];
 
-    if (!$validator->validateName($name)) $errors[] = "Invalid name.";
-    if (!$validator->validateEmail($email)) $errors[] = "Invalid email.";
-    if (!$validator->validatePhone($phone)) $errors[] = "Invalid phone number.";
-    if (!$validator->validatePasswords($password, $confirmPassword)) $errors[] = "Passwords do not match.";
-    if (!$validator->validateDate($bday)) $errors[] = "Invalid date.";
-    if (!$validator->validateDropdown($cardtype)) $errors[] = "Invalid card type.";
-    if (!$validator->validateDropdown($gender)) $errors[] = "Invalid gender.";
-    if (!$validator->validatePersonalNumber($personal_number))$errors[]="Invalid Personal number.";
+    if($accType === 'individ'){
+        if (!$validator->validateName($name)) $errors[] = "Invalid name.";
+        if (!$validator->validateEmail($email)) $errors[] = "Invalid email.";
+        if (!$validator->validatePhone($phone)) $errors[] = "Invalid phone number.";
+        if (!$validator->validatePasswords($password, $confirmPassword)) $errors[] = "Passwords do not match.";
+        if (!$validator->validateDate($bday)) $errors[] = "Invalid date.";
+        if (!$validator->validateDropdown($cardtype)) $errors[] = "Invalid card type.";
+        if (!$validator->validateDropdown($gender)) $errors[] = "Invalid gender.";
+        if (!$validator->validatePersonalNumber($personal_number))$errors[]="Invalid Personal number.";
+    }else {
+        if (!$validator->validateName($name)) $errors[] = "Invalid name.";
+        if (!$validator->validateEmail($email)) $errors[] = "Invalid email.";
+        if (!$validator->validatePhone($phone)) $errors[] = "Invalid phone number.";
+        if (!$validator->validatePasswords($password, $confirmPassword)) $errors[] = "Passwords do not match.";
+        if (!$validator->validateDropdown($cardtype)) $errors[] = "Invalid card type.";
+    }
 
     if (empty($errors)) {
         $signupHandler->insertUser([
