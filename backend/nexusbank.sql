@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 16, 2025 at 01:45 PM
+-- Generation Time: Jan 31, 2025 at 02:24 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -61,6 +61,17 @@ CREATE TABLE `cards` (
   `credit_limit` decimal(10,2) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `cards`
+--
+
+INSERT INTO `cards` (`card_id`, `user_id`, `card_type_id`, `card_number`, `expiry_date`, `cvv`, `balance`, `credit_limit`) VALUES
+(2, 6, 3, '6738997603578276', '0000-00-00', '875', 0.00, NULL),
+(3, 7, 2, '1509579090214754', '0000-00-00', '307', 0.00, NULL),
+(4, 8, 1, '6574694804209143', '2027-04-01', '745', 0.00, NULL),
+(5, 9, 2, '3187028694034455', '2027-06-01', '159', 0.00, NULL),
+(6, 10, 1, '7000274037277000', '2029-02-01', '292', 0.00, NULL);
+
 -- --------------------------------------------------------
 
 --
@@ -83,7 +94,8 @@ CREATE TABLE `card_type` (
 
 INSERT INTO `card_type` (`card_type_id`, `type_name`, `card_category`, `image_url`, `description`, `benefits`, `card_name`) VALUES
 (1, 'classic', 'debit', 'debit-card-test1.png', 'The Nexus Classic Debit Card is simple, secure, and ideal for everyday use. With no annual fees, it provides instant access to your funds and essential features like fraud protection. A perfect choice for practical banking.\r\n', 'testtest', 'Classic Debit Card'),
-(2, 'premium', 'debit', 'premium_debit_card.png', 'The Nexus Premium Debit Card offers a sleek design and seamless worldwide transactions. Enjoy cashback rewards, travel perks, and advanced chip security for a secure and reliable experience. Perfect for those seeking premium banking benefits.\r\n', 'testtest', 'Premium Debit Card');
+(2, 'premium', 'debit', 'premium_debit_card.png', 'The Nexus Premium Debit Card offers a sleek design and seamless worldwide transactions. Enjoy cashback rewards, travel perks, and advanced chip security for a secure and reliable experience. Perfect for those seeking premium banking benefits.\r\n', 'testtest', 'Premium Debit Card'),
+(3, 'elite', 'debit', 'debit-card-test2.png', 'The Nexus Elite Debit Card delivers luxury and convenience. Enjoy priority services, higher spending limits, and exclusive travel benefits. A card designed to match your ambition and lifestyle.', 'testtest', 'Elite Debit Card');
 
 -- --------------------------------------------------------
 
@@ -175,9 +187,29 @@ CREATE TABLE `users` (
   `name` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `phone` varchar(20) NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `status` enum('active','inacitve') NOT NULL
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `type` enum('individ','business') NOT NULL,
+  `admin` tinyint(1) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `birthday` date DEFAULT NULL,
+  `gender` char(1) DEFAULT NULL,
+  `personal_number` int(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`user_id`, `name`, `email`, `phone`, `created_at`, `type`, `admin`, `password`, `birthday`, `gender`, `personal_number`) VALUES
+(1, 'leon', 'lonilee29@gmail.com', '123 456 789', '2025-01-30 15:35:49', 'individ', 0, '$2y$10$bkB7Nl7LSC9pO3stmBj89ux24LetdT6SxkNoMCHy3Tup98UW/unt6', '2005-06-29', 'M', 0),
+(2, 'albin', 'albin@gmail.com', '456 789 123', '2025-01-30 15:43:46', 'individ', 0, '$2y$10$uBqbGmt1xa3wflE/cwi3BOiEwkaeabEMHsJvQHO7itN2qQvfll5K6', '2005-01-26', 'M', 0),
+(3, 'albini', 'albin@gmail.com', '456 789 123', '2025-01-30 15:46:00', 'individ', 0, '$2y$10$Q0/fS8IwgWaW4jDZrT2iuu84YGKJQjrrmhCQfBwnXUJHcO9JjKNCq', '2005-01-26', 'M', 0),
+(5, 'test', 'test@gmail.com', '123 456 789', '2025-01-30 22:42:39', 'individ', 0, '$2y$10$Fc2pjnN2UN5ifRnFTi2LrenZFfqvwan8fEMVk1dse0C/Mv7PgYdZa', '2005-06-29', 'F', 0),
+(6, 'test', 'blabla@gmail.com', '123 456 789', '2025-01-30 22:46:18', 'individ', 0, '$2y$10$VB/0C2zI6Ek3gFtVktqkBenWbpje4/wTLf0wYVSKAOAatkMPjIMvC', '2005-06-29', 'F', 0),
+(7, 'test', 'shefqet@gmail.com', '123 456 789', '2025-01-30 22:47:33', 'individ', 0, '$2y$10$KP/xPhVF.PwHOofhAFtcsOh9IWhq1OhZkOpPXeKLhgO5R8SzMrnd6', '2005-06-29', 'F', 0),
+(8, 'tyrion', 'tyrion@gmail.com', '753 789 753', '2025-01-30 23:08:47', 'individ', 0, '$2y$10$F7zV8gkAzNaNZvfkSG/l.uo5aYdoAWvu2bNd38Jx/3EYGyZ1IjWIS', '1980-05-05', 'O', 0),
+(9, 'leon', 'lb70655@ubt-uni.net', '123 123 123', '2025-01-31 00:44:20', 'individ', 0, '$2y$10$saJDgaSLUSqIaEaqxNFFPufvJ1vqhtyFSnzIv7JHCJnY/PhlySoHi', '2005-06-29', 'M', 1111111111),
+(10, 'leon', 'lb7655@ubt-uni.net', '555 555 555', '2025-01-31 00:53:21', 'individ', 0, '$2y$10$P7/wj68YP4ECoOQd4tF2Zu234W/4E2m5kNtXA4C9KllkfPvv.9.uq', '5555-05-04', 'M', 2147483647);
 
 --
 -- Indexes for dumped tables
@@ -250,7 +282,7 @@ ALTER TABLE `about_us`
 -- AUTO_INCREMENT for table `cards`
 --
 ALTER TABLE `cards`
-  MODIFY `card_id` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `card_id` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `card_type`
@@ -274,7 +306,7 @@ ALTER TABLE `pikat`
 -- AUTO_INCREMENT for table `reviews`
 --
 ALTER TABLE `reviews`
-  MODIFY `review_id` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `review_id` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `transactions`
@@ -286,7 +318,7 @@ ALTER TABLE `transactions`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(9) NOT NULL AUTO_INCREMENT;
+  MODIFY `user_id` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- Constraints for dumped tables
