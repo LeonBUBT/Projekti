@@ -13,6 +13,10 @@ class Validator {
         return preg_match("/^[0-9]{9,11}$/", $phone);
     }
 
+    public function validatePersonalNumber($pNumber) {
+        return preg_match("/^[0-9]{10}$/", $pNumber);
+    }
+
     public function validatePasswords($password, $confirmPassword) {
         return !empty($password) && $password === $confirmPassword;
     }

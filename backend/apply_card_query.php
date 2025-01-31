@@ -31,7 +31,7 @@ class CardMaker{
         
         $month = str_pad(random_int(1,12),2,'0',STR_PAD_LEFT);
         $year = date('y') + random_int(2,5);
-        $expiryDate = "$month/$year";
+        $expiryDate = "$year-$month-01";
 
         $cvv=random_int(100,999);
 

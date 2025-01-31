@@ -20,8 +20,8 @@ class ApplyHandler {
             die ("This email already exists");
         }
 
-        $sql = "INSERT INTO users (name, email, phone, type, admin, password, birthday, gender) 
-        VALUES (:name, :email, :phone, :type, :admin, :password, :birthday, :gender)";
+        $sql = "INSERT INTO users (name, email, phone, type, admin, password, birthday, gender, personal_number) 
+        VALUES (:name, :email, :phone, :type, :admin, :password, :birthday, :gender, :personal_number)";
         $hashedPass = password_hash($data['password'], PASSWORD_DEFAULT);
 
         $stmt = $this->db->prepare($sql);
@@ -33,6 +33,7 @@ class ApplyHandler {
         $stmt->bindParam(':password', $hashedPass);
         $stmt->bindParam(':birthday', $data['bday']);
         $stmt->bindParam(':gender', $data['gender']);
+        $stmt->bindParam(':personal_number', $data['pNumber']);
         $stmt->execute();
     }
 }

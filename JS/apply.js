@@ -15,9 +15,22 @@ document.getElementById('phone').addEventListener('input', function (e) {
     input.value = formatted;
 });
 
+document.getElementById('id').addEventListener('input', function (e) {
+    const input = e.target;
+    let value = input.value.replace(/\D/g, ''); 
+    value = value.slice(0, 10);
+
+    if (value.length > 10) {
+      value = value.slice(0, 10);
+    }
+
+    input.value = value;
+});
+
 const individ = document.getElementById('individ');
 const business = document.getElementById('business');
-const form = document.querySelector('form');
+const individualForm = document.getElementById('individualForm');
+const businessForm = document.getElementById('businessForm');
 const nextBtn = document.querySelector('.next');
 const accTypeDiv = document.getElementById('acc-type');
 
@@ -37,5 +50,12 @@ business.addEventListener('click',()=>{
 
 nextBtn.addEventListener('click',()=>{
     accTypeDiv.style.display="none";
-    form.classList.toggle("hidden");
+
+    if(accType===individ.value){
+        individualForm.classList.toggle("hidden");
+    }else if(accType===business.value){
+        businessForm.classList.toggle("hidden");
+    }
+
+
 });
