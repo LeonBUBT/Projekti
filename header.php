@@ -24,9 +24,9 @@
             <hr>
         </div>
         <ul>
-            <li><a href="rrethnesh.php">Rreth Nesh</a></li>
-            <li><a href="kontakt.php">Na kontaktoni</a></li>
-            <li><a href="pikat.php">Kërko Pikat</a></li>
+            <li><a href="rrethnesh.php">About Us</a></li>
+            <li><a href="kontakt.php">Contact Us</a></li>
+            <li><a href="pikat.php">Search locations</a></li>
         </ul>
     </div>
 
@@ -38,7 +38,7 @@
         </ul>
         
         <ul id="header-ul2">
-            <li><a href="loans.php">Produktet kreditore</a></li>
-            <li><a href="cards.php">Kartelat</a></li>
+            <li><a href="loans.php">Credit Products</a></li>
+            <li><a href="cards.php">Cards</a></li>
         </ul>
     </div>
