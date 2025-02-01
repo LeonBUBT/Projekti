@@ -38,7 +38,7 @@
         </ul>
         
         <ul id="header-ul2">
-            <li><a href="">Produktet kreditore</a></li>
+            <li><a href="loans.php">Produktet kreditore</a></li>
             <li><a href="cards.php">Kartelat</a></li>
         </ul>
     </div>
