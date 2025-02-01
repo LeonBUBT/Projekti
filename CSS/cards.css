@@ -2,8 +2,18 @@
     width: 70vh;
 }
 
-.wrapper{
-    background-image: url(../images/vector.jpg);
+.card-wrapper{
+    background-image: url(../images/170\ -\ Copy.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.loan-wrapper{
+    background-image: url(../images/170.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .card-container{
@@ -12,7 +22,8 @@
     text-align: end;
     padding: 6vh ;
     margin:5vh 0;
-    background-color: #686565aa;
+    background-color: #353232aa;
+    border-radius: 5px;
 }
 
 .card-container-info{
@@ -37,10 +48,10 @@
     margin-top: 8vh;
 }
 
-.wrapper > div:first-child {
+.card-wrapper > div:first-child,.loan-wrapper > div:first-child {
     margin-top: 0;
 }
 
-.wrapper > div:last-child {
+.card-wrapper > div:last-child,.loan-wrapper > div:last-child {
     margin-bottom: 0;
 }

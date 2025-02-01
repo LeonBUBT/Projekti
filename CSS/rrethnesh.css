@@ -4,19 +4,82 @@
     height: 100;
     border: 1px;
 }
+.accordion {
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    
+}
+#why-choose-us h2{
+    text-align: center;
+    color: #800000;
+    font-size: 2em;
+    margin-bottom: 20px;
+    margin-top: 20px;
+} 
+
+.accordion-item {
+    border-bottom: 1px solid #ddd;
+   
+}
+
+.accordion-item:last-child {
+    border-bottom: none;
+}
+
+.accordion-item button {
+    width: 100%;
+    padding: 15px 20px;
+    background-color: #800000;
+    color: #ffffff;
+    font-size: 16px;
+    text-align: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.accordion-item button:hover {
+    background-color: #a10d0d;
+}
+
+.accordion-item button[aria-expanded="true"] {
+    background-color: #a10d0d;
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    padding: 0 20px;
+    background-color: #fff;
+    color: #333;
+}
+
+.accordion-content p {
+    padding: 15px 0;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #000;
+}
 /* Main Content */
 #main {
     display: flex;
-    flex-wrap: wrap; /* Allows cards to wrap on smaller screens */
-    justify-content: center; /* Centers the cards horizontally */
-    align-items: center; /* Centers the cards vertically */
-    gap: 20px; /* Adds spacing between cards */
+    flex-wrap: wrap; 
+    justify-content: center; 
+    align-items: center; 
+    gap: 20px; 
     padding: 40px;
     margin: auto;
+    margin-top: 30px;
     max-width: 1200px;
-    background-color: #600000; /* Deep red background to align with the theme */
+    background-color: #600000; 
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
 }
 
 /* Flip Card */
@@ -24,10 +87,10 @@
     background-color: transparent;
     width: 250px;
     height: 300px;
-    perspective: 1000px; /* Adds 3D effect */
+    perspective: 1000px; 
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds depth to the cards */
-    overflow: hidden; /* Ensures clean edges */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    overflow: hidden; 
 }
 
 .flip-card-inner {
@@ -61,8 +124,8 @@
 
 /* Front of Card */
 .flip-card-front {
-    background: linear-gradient(145deg, #800000, #a10d0d); /* Vibrant red gradient */
-    color: #ffffff; /* White text for high contrast */
+    background: linear-gradient(145deg, #800000, #a10d0d); 
+    color: #ffffff; 
 }
 
 .flip-card-front img {
@@ -70,13 +133,13 @@
     height: 80px;
     border-radius: 50%;
     margin-bottom: 15px;
-    border: 2px solid #ffffff; /* White border for contrast */
+    border: 2px solid #ffffff; 
 }
 
 /* Back of Card */
 .flip-card-back {
-    background: #7e0000; /* Dark red for strong contrast */
-    color: #ffffff; /* White text for readability */
+    background: #7e0000; 
+    color: #ffffff; 
     transform: rotateY(180deg);
     text-align: center;
 }
@@ -91,6 +154,146 @@
     font-size: 1em;
     margin: 5px 0;
 }
+
+#core-values {
+    text-align: center;
+    background-color: #f2f2f2;
+    padding: 40px 20px;
+    border-radius: 10px;
+    margin: 20px auto;
+    max-width: 1200px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#core-values h2 {
+    font-size: 2.5em;
+    color: #800000;
+    margin-bottom: 30px;
+}
+
+.values-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.value-item {
+    background-color: #800000;
+    color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: left;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.value-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.value-item h3 {
+    color: #ffd700;
+    font-size: 1.8em;
+    margin-bottom: 15px;
+}
+
+.value-item p {
+    font-size: 1em;
+    line-height: 1.6;
+    color: #f9f9f9;
+}
+/*timeline*/
+#timeline {
+    text-align: left;
+    background-color: #800000;
+    padding: 40px;
+    border-radius: 10px;
+    margin: 30px auto;
+    max-width: 900px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    color: #ffffff;
+}
+
+#timeline h2 {
+    font-size: 2em;
+    color: #ffd700;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: left;
+}
+
+.timeline-container {
+    display: table;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.timeline-item {
+    display: table-row;
+    border-bottom: 2px solid #ffffff;
+}
+
+.timeline-year {
+    display: table-cell;
+    color: #ffd700;
+    font-size: 1.3em;
+    font-weight: bold;
+    padding: 12px;
+    width: 150px;
+    text-align: center;
+    vertical-align: middle;
+    border-right: 2px solid #ffffff;
+}
+
+.timeline-content {
+    display: table-cell;
+    padding: 20px;
+    text-align: left;
+    vertical-align: middle;
+    color: #ffffff;
+}
+
+.timeline-content h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.timeline-content p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #ffffff;
+}
+
+@media (max-width: 768px) {
+    .timeline-container {
+        display: block;
+    }
+
+    .timeline-item {
+        display: flex;
+        flex-direction: column;
+        border-bottom: 2px solid #ffffff;
+        padding: 10px 0;
+    }
+
+    .timeline-year {
+        width: 100%;
+        text-align: left;
+        border-right: none;
+        margin-bottom: 5px;
+        padding: 10px;
+    }
+
+    .timeline-content {
+        padding: 10px;
+    }
+}
+
+
 
 /*========================================================= footeri =========================================================*/
 
