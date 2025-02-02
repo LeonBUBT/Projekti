@@ -1,3 +1,13 @@
+<?php
+session_start();
+
+if (!isset($_SESSION['user_id'])) {
+    header("Location: login.php");
+    exit();
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,7 +25,7 @@
             <h2>Confirm Logout</h2>
             <p>Are you sure you want to log out?</p>
             <div class="modal-actions">
-                <button id="confirm-logout" class="btn-confirm">Yes, Logout</button>
+                <button id="confirm-logout" onclick="window.location.href='logout.php'" class="btn-confirm">Yes, Logout</button>
                 <button id="cancel-logout" class="btn-cancel">Cancel</button>
             </div>
         </div>
