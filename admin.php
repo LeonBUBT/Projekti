@@ -2,6 +2,7 @@
 require_once 'backend/config.php';
 require_once 'backend/user_class.php';
 require_once 'backend/delete_user.php';
+require_once 'backend/fetch_cards.php';
 if($_SESSION['role']==0){
     header("Location: dashboard.php");    
     exit();    
@@ -13,7 +14,9 @@ if (session_status() == PHP_SESSION_NONE) {
 
 $database = new Database();
 $userClass = new User($database); 
+$cardTypes = new CardType($database);
 
+$cardsTable = $cardTypes->getAllCardTypes();
 $usersTable = $userClass->getUsers();
 
 $individual_accounts = 0;
@@ -95,7 +98,7 @@ if(!empty($usersTable)){
     </div>
 
     <div class="dashboard-container">
-        <h1>Manage businesses</h1>
+    <h1>Manage businesses</h1>
         <table border="1">
             <thead>
                 <tr>
@@ -135,6 +138,48 @@ if(!empty($usersTable)){
         </table>
     </div>
 
+    <div class="dashboard-container">
+        <h1>Manage businesses</h1>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Card Type ID</th>
+                    <th>Type</th>
+                    <th>Category</th>
+                    <th>Image url</th>
+                    <th>Description</th>
+                    <th>Card name</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            <?php
+                    if(!empty($cardsTable)){
+                        foreach($cardsTable as $cards){
+                                echo'
+                                    <tr>
+                                        <td>'.$cards['card_type_id'].'</td>
+                                        <td>'.$cards['type_name'].'</td>
+                                        <td>'.$cards['card_category'].'</td>
+                                        <td>'.$cards['image_url'].'</td>
+                                        <td>'.$cards['description'].'</td>
+                                        <td>'.$cards['card_name'].'</td>
+                                        <td>
+                                            <a href="backend/delete_card.php?id=' . $cards["card_type_id"] . '" 
+                                                onclick="return confirm(\'Are you sure you want to delete this Card?\')">
+                                                <button class="delete">Delete</button>
+                                            </a>
+                                            <a href="edit_card.php?id=' . $cards["card_type_id"] . '">Edit</a>
+                                        </td>
+                                    </tr>
+                                ';
+                            
+                        }
+                    }
+                ?>
+            </tbody>
+        </table>
+    </div>
                 
     <section>
         <h2>Send Notification</h2>
