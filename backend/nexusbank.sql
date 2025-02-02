@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 31, 2025 at 02:24 PM
+-- Generation Time: Feb 03, 2025 at 12:01 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -66,11 +66,9 @@ CREATE TABLE `cards` (
 --
 
 INSERT INTO `cards` (`card_id`, `user_id`, `card_type_id`, `card_number`, `expiry_date`, `cvv`, `balance`, `credit_limit`) VALUES
-(2, 6, 3, '6738997603578276', '0000-00-00', '875', 0.00, NULL),
-(3, 7, 2, '1509579090214754', '0000-00-00', '307', 0.00, NULL),
-(4, 8, 1, '6574694804209143', '2027-04-01', '745', 0.00, NULL),
-(5, 9, 2, '3187028694034455', '2027-06-01', '159', 0.00, NULL),
-(6, 10, 1, '7000274037277000', '2029-02-01', '292', 0.00, NULL);
+(7, 11, 3, '1776947049620108', '2030-12-01', '173', 0.00, NULL),
+(12, 16, 3, '8724899955264254', '2027-11-01', '571', 0.00, NULL),
+(13, 17, 3, '2830937631706272', '2030-02-01', '508', 0.00, NULL);
 
 -- --------------------------------------------------------
 
@@ -84,7 +82,6 @@ CREATE TABLE `card_type` (
   `card_category` enum('debit','credit') NOT NULL,
   `image_url` varchar(255) NOT NULL,
   `description` text NOT NULL,
-  `benefits` text NOT NULL,
   `card_name` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -92,10 +89,11 @@ CREATE TABLE `card_type` (
 -- Dumping data for table `card_type`
 --
 
-INSERT INTO `card_type` (`card_type_id`, `type_name`, `card_category`, `image_url`, `description`, `benefits`, `card_name`) VALUES
-(1, 'classic', 'debit', 'debit-card-test1.png', 'The Nexus Classic Debit Card is simple, secure, and ideal for everyday use. With no annual fees, it provides instant access to your funds and essential features like fraud protection. A perfect choice for practical banking.\r\n', 'testtest', 'Classic Debit Card'),
-(2, 'premium', 'debit', 'premium_debit_card.png', 'The Nexus Premium Debit Card offers a sleek design and seamless worldwide transactions. Enjoy cashback rewards, travel perks, and advanced chip security for a secure and reliable experience. Perfect for those seeking premium banking benefits.\r\n', 'testtest', 'Premium Debit Card'),
-(3, 'elite', 'debit', 'debit-card-test2.png', 'The Nexus Elite Debit Card delivers luxury and convenience. Enjoy priority services, higher spending limits, and exclusive travel benefits. A card designed to match your ambition and lifestyle.', 'testtest', 'Elite Debit Card');
+INSERT INTO `card_type` (`card_type_id`, `type_name`, `card_category`, `image_url`, `description`, `card_name`) VALUES
+(1, 'classic', 'debit', 'debit-card-test1.png', 'The Nexus Classic Debit Card is simple, secure, and ideal for everyday use. With no annual fees, it provides instant access to your funds and essential features like fraud protection. A perfect choice for practical banking.\r\n', 'Classic Debit Card'),
+(2, 'premium', 'debit', 'premium_debit_card.png', 'The Nexus Premium Debit Card offers a sleek design and seamless worldwide transactions. Enjoy cashback rewards, travel perks, and advanced chip security for a secure and reliable experience. Perfect for those seeking premium banking benefits.\r\n', 'Premium Debit Card'),
+(3, 'elite', 'debit', 'debit-card-test2.png', 'The Nexus Elite Debit Card delivers luxury and convenience. Enjoy priority services, higher spending limits, and exclusive travel benefits. A card designed to match your ambition and lifestyle.', 'Elite Debit Card'),
+(7, 'elite', 'credit', 'leoni.png', 'The Nexus Elite Debit Card delivers luxury and convenience. Enjoy priority services, higher spending limits, and exclusive travel benefits. A card designed to match your ambition and lifestyle.', 'classic');
 
 -- --------------------------------------------------------
 
@@ -113,6 +111,58 @@ CREATE TABLE `loans` (
   `end_date` date NOT NULL,
   `status` enum('ongoing','paid') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `loan_types`
+--
+
+CREATE TABLE `loan_types` (
+  `loan_type_id` int(9) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `loan_img` varchar(255) NOT NULL,
+  `description` text NOT NULL,
+  `interest` decimal(5,2) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `loan_types`
+--
+
+INSERT INTO `loan_types` (`loan_type_id`, `name`, `loan_img`, `description`, `interest`) VALUES
+(1, 'Personal Loan', 'personal_loan.png', 'Need extra funds for unexpected expenses, home improvements, or debt consolidation? Our Personal Loan offers a flexible solution with competitive interest rates and fixed monthly payments—no collateral required. Get the financial support you need, when you need it, with a hassle-free application process.', 7.50),
+(2, 'Home Loan (Mortgage)', 'home_loan-removebg-preview.png', 'Ready to buy your dream home or renovate your current one? Our Home Loan provides affordable financing with structured repayment terms and attractive interest rates. With expert guidance and a smooth approval process, we’ll help you take the next big step toward homeownership.', 4.20),
+(3, 'Auto Loan', 'car_loan.png', 'Drive away in your dream car with our Auto Loan! We offer low interest rates, flexible repayment plans, and quick approvals, making financing a new or used vehicle easier than ever. Whether it’s your first car or an upgrade, we’re here to get you on the road faster.', 5.00);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `milestones`
+--
+
+CREATE TABLE `milestones` (
+  `milestone_id` int(6) NOT NULL,
+  `year` int(11) NOT NULL,
+  `title` text NOT NULL,
+  `description` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `milestones`
+--
+
+INSERT INTO `milestones` (`milestone_id`, `year`, `title`, `description`) VALUES
+(1, 2000, 'Founded  Nexus Bank', 'Established with a vision to revolutionize banking through innovation and trust.'),
+(2, 2002, 'First Branch Opened', 'Serving thousand of costumers locally.'),
+(3, 2005, 'Online Banking Introduced', 'Enabled costumers to manage accounts remotely.'),
+(4, 2010, '1 Million Costumers', 'Expanded to multiple locations with a growing costumer base.'),
+(5, 2012, 'Mobile Banking Launched', 'Bringing banking services to smartphones.'),
+(6, 2015, 'International Expansion', 'Seamless global transactions made possible.'),
+(7, 2018, 'AI Financial Advisory', 'Personalized banking enhanced by AI-driven services.'),
+(8, 2022, 'Carbon-Neutral Operation', 'Commitment to sustainability and eco-friendly banking.'),
+(9, 2024, 'Fully Digital Branches', 'Combining AI, automation, and human experties.'),
+(10, 2025, 'Blockchain Banking Solutions', 'Enhanced security and transparency through blockchain.');
 
 -- --------------------------------------------------------
 
@@ -163,22 +213,6 @@ INSERT INTO `reviews` (`review_id`, `user_name`, `description`, `raiting`) VALUE
 -- --------------------------------------------------------
 
 --
--- Table structure for table `transactions`
---
-
-CREATE TABLE `transactions` (
-  `transaction_id` int(9) NOT NULL,
-  `user_id` int(9) NOT NULL,
-  `card_id` int(9) DEFAULT NULL,
-  `loan_id` int(9) DEFAULT NULL,
-  `amount` decimal(10,2) NOT NULL,
-  `type` enum('debit','credit','loan') NOT NULL,
-  `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `users`
 --
 
@@ -201,15 +235,32 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`user_id`, `name`, `email`, `phone`, `created_at`, `type`, `admin`, `password`, `birthday`, `gender`, `personal_number`) VALUES
-(1, 'leon', 'lonilee29@gmail.com', '123 456 789', '2025-01-30 15:35:49', 'individ', 0, '$2y$10$bkB7Nl7LSC9pO3stmBj89ux24LetdT6SxkNoMCHy3Tup98UW/unt6', '2005-06-29', 'M', 0),
-(2, 'albin', 'albin@gmail.com', '456 789 123', '2025-01-30 15:43:46', 'individ', 0, '$2y$10$uBqbGmt1xa3wflE/cwi3BOiEwkaeabEMHsJvQHO7itN2qQvfll5K6', '2005-01-26', 'M', 0),
-(3, 'albini', 'albin@gmail.com', '456 789 123', '2025-01-30 15:46:00', 'individ', 0, '$2y$10$Q0/fS8IwgWaW4jDZrT2iuu84YGKJQjrrmhCQfBwnXUJHcO9JjKNCq', '2005-01-26', 'M', 0),
-(5, 'test', 'test@gmail.com', '123 456 789', '2025-01-30 22:42:39', 'individ', 0, '$2y$10$Fc2pjnN2UN5ifRnFTi2LrenZFfqvwan8fEMVk1dse0C/Mv7PgYdZa', '2005-06-29', 'F', 0),
-(6, 'test', 'blabla@gmail.com', '123 456 789', '2025-01-30 22:46:18', 'individ', 0, '$2y$10$VB/0C2zI6Ek3gFtVktqkBenWbpje4/wTLf0wYVSKAOAatkMPjIMvC', '2005-06-29', 'F', 0),
-(7, 'test', 'shefqet@gmail.com', '123 456 789', '2025-01-30 22:47:33', 'individ', 0, '$2y$10$KP/xPhVF.PwHOofhAFtcsOh9IWhq1OhZkOpPXeKLhgO5R8SzMrnd6', '2005-06-29', 'F', 0),
-(8, 'tyrion', 'tyrion@gmail.com', '753 789 753', '2025-01-30 23:08:47', 'individ', 0, '$2y$10$F7zV8gkAzNaNZvfkSG/l.uo5aYdoAWvu2bNd38Jx/3EYGyZ1IjWIS', '1980-05-05', 'O', 0),
-(9, 'leon', 'lb70655@ubt-uni.net', '123 123 123', '2025-01-31 00:44:20', 'individ', 0, '$2y$10$saJDgaSLUSqIaEaqxNFFPufvJ1vqhtyFSnzIv7JHCJnY/PhlySoHi', '2005-06-29', 'M', 1111111111),
-(10, 'leon', 'lb7655@ubt-uni.net', '555 555 555', '2025-01-31 00:53:21', 'individ', 0, '$2y$10$P7/wj68YP4ECoOQd4tF2Zu234W/4E2m5kNtXA4C9KllkfPvv.9.uq', '5555-05-04', 'M', 2147483647);
+(11, 'business', 'business@gmail.com', '123 456 456', '2025-01-31 14:26:37', 'business', 0, '$2y$10$hIPDH4gANrKKjJCkuQL.rOW7IF977OXsWfYgA3xFNokQ.E5i1kvia', '0000-00-00', '', NULL),
+(16, 'leon', 'leon@gmail.com', '123 132 133', '2025-02-02 19:23:58', 'individ', 0, '$2y$10$8xu15gXHra9eoYtMus5UP.H/p98aiBjTJ.LyKwROr4bowME9vqmp2', '2005-05-05', 'M', 2147483647),
+(17, 'Admin', 'admin@gmail.com', '123 132 132', '2025-02-02 19:38:35', 'individ', 1, '$2y$10$dHm8Fg7RqVGTlW/UP0Y1YuapFzLnAOUwNoW6TtCbWuJND387zWovO', '2005-06-29', 'M', 2147483647);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `why_chose_us`
+--
+
+CREATE TABLE `why_chose_us` (
+  `wcu_id` varchar(30) NOT NULL,
+  `title` text NOT NULL,
+  `description` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `why_chose_us`
+--
+
+INSERT INTO `why_chose_us` (`wcu_id`, `title`, `description`) VALUES
+('accordion-item-1', 'Innovative Banking Solutions', 'At Nexus Bank, we are committed to staying at the forefront of financial technology. Our cutting-edge digital tools and AI-powered insights make managing your finances effortless and secure.'),
+('accordion-item-2', 'Unmatched Security', 'Your trust is our priority. We use advanced encryption and fraud detection systems to ensure your money and personal information are safe, giving you peace of mind every step of the way.'),
+('accordion-item-3', 'Customer-Centric Services', 'We value every customer and provide personalized financial solutions tailored to your goals. With 24/7 customer support, we\'re always here to help you succeed.'),
+('accordion-item-4', 'Transparent and Competitive Rates', 'Nexus Bank offers transparent pricing with no hidden fees, competitive loan rates, and high-return savings accounts, ensuring you get the best value for your money.'),
+('accordion-item-5', 'Global Reach with Local Expertise', 'Whether you\'re banking locally or internationally, our extensive network and expertise ensure smooth financial operations wherever you are.');
 
 --
 -- Indexes for dumped tables
@@ -242,6 +293,18 @@ ALTER TABLE `loans`
   ADD PRIMARY KEY (`loan_id`);
 
 --
+-- Indexes for table `loan_types`
+--
+ALTER TABLE `loan_types`
+  ADD PRIMARY KEY (`loan_type_id`);
+
+--
+-- Indexes for table `milestones`
+--
+ALTER TABLE `milestones`
+  ADD PRIMARY KEY (`milestone_id`);
+
+--
 -- Indexes for table `pikat`
 --
 ALTER TABLE `pikat`
@@ -254,19 +317,16 @@ ALTER TABLE `reviews`
   ADD PRIMARY KEY (`review_id`);
 
 --
--- Indexes for table `transactions`
---
-ALTER TABLE `transactions`
-  ADD PRIMARY KEY (`transaction_id`),
-  ADD KEY `card_id` (`card_id`),
-  ADD KEY `user_id` (`user_id`),
-  ADD KEY `loan_id` (`loan_id`);
-
---
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`user_id`);
+
+--
+-- Indexes for table `why_chose_us`
+--
+ALTER TABLE `why_chose_us`
+  ADD PRIMARY KEY (`wcu_id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -282,19 +342,31 @@ ALTER TABLE `about_us`
 -- AUTO_INCREMENT for table `cards`
 --
 ALTER TABLE `cards`
-  MODIFY `card_id` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `card_id` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `card_type`
 --
 ALTER TABLE `card_type`
-  MODIFY `card_type_id` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `card_type_id` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `loans`
 --
 ALTER TABLE `loans`
   MODIFY `loan_id` int(9) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `loan_types`
+--
+ALTER TABLE `loan_types`
+  MODIFY `loan_type_id` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `milestones`
+--
+ALTER TABLE `milestones`
+  MODIFY `milestone_id` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `pikat`
@@ -309,16 +381,10 @@ ALTER TABLE `reviews`
   MODIFY `review_id` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `transactions`
---
-ALTER TABLE `transactions`
-  MODIFY `transaction_id` int(9) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `user_id` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- Constraints for dumped tables
@@ -330,14 +396,6 @@ ALTER TABLE `users`
 ALTER TABLE `cards`
   ADD CONSTRAINT `cards_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `cards_ibfk_2` FOREIGN KEY (`card_type_id`) REFERENCES `card_type` (`card_type_id`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Constraints for table `transactions`
---
-ALTER TABLE `transactions`
-  ADD CONSTRAINT `transactions_ibfk_1` FOREIGN KEY (`card_id`) REFERENCES `cards` (`card_id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `transactions_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `transactions_ibfk_3` FOREIGN KEY (`loan_id`) REFERENCES `loans` (`loan_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
