@@ -1,7 +1,9 @@
 <?php
 require_once 'config.php';
 require_once 'user_class.php';
-session_start();
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
 
 if (isset($_GET['id'])) {
     $user_id = $_GET['id'];

@@ -1,5 +1,30 @@
 <?php
-session_start();
+require_once 'backend/config.php';
+require_once 'backend/user_class.php';
+require_once 'backend/delete_user.php';
+if($_SESSION['role']==0){
+    header("Location: dashboard.php");    
+    exit();    
+}
+
+if (session_status() == PHP_SESSION_NONE) {
+    session_start(); 
+}
+
+$database = new Database();
+$userClass = new User($database); 
+
+$usersTable = $userClass->getUsers();
+
+$individual_accounts = 0;
+$business_accounts = 0;
+
+if(!empty($usersTable)){
+    foreach($usersTable as $user){
+        if($user['type']=="individ") $individual_accounts++;
+        if($user['type']=="business") $business_accounts++;
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -15,9 +40,18 @@ session_start();
 <body>
 
     <div class="stats">
-        <div class="stat-box">Total Users: <span id="totalUsers">9</span></div>
-        <div class="stat-box">Total Businesses: <span id="totalBusinesses">50</span></div>
+        <div class="stat-box">Total Users: <span id="totalUsers"><?php echo $individual_accounts ;?></span></div>
+        <div class="stat-box">Total Businesses: <span id="totalBusinesses"><?php echo $business_accounts ;?></span></div>
     </div>
+
+    <?php if (isset($_GET['message'])): ?>
+        <p style="color: green;"><?php echo htmlspecialchars($_GET['message']); ?></p>
+    <?php endif; ?>
+
+    <?php if (isset($_GET['error'])): ?>
+        <p style="color: red;"><?php echo htmlspecialchars($_GET['error']); ?></p>
+    <?php endif; ?>
+
     
     <div class="dashboard-container">
         <h1>Manage Users</h1>
@@ -29,26 +63,33 @@ session_start();
                     <th>Email</th>
                     <th>Phone</th>
                     <th>Created At</th>
-                    <th>Status</th>
                     <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($users as $user): ?>
-                    <tr>
-                        <td><?= $user['user_id']; ?></td>
-                        <td><?= $user['name']; ?></td>
-                        <td><?= $user['email']; ?></td>
-                        <td><?= $user['phone']; ?></td>
-                        <td><?= $user['status']; ?></td>
-                        <td>
-                            <a href="backend/delete_user.php?id=<?php echo $user['user_id']; ?>" 
-                                onclick="return confirm('Are you sure you want to delete this user?')">
-                                <button class="delete">Delete</button>
-                            </a>
-                        </td>
-                    </tr>
-                <?php endforeach; ?>
+                <?php
+                    if(!empty($usersTable)){
+                        foreach($usersTable as $user){
+                            if($user['type']=="individ"){
+                                echo'
+                                    <tr>
+                                        <td>'.$user['user_id'].'</td>
+                                        <td>'.$user['name'].'</td>
+                                        <td>'.$user['email'].'</td>
+                                        <td>'.$user['phone'].'</td>
+                                        <td>'.$user['created_at'].'</td>
+                                        <td>
+                                            <a href="backend/delete_user.php?id=' . $user["user_id"] . '" 
+                                                onclick="return confirm(\'Are you sure you want to delete this user?\')">
+                                                <button class="delete">Delete</button>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                ';
+                            }    
+                        }
+                    }
+                ?>
             </tbody>
         </table>
     </div>
@@ -63,24 +104,33 @@ session_start();
                     <th>Email</th>
                     <th>Phone</th>
                     <th>Created At</th>
-                    <th>Status</th>
                     <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($users as $user): ?>
-                    <tr>
-                        <td><?= $user['user_id']; ?></td>
-                        <td><?= $user['name']; ?></td>
-                        <td><?= $user['email']; ?></td>
-                        <td><?= $user['phone']; ?></td>
-                        <td><?= $user['created_at']; ?></td>
-                        <td><?= $user['status']; ?></td>
-                        <td>
-                            <button>Delete</button>
-                        </td>
-                    </tr>
-                <?php endforeach; ?>
+            <?php
+                    if(!empty($usersTable)){
+                        foreach($usersTable as $user){
+                            if($user['type']=="business"){
+                                echo'
+                                    <tr>
+                                        <td>'.$user['user_id'].'</td>
+                                        <td>'.$user['name'].'</td>
+                                        <td>'.$user['email'].'</td>
+                                        <td>'.$user['phone'].'</td>
+                                        <td>'.$user['created_at'].'</td>
+                                        <td>
+                                            <a href="backend/delete_user.php?id=' . $user["user_id"] . '" 
+                                                onclick="return confirm(\'Are you sure you want to delete this user?\')">
+                                                <button class="delete">Delete</button>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                ';
+                            }    
+                        }
+                    }
+                ?>
             </tbody>
         </table>
     </div>
@@ -100,5 +150,5 @@ session_start();
         </form>
     </section>
 
-
+<button onclick="window.location.href='logout.php'" >logout</button>
 <?php include 'footer.php'; ?>
