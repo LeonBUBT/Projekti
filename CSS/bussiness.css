@@ -1,0 +1,80 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f9f9f9;
+    /* color: #333; */
+    
+}
+.navbar {
+  background-color: #7e0000;  
+    
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.navbar .logo {
+    height: 40px;
+}
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+.nav-links li {
+    display: inline;
+}
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+.section {
+    padding: 20px;
+    text-align: center;
+}
+.dashboard-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.dashboard-card {
+    background: #900000;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    min-width: 200px;
+}
+.transactions-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.transactions-table th, .transactions-table td {
+    border: 1px solid black;
+    padding: 10px;
+    text-align: left;
+}
+.deadlines-container ul {
+    list-style: none;
+    padding: 0;
+}
+.deadline-item {
+    background: #900000;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+}
+.styled-button {
+    margin-top: 15px;
+    width: 50%;
+    
+    background-color: #7e0000;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 16px;
+}
