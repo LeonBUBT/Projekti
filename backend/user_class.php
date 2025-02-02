@@ -23,6 +23,14 @@ class User {
         return false;
     }
 
+    public function deleteUser($user_id) {
+        $query = "DELETE FROM users WHERE user_id = :user_id";
+        $stmt = $this->db->prepare($query);
+        $stmt->bindParam(':user_id', $user_id, PDO::PARAM_INT);
+    
+        return $stmt->execute();
+    }
+
     public function isLoggedIn() {
         return isset($_SESSION['user_id']);
     }
