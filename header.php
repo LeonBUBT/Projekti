@@ -21,8 +21,18 @@ session_start();
     
     <div id="nav-bar">
         <div id="register">
-            <a href="apply.php">Register to Nexus Bank</a>
-            <hr>
+            <?php 
+                if(isset($_SESSION['user_id'])){
+                    echo"
+                    <a href='dashboard.php'>Dashboard</a>
+                    ";
+                }else{
+                    echo"
+                    <a href='apply.php'>Register to Nexus Bank</a> 
+                    ";
+                }
+                ?>
+                <hr>
         </div>
         <ul>
             <li><a href="rrethnesh.php">About Us</a></li>
