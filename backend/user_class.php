@@ -23,6 +23,17 @@ class User {
         return false;
     }
 
+    public function getUsers(){
+        try{
+            $sql = "SELECT * FROM users";
+            $stmt = $this->db->prepare($sql);
+            $stmt->execute();
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        }catch(PDOException $e){
+            echo $e->getMessage();
+        }
+    }
+
     public function deleteUser($user_id) {
         $query = "DELETE FROM users WHERE user_id = :user_id";
         $stmt = $this->db->prepare($query);

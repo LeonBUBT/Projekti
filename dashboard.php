@@ -2,14 +2,17 @@
 session_start();
 
 if (!isset($_SESSION['user_id'])) {
-    header("Location: login.php");
-    
+    header("Location: login.php");    
     exit();
 }
+
+if($_SESSION['role']==1){
+    header("Location: dashboard.php");    
+    exit();    
+}
+
 error_reporting(E_ALL);
 ini_set('display_errors',1);
-
-
 ?>
 
 
@@ -47,29 +50,6 @@ ini_set('display_errors',1);
             <li><button onclick="showLogoutModal()">Logout</button></li>
         </ul>
     </nav>
-
-    <section id="account-overview" class="section"  style="margin-top: 100px;">
-        <h2>Account Overview</h2>
-        <div class="overview-grid">
-            <div class="overview-card">
-                <h3>Total Balance</h3>
-                <p>$<span id="balance">3000</span></p>
-            </div>
-            <div class="overview-card">
-                <h3>Monthly Expenses</h3>
-                <p>$<span id="expenses">1200</span></p>
-            </div>
-            <div class="overview-card">
-                <h3>Savings</h3>
-                <p>$<span id="savings">1800</span></p>
-            </div>
-        </div>
-        <div class="pie-chart-container" id="transfers">
-            <div id="pie-chart" class="pie-chart"></div>
-            <div id="pie-chart-text" class="pie-chart-text">0%</div>
-        </div>
-    </section>
-
  
     <section  class="section">
         <h2>Transfers</h2>
