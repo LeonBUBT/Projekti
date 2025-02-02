@@ -160,6 +160,106 @@ table tr:nth-child(even) {
     font-size: 16px;
 }
 
- button:hover {
-    transform: translateY(-3px);
+
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    
+
+}
+
+.modal-content {
+    background-color: white;
+    padding: 25px;
+    width: 420px;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+    text-align: center;
+    animation: fadeIn 0.3s ease-in-out;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9) ;
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translate(50%);
+    }
+}
+
+.close {
+    position: absolute;
+    top: 12px;
+    right: 15px;
+    font-size: 22px;
+    cursor: pointer;
+    color: #7e0000;
+    transition: 0.2s ease-in-out;
+}
+
+.close:hover {
+    color: black;
+    transform: scale(1.2);
+}
+
+h2 {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+label {
+    font-weight: bold;
+    text-align: left;
+    font-size: 14px;
+    color: #444;
+}
+
+input, select {
+    padding: 10px;
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: border-color 0.2s ease-in-out;
+}
+
+input:focus, select:focus {
+    border-color: #7e0000;
+    outline: none;
+}
+
+button {
+    background-color: #7e0000;
+    color: white;
+    padding: 12px;
+    font-size: 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+    margin-top: 10px;
+    transition: 0.3s ease-in-out;
+}
+
+button:hover {
+    background-color: #5a0000;
+    transform: translateY(-2px);
 }
