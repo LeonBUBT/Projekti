@@ -63,7 +63,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
            'cardType'=>$cardtype 
         ]);
 
-        header("Location: ../dashboard.php");
+        header("Location: ../login.php");
         exit;
     } else {
         foreach ($errors as $error) {

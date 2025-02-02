@@ -1,3 +1,18 @@
+<?php
+session_start();
+
+if (!isset($_SESSION['user_id'])) {
+    header("Location: login.php");
+    
+    exit();
+}
+error_reporting(E_ALL);
+ini_set('display_errors',1);
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,7 +30,7 @@
             <h2>Confirm Logout</h2>
             <p>Are you sure you want to log out?</p>
             <div class="modal-actions">
-                <button id="confirm-logout" class="btn-confirm">Yes, Logout</button>
+                <button id="confirm-logout" onclick="window.location.href='logout.php'" class="btn-confirm">Yes, Logout</button>
                 <button id="cancel-logout" class="btn-cancel">Cancel</button>
             </div>
         </div>
@@ -125,7 +140,7 @@
 
     <section class="home-section">
         <div id="welcome">
-            <h1>Welcome To Your Profile <span>[User]</span></h1>
+            <h1>Welcome To Your Profile <?php echo$_SESSION['name']; ?></h1>
             <img src="images/user.png" alt="Profile Picture" id="profileImage">
             <div class="profile-actions">
                 <button type="button" id="uploadBtn">Enter Your Profile Picture</button>

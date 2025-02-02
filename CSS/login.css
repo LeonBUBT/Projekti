@@ -1,238 +1,122 @@
-html{
-    scroll-behavior: smooth;
-}
-a{
-    text-decoration: none;
-}
-* {
+*{
     margin: 0;
     padding: 0;
-    color: white;
-}
-
-body {
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #f2f2f2;
-    overflow-x: hidden;
+    
 }
 
-#nav-bar {
-    background-color: #600000;
-    font-size: large;
-    display: flex;
-    justify-content: space-between;
+body{
+    background-image: url(../images/geometric-background-with-copy-space.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
 }
 
-#nav-bar ul{
-    list-style-type: none;
-    display: flex;
-    padding: 5px;
-}
-
-#nav-bar li{
-    padding: 2px 10px 0px 10px;
-}
-
-#nav-bar li:hover {
-    background-color: rgb(148, 38, 38);
-    border-radius: 15px;
-}
-
-/* --------------------------------- Header --------------------------------------------------------------------------- */
-
-#header {
-    background-color: #8B0000;
-    display: flex;
-    font-size: large;
-    align-items: center;
-    /* justify-content:flex-end; */
-}
-
-#header-ul1,#header-ul2,#header-img{
-    padding: 15px;
-}
-
-#header-ul1{
-    list-style-type: none;
-    padding-left: 1px;
-}
-
-#header-ul2{
-    list-style-type: none;
-    display: flex;
-}
-
-#header-ul2 li{
-    padding: 10px;
-    font-size:medium;
-}
-
-#header-ul2 li:hover {
-    background-color: rgb(148, 38, 38);
-    border-radius: 15px;
-}
-
-#register{
-    /* justify-content:; */
-    flex-wrap: nowrap;
-}
-
-/* ---------------------------------------------LoginFomr----------------------------------------------------- */
-#login {
+.container{
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    width: 600px;
+    height: auto;
+    transform: translate(-50%,-50%);
+    background-color: rgba(204, 204, 204, 0.93);
+    /* background-color: rgba(121, 121, 121, 0.93); */
+    
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 120%;
-    max-width: 900px;
-    margin: 50px auto;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 36% 64% 36% 64% / 66% 29% 71% 34% ;
-    background-color: #f9f9f9;
-    backdrop-filter: blur( 10px );
-    box-shadow: 0px 0px 110px 0px rgba(176,0,0,1);
-     /* box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 ); */
-    box-sizing: border-box;
+    border-radius: 15px;
 }
 
-#login h3 {
-    width: 100%;
-    text-align: center;
-    margin-bottom: 5px;
-
-    color: #8B0000;
-    padding-left: 10px;
-    box-sizing: border-box;
-}
-#login input[type="text"],
-#login input[type="password"] {
-    width: 100%;
-    max-width: 400px;
-    padding: 12px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    font-size: 1em;
-    box-sizing: border-box;
-    color: #8B0000;
-}
-
-#login button {
-    width: 100%;
-    max-width: 400px;
-    padding: 12px;
-    background-color: #600000;
-    color: white;
-    font-size: 1.1em;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-#login button:hover {
-    background-color: #600000;
-    transform: scale(1.02);
-}
-
-#login a {
-    display: block;
-    margin-top: 10px;
-    color: #1976d2;
-    text-decoration: none;
-    font-size: 0.9em;
-}
-
-#login a:hover {
-    text-decoration: underline;
-}
-
-#error-message {
-    margin-top: 15px;
-    color: red;
-    font-size: 0.9em;
-    display: none;
-}
-
-footer {
-    background-color: rgb(197, 26, 26);
-    color: #fff;
-    padding: 40px 20px;
-}
-
-.footer-container {
+.header{
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 20px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3vh;
 }
 
-.footer-section {
-    flex: 1;
-    min-width: 250px;
-}
-
-.footer-section h2 {
-    font-size: 1.5em;
-    margin-bottom: 15px;
-}
-
-.footer-section p,
-.footer-section li {
-    font-size: 0.9em;
-    margin-bottom: 10px;
-    line-height: 1.5;
-}
-
-.footer-section ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.footer-section a {
-    text-decoration: none;
-    color: #fff;
-    transition: color 0.3s;
-}
-
-.footer-section a:hover {
-    color: #ffd700; /* Golden hover effect */
-}
-
-.socials a {
-    color: #fff;
-    margin-right: 15px;
-    font-size: 1.5em;
-    transition: transform 0.3s;
-}
-
-.socials a:hover {
-    transform: scale(1.2);
-}
-
-/* Footer Bottom */
-.footer-bottom {
-    text-align: center;
-    margin-top: 20px;
-    font-size: 0.8em;
-    border-top: 1px solid #fff;
-    padding-top: 10px;
-    color: #ddd;
-}
-.scroll-to-top {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: rgb(197, 26, 26);
-    color: #fff;
-    border: none;
+.header img{
+    width: 120px;
     border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    cursor: pointer;
-    font-size: 1.2em;
-    display: none;
+    padding:     15px;
+    box-shadow:5px 5px  15px rgba(0, 0, 0, 0.212); ;
+    background-color: black;
+    margin-bottom: 5px;
+}
+
+#header-hr{
+    width: 90%;
+    align-self: center;
+    margin: 2vh;
+    border-color: rgba(255, 50, 50, 0.856);
+}
+
+/* ======================== form ===================================== */
+
+form{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 2vh;
+    width: 600px;
+    font-size: larger;
+
+    /* border: 1px black solid; */
+}
+
+form div {
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 100%;
+    height: auto;
+    padding: 5px 0px;
+
+    /* border: 1px black solid; */
 }
-/* Pe
+
+label{
+    padding: 0px 0px 4px 4px;
+}
+
+input{
+    padding: 8px;
+    font-size: 17px;
+    border-radius: 5px;
+    border: none;
+}
+
+
+.hidden{
+    display: none;
+}
+
+.show{
+    display: flex;
+}
+
+#submit{
+    background-color:rgb(231, 20, 20) ;
+    color: white;
+    padding: 2% 20%;
+    font-size: 18px;
+    border-radius: 10px;
+    border: none;
+    margin: 3vh;
+    margin-top: 0;
+}
+
+#submit:hover,.acctypeDiv button:hover{
+    background-color:rgb(199, 8, 8) ;
+}
+
+#submit:active,.acctypeDiv button:active{
+    background-color:rgb(231, 20, 20) ;
+}
+
+#apply{
+    font-size: 16px;
+    margin: 10px 0 2px 0;
+}
