@@ -158,6 +158,13 @@ input,select{
     margin: 2vh;
 }
 
+.cardDiv{
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    width: 50%;
+}
+
 button.next:hover{
     background-color:rgb(85, 83, 83) ;
 }

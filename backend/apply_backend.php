@@ -18,23 +18,33 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $confirmPassword = $_POST['confirm'] ?? '';
     $bday = $_POST['bday'] ?? '';
     $gender = $_POST['gender'] ?? '';
+    $personal_number = $_POST['personal_number'];
     $accType = 'individ';
     $admin = 0;
 
 
-    if($bday===null || $gender===null){
+    if($bday==='' || $gender===''){
         $accType = 'business';
     }
 
     $errors = [];
 
-    if (!$validator->validateName($name)) $errors[] = "Invalid name.";
-    if (!$validator->validateEmail($email)) $errors[] = "Invalid email.";
-    if (!$validator->validatePhone($phone)) $errors[] = "Invalid phone number.";
-    if (!$validator->validatePasswords($password, $confirmPassword)) $errors[] = "Passwords do not match.";
-    if (!$validator->validateDate($bday)) $errors[] = "Invalid date.";
-    if (!$validator->validateDropdown($cardtype)) $errors[] = "Invalid card type.";
-    if (!$validator->validateDropdown($gender)) $errors[] = "Invalid gender.";
+    if($accType === 'individ'){
+        if (!$validator->validateName($name)) $errors[] = "Invalid name.";
+        if (!$validator->validateEmail($email)) $errors[] = "Invalid email.";
+        if (!$validator->validatePhone($phone)) $errors[] = "Invalid phone number.";
+        if (!$validator->validatePasswords($password, $confirmPassword)) $errors[] = "Passwords do not match.";
+        if (!$validator->validateDate($bday)) $errors[] = "Invalid date.";
+        if (!$validator->validateDropdown($cardtype)) $errors[] = "Invalid card type.";
+        if (!$validator->validateDropdown($gender)) $errors[] = "Invalid gender.";
+        if (!$validator->validatePersonalNumber($personal_number))$errors[]="Invalid Personal number.";
+    }else {
+        if (!$validator->validateName($name)) $errors[] = "Invalid name.";
+        if (!$validator->validateEmail($email)) $errors[] = "Invalid email.";
+        if (!$validator->validatePhone($phone)) $errors[] = "Invalid phone number.";
+        if (!$validator->validatePasswords($password, $confirmPassword)) $errors[] = "Passwords do not match.";
+        if (!$validator->validateDropdown($cardtype)) $errors[] = "Invalid card type.";
+    }
 
     if (empty($errors)) {
         $signupHandler->insertUser([
@@ -45,7 +55,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             'admin' => $admin,
             'password' => $password,
             'bday' => $bday,
-            'gender' => $gender
+            'gender' => $gender,
+            'pNumber'=>$personal_number
         ]);
         $cardMaker->makeCard([
            'email'=>$email,

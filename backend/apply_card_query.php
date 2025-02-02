@@ -31,13 +31,11 @@ class CardMaker{
         
         $month = str_pad(random_int(1,12),2,'0',STR_PAD_LEFT);
         $year = date('y') + random_int(2,5);
-        $expiryDate = "$month/$year";
+        $expiryDate = "$year-$month-01";
 
         $cvv=random_int(100,999);
 
         $balance = 0.0;
-
-        // $creditLimit = ; add logic for determening credit limit for credit cards
 
         $typeSql = "INSERT INTO cards (user_id, card_type_id, card_number, expiry_date, cvv, balance) 
                 VALUES (:user_id, :card_type_id, :card_number, :expiry_date, :cvv, :balance) ";

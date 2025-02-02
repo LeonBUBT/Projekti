@@ -1,19 +1,27 @@
 <?php
-    require 'config.php';
-    error_reporting(E_ALL);
-    ini_set('display_errors', 1);
 
-    try{
-        $sql = "SELECT * FROM pikat";
-        $points=$connect->prepare($sql);
-        $points->execute();
+require_once 'config.php';
+class FetchPikat {
+    private $db;
 
-        $pikat = $points->fetchAll(PDO::FETCH_ASSOC);
-
-        header('Content-Type: application/json');
-        echo json_encode($pikat);
-    }catch(Exception $e){
-        echo "something went wrong";
+    public function __construct(Database $database) {
+        $this->db = $database->getConnection();
     }
+
+    public function getPikat() {
+        $sql = "SELECT * FROM pikat";
+        $stmt = $this->db->prepare($sql);
+        $stmt->execute();
+        $pikat = $stmt ->fetchAll(PDO::FETCH_ASSOC);
+
+        return $pikat;
+    }
+}
+
+$database = new Database();
+$fetchPikat = new FetchPikat($database);
+
+header('Content-Type: application/json');
+echo json_encode($fetchPikat->getPikat());
 
 ?>
