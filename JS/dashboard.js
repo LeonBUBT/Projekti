@@ -209,7 +209,6 @@ function updateDangerIndicator() {
 
     confirmBtn.addEventListener('click', () => {
         modal.style.display = 'none';
-        window.open('index.html', '_self');
     });
 
     cancelBtn.addEventListener('click', () => {

@@ -1,3 +1,10 @@
+<?php 
+session_start();
+
+error_reporting(E_ALL);
+ini_set('display_errors',1);
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,6 +22,10 @@
         </div>
 
         <hr id="header-hr">
+
+        <?php if (isset($_SESSION['error'])): ?>
+            <p style="color: red;"><?php echo $_SESSION['error']; unset($_SESSION['error']); ?></p>
+        <?php endif; ?>
 
         <form action="backend/login_backend.php" method="POST">            
             <div class="name_email">
